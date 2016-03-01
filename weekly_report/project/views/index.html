@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<link href="/css/bootstrap.css" rel="stylesheet">
+<link href="/css/main.css" rel="stylesheet">
+<script src="/js/jquery-1.11.2.min.js"></script> 
+<script src="/js/bootstrap.js"></script>
+</head>
+<body>
+<div class="list-group col-lg-4 col-lg-offset-4" style="margin-top:50px">
+  % for k in namelist.keys():
+    <a class="list-group-item text-center" href="/weeknote/{{k}}">{{namelist[k]}}</a>  
+  % end
+</div>
+
+
+</body>
+</html>
