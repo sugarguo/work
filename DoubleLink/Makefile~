@@ -1,0 +1,31 @@
+#*****************************************************************************
+
+# Copyright        :  
+
+#
+
+# Author           :   sugarguo
+
+# Date             :   2016-03-01
+
+# Version          :   Link静态链接库
+
+# Description 	   :   DoubleLink
+
+#
+
+#****************************************************************************/
+
+CC = gcc
+
+AR = ar rc
+
+Link : Link.o Link.a
+	$(CC) -o Link Link.o
+
+Link.o : Link.c
+	$(CC) -c Link.c
+Link.a : Link.c
+	$(AR) -c Link.a Link.c
+clean :
+	$(RM) = rm -fr *.o *.a
