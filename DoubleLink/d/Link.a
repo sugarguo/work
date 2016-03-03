@@ -1,3 +1,5 @@
+!<arch>
+Link.c/         1457000888  1000  1000  100664  11011     `
 /******************************************************
 * Program Assignment :  通用双向链表
 * Author:              Sugarguo
@@ -445,3 +447,4 @@ void main()
 	DropList(List);
 	ShowList(List,1);
 }
+

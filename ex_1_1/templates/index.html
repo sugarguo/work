@@ -1,7 +1,20 @@
 {% extends "base.html" %}
 
 {% block content %}
-
+	<div class="col-lg-2 col-lg-offset-10" style="padding-top:20px">
+		<p>你好，{% if name %}{{ name }}！{% else %} 未登录用户 {% endif%}
+			<a class="label label-default" href="/">退出</a>
+		</p>
+	</div>
+<div class="row">
+	<div class="col-lg-11 col-lg-offset-1" >
+    	<div class="form-inline" role="form">
+			<a type="button" href="/" class="btn btn-info btn-sm"><span class="glyphicon glyphicon-home"> 主页</span></a>
+        	<a type="button" href="add.html" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-plus"> 新建</span></a>   
+    	</div>
+	</div>
+</div>
+<br/>
 <div class="row">
 	<div class="col-md-1"></div>
 	<div class="col-md-10">
@@ -14,8 +27,6 @@
   			<td>工作类型</td>
 			<td>操作</td>
 		</tr>
-
-
 		{% for item in projectlist %}
 		<tr>
   			<td>{{ item.project }}</td>
