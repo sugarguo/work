@@ -1,0 +1,371 @@
+\hypertarget{_double_link_8h}{}\section{Double\+Link.\+h 文件参考}
+\label{_double_link_8h}\index{Double\+Link.\+h@{Double\+Link.\+h}}
+
+
+通用双向链表 ~\newline
+双向链表的动态创建，支持多种数据格式。  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include $<$string.\+h$>$}\\*
+\subsection*{结构体}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct___double_link}{\+\_\+\+Double\+Link}
+\begin{DoxyCompactList}\small\item\em 定义双向链表的结构体 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{类型定义}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{struct___double_link}{\+\_\+\+Double\+Link} \hyperlink{_double_link_8h_a9fcabae42ec5545a4c8f778a68a4e578}{D\+L\+Node}
+\begin{DoxyCompactList}\small\item\em 定义双向链表的结构体 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{函数}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_double_link_8h_a9fcabae42ec5545a4c8f778a68a4e578}{D\+L\+Node} $\ast$ \hyperlink{_double_link_8h_aec0d0b1312b68b305a5ec9cd4ae3c6c3}{Create\+List} ()
+\item 
+int \hyperlink{_double_link_8h_ab4a6ee8ded3b16a2f5b7b86aa2057026}{Call\+Back\+Search} (void $\ast$one, void $\ast$two, int judge)
+\begin{DoxyCompactList}\small\item\em Call\+Back\+Search ~\newline
+回调函数，比较内容是否相同 \end{DoxyCompactList}\item 
+int \hyperlink{_double_link_8h_a5f512133d0ad7d1049877badccb60644}{Call\+Back\+Show} (void $\ast$one, int judge)
+\begin{DoxyCompactList}\small\item\em Call\+Back\+Show ~\newline
+回调函数，显示内容 \end{DoxyCompactList}\item 
+int \hyperlink{_double_link_8h_ae831c0ec627bb4d2b28595bbe6f7de7b}{Call\+Back\+Sequence} (\hyperlink{_double_link_8h_a9fcabae42ec5545a4c8f778a68a4e578}{D\+L\+Node} $\ast$List, \hyperlink{_double_link_8h_a9fcabae42ec5545a4c8f778a68a4e578}{D\+L\+Node} $\ast$p\+\_\+one, \hyperlink{_double_link_8h_a9fcabae42ec5545a4c8f778a68a4e578}{D\+L\+Node} $\ast$p\+\_\+two, int judge)
+\begin{DoxyCompactList}\small\item\em Call\+Back\+Sequence ~\newline
+回调函数，对不同类型数据进行排序 \end{DoxyCompactList}\item 
+\hyperlink{_double_link_8h_a9fcabae42ec5545a4c8f778a68a4e578}{D\+L\+Node} $\ast$ \hyperlink{_double_link_8h_a6a5964d3d0366318999c4b4682bf49df}{Sequence\+List} (\hyperlink{_double_link_8h_a9fcabae42ec5545a4c8f778a68a4e578}{D\+L\+Node} $\ast$List, int judge, int($\ast$\hyperlink{_double_link_8h_ae831c0ec627bb4d2b28595bbe6f7de7b}{Call\+Back\+Sequence})(\hyperlink{_double_link_8h_a9fcabae42ec5545a4c8f778a68a4e578}{D\+L\+Node} $\ast$, \hyperlink{_double_link_8h_a9fcabae42ec5545a4c8f778a68a4e578}{D\+L\+Node} $\ast$, \hyperlink{_double_link_8h_a9fcabae42ec5545a4c8f778a68a4e578}{D\+L\+Node} $\ast$, int judge))
+\begin{DoxyCompactList}\small\item\em Search\+List ~\newline
+排列双向链表函数通过judge的flag，选择合适的排序方法 \end{DoxyCompactList}\item 
+\hyperlink{_double_link_8h_a9fcabae42ec5545a4c8f778a68a4e578}{D\+L\+Node} $\ast$ \hyperlink{_double_link_8h_a538fbae00f5161911678fd8012e5b424}{Search\+List} (\hyperlink{_double_link_8h_a9fcabae42ec5545a4c8f778a68a4e578}{D\+L\+Node} $\ast$List, void $\ast$data, int judge, int($\ast$\hyperlink{_double_link_8h_ab4a6ee8ded3b16a2f5b7b86aa2057026}{Call\+Back\+Search})(void $\ast$, void $\ast$, int judge))
+\begin{DoxyCompactList}\small\item\em Search\+List ~\newline
+查询双向链表，通过给定的默认双向链表，判断数据以及数据地址是否存在 \end{DoxyCompactList}\item 
+void \hyperlink{_double_link_8h_a3c75e226a401f131a4808dd22b234cca}{Insert\+List} (\hyperlink{_double_link_8h_a9fcabae42ec5545a4c8f778a68a4e578}{D\+L\+Node} $\ast$List, void $\ast$data)
+\begin{DoxyCompactList}\small\item\em Insert\+List ~\newline
+插入双向链表，根据双向链表的接口插入数据 \end{DoxyCompactList}\item 
+void \hyperlink{_double_link_8h_aa98d78b09347c0349867a8448998b9ed}{Update\+List} (\hyperlink{_double_link_8h_a9fcabae42ec5545a4c8f778a68a4e578}{D\+L\+Node} $\ast$List, void $\ast$data\+\_\+search, void $\ast$data\+\_\+change, int judge)
+\begin{DoxyCompactList}\small\item\em Update\+List ~\newline
+更新双向链表，通过查询原始的节点位置，修改数据 \end{DoxyCompactList}\item 
+void \hyperlink{_double_link_8h_a1ad1f2a8d287458ac0bfc4293b1c9aac}{Delete\+List} (\hyperlink{_double_link_8h_a9fcabae42ec5545a4c8f778a68a4e578}{D\+L\+Node} $\ast$List, void $\ast$data, int judge)
+\begin{DoxyCompactList}\small\item\em Delete\+List ~\newline
+删除双向链表，查询节点位置，将前后地址相连接，然后free此节点位置 \end{DoxyCompactList}\item 
+void \hyperlink{_double_link_8h_a02e02668c6b08dcff05ad02a55430c2f}{Show\+List} (\hyperlink{_double_link_8h_a9fcabae42ec5545a4c8f778a68a4e578}{D\+L\+Node} $\ast$List, int judge)
+\begin{DoxyCompactList}\small\item\em Show\+List ~\newline
+遍历双向链表 \end{DoxyCompactList}\item 
+void \hyperlink{_double_link_8h_a15364937ad58d693d28671f21106d2ec}{Drop\+List} (\hyperlink{_double_link_8h_a9fcabae42ec5545a4c8f778a68a4e578}{D\+L\+Node} $\ast$List)
+\begin{DoxyCompactList}\small\item\em Drop\+List ~\newline
+删除双向链表，全部删除，释放内存空间 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{详细描述}
+通用双向链表 ~\newline
+双向链表的动态创建，支持多种数据格式。 
+
+\begin{DoxyAuthor}{作者}
+Sugarguo  \href{mailto:sugarguo@live.com}{\tt sugarguo@live.\+com} 
+\end{DoxyAuthor}
+\begin{DoxyDate}{日期}
+2016/03/01 20\+:00 
+\end{DoxyDate}
+\begin{DoxyVersion}{版本}
+v1.\+0.\+0 
+\end{DoxyVersion}
+\begin{DoxyCopyright}{版权所有}
+Sugarguo 
+\end{DoxyCopyright}
+
+
+\subsection{类型定义说明}
+\hypertarget{_double_link_8h_a9fcabae42ec5545a4c8f778a68a4e578}{}\index{Double\+Link.\+h@{Double\+Link.\+h}!D\+L\+Node@{D\+L\+Node}}
+\index{D\+L\+Node@{D\+L\+Node}!Double\+Link.\+h@{Double\+Link.\+h}}
+\subsubsection[{D\+L\+Node}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf \+\_\+\+Double\+Link} {\bf D\+L\+Node}}\label{_double_link_8h_a9fcabae42ec5545a4c8f778a68a4e578}
+
+
+定义双向链表的结构体 
+
+
+
+\subsection{函数说明}
+\hypertarget{_double_link_8h_ab4a6ee8ded3b16a2f5b7b86aa2057026}{}\index{Double\+Link.\+h@{Double\+Link.\+h}!Call\+Back\+Search@{Call\+Back\+Search}}
+\index{Call\+Back\+Search@{Call\+Back\+Search}!Double\+Link.\+h@{Double\+Link.\+h}}
+\subsubsection[{Call\+Back\+Search(void $\ast$one, void $\ast$two, int judge)}]{\setlength{\rightskip}{0pt plus 5cm}int Call\+Back\+Search (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{one, }
+\item[{void $\ast$}]{two, }
+\item[{int}]{judge}
+\end{DoxyParamCaption}
+)}\label{_double_link_8h_ab4a6ee8ded3b16a2f5b7b86aa2057026}
+
+
+Call\+Back\+Search ~\newline
+回调函数，比较内容是否相同 
+
+
+\begin{DoxyParams}[1]{参数}
+\mbox{\tt in}  & {\em $\ast$one} & 比较的第一个内容 \\
+\hline
+\mbox{\tt in}  & {\em $\ast$two} & 比较的第二个内容 \\
+\hline
+\mbox{\tt in}  & {\em judge} & 提供接口，让用户定义具体比较函数 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+返回值为0 为查询到相同数据，若返回为1，则没有查询到数据 
+\end{DoxyReturn}
+
+
+在文件 Double\+Link.\+h 第 46 行定义.
+
+\hypertarget{_double_link_8h_ae831c0ec627bb4d2b28595bbe6f7de7b}{}\index{Double\+Link.\+h@{Double\+Link.\+h}!Call\+Back\+Sequence@{Call\+Back\+Sequence}}
+\index{Call\+Back\+Sequence@{Call\+Back\+Sequence}!Double\+Link.\+h@{Double\+Link.\+h}}
+\subsubsection[{Call\+Back\+Sequence(\+D\+L\+Node $\ast$\+List, D\+L\+Node $\ast$p\+\_\+one, D\+L\+Node $\ast$p\+\_\+two, int judge)}]{\setlength{\rightskip}{0pt plus 5cm}int Call\+Back\+Sequence (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+L\+Node} $\ast$}]{List, }
+\item[{{\bf D\+L\+Node} $\ast$}]{p\+\_\+one, }
+\item[{{\bf D\+L\+Node} $\ast$}]{p\+\_\+two, }
+\item[{int}]{judge}
+\end{DoxyParamCaption}
+)}\label{_double_link_8h_ae831c0ec627bb4d2b28595bbe6f7de7b}
+
+
+Call\+Back\+Sequence ~\newline
+回调函数，对不同类型数据进行排序 
+
+
+\begin{DoxyParams}[1]{参数}
+\mbox{\tt in}  & {\em $\ast$\+List} & 双向链表默认链表接口 \\
+\hline
+\mbox{\tt in}  & {\em $\ast$p\+\_\+one} & 比较的第一个数据指针 \\
+\hline
+\mbox{\tt in}  & {\em $\ast$p\+\_\+two} & 比较的第二个数据指针 \\
+\hline
+\mbox{\tt in}  & {\em judge} & 提供接口，让用户定义具体比较函数 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+返回值为0 为正确排序 
+\end{DoxyReturn}
+
+
+在文件 Double\+Link.\+h 第 100 行定义.
+
+\hypertarget{_double_link_8h_a5f512133d0ad7d1049877badccb60644}{}\index{Double\+Link.\+h@{Double\+Link.\+h}!Call\+Back\+Show@{Call\+Back\+Show}}
+\index{Call\+Back\+Show@{Call\+Back\+Show}!Double\+Link.\+h@{Double\+Link.\+h}}
+\subsubsection[{Call\+Back\+Show(void $\ast$one, int judge)}]{\setlength{\rightskip}{0pt plus 5cm}int Call\+Back\+Show (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{one, }
+\item[{int}]{judge}
+\end{DoxyParamCaption}
+)}\label{_double_link_8h_a5f512133d0ad7d1049877badccb60644}
+
+
+Call\+Back\+Show ~\newline
+回调函数，显示内容 
+
+
+\begin{DoxyParams}[1]{参数}
+\mbox{\tt in}  & {\em $\ast$one} & 需要显示的内容 \\
+\hline
+\mbox{\tt in}  & {\em judge} & 提供接口，让用户定义具体比较函数 \\
+\hline
+\end{DoxyParams}
+
+
+在文件 Double\+Link.\+h 第 79 行定义.
+
+\hypertarget{_double_link_8h_aec0d0b1312b68b305a5ec9cd4ae3c6c3}{}\index{Double\+Link.\+h@{Double\+Link.\+h}!Create\+List@{Create\+List}}
+\index{Create\+List@{Create\+List}!Double\+Link.\+h@{Double\+Link.\+h}}
+\subsubsection[{Create\+List()}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+L\+Node}$\ast$ Create\+List (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{_double_link_8h_aec0d0b1312b68b305a5ec9cd4ae3c6c3}
+Create\+List 创建双向链表 \begin{DoxyReturn}{返回}
+返回值为\+List 为\+D\+L\+Node的空链表，首尾相连 
+\end{DoxyReturn}
+
+
+在文件 Double\+Link.\+h 第 27 行定义.
+
+\hypertarget{_double_link_8h_a1ad1f2a8d287458ac0bfc4293b1c9aac}{}\index{Double\+Link.\+h@{Double\+Link.\+h}!Delete\+List@{Delete\+List}}
+\index{Delete\+List@{Delete\+List}!Double\+Link.\+h@{Double\+Link.\+h}}
+\subsubsection[{Delete\+List(\+D\+L\+Node $\ast$\+List, void $\ast$data, int judge)}]{\setlength{\rightskip}{0pt plus 5cm}void Delete\+List (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+L\+Node} $\ast$}]{List, }
+\item[{void $\ast$}]{data, }
+\item[{int}]{judge}
+\end{DoxyParamCaption}
+)}\label{_double_link_8h_a1ad1f2a8d287458ac0bfc4293b1c9aac}
+
+
+Delete\+List ~\newline
+删除双向链表，查询节点位置，将前后地址相连接，然后free此节点位置 
+
+
+\begin{DoxyParams}[1]{参数}
+\mbox{\tt in}  & {\em $\ast$\+List} & 双向链表默认链表接口 \\
+\hline
+\mbox{\tt in}  & {\em $\ast$data} & 需要被删除的无类型数据指针 \\
+\hline
+\mbox{\tt in}  & {\em judge} & 提供接口，让用户定义具体比较函数 \\
+\hline
+\end{DoxyParams}
+
+
+在文件 Double\+Link.\+h 第 255 行定义.
+
+\hypertarget{_double_link_8h_a15364937ad58d693d28671f21106d2ec}{}\index{Double\+Link.\+h@{Double\+Link.\+h}!Drop\+List@{Drop\+List}}
+\index{Drop\+List@{Drop\+List}!Double\+Link.\+h@{Double\+Link.\+h}}
+\subsubsection[{Drop\+List(\+D\+L\+Node $\ast$\+List)}]{\setlength{\rightskip}{0pt plus 5cm}void Drop\+List (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+L\+Node} $\ast$}]{List}
+\end{DoxyParamCaption}
+)}\label{_double_link_8h_a15364937ad58d693d28671f21106d2ec}
+
+
+Drop\+List ~\newline
+删除双向链表，全部删除，释放内存空间 
+
+
+\begin{DoxyParams}[1]{参数}
+\mbox{\tt in}  & {\em $\ast$\+List} & 双向链表默认链表接口 \\
+\hline
+\end{DoxyParams}
+
+
+在文件 Double\+Link.\+h 第 297 行定义.
+
+\hypertarget{_double_link_8h_a3c75e226a401f131a4808dd22b234cca}{}\index{Double\+Link.\+h@{Double\+Link.\+h}!Insert\+List@{Insert\+List}}
+\index{Insert\+List@{Insert\+List}!Double\+Link.\+h@{Double\+Link.\+h}}
+\subsubsection[{Insert\+List(\+D\+L\+Node $\ast$\+List, void $\ast$data)}]{\setlength{\rightskip}{0pt plus 5cm}void Insert\+List (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+L\+Node} $\ast$}]{List, }
+\item[{void $\ast$}]{data}
+\end{DoxyParamCaption}
+)}\label{_double_link_8h_a3c75e226a401f131a4808dd22b234cca}
+
+
+Insert\+List ~\newline
+插入双向链表，根据双向链表的接口插入数据 
+
+
+\begin{DoxyParams}[1]{参数}
+\mbox{\tt in}  & {\em $\ast$\+List} & 双向链表默认链表接口 \\
+\hline
+\mbox{\tt in}  & {\em $\ast$data} & 需要插入的无类型数据指针 \\
+\hline
+\end{DoxyParams}
+
+
+在文件 Double\+Link.\+h 第 210 行定义.
+
+\hypertarget{_double_link_8h_a538fbae00f5161911678fd8012e5b424}{}\index{Double\+Link.\+h@{Double\+Link.\+h}!Search\+List@{Search\+List}}
+\index{Search\+List@{Search\+List}!Double\+Link.\+h@{Double\+Link.\+h}}
+\subsubsection[{Search\+List(\+D\+L\+Node $\ast$\+List, void $\ast$data, int judge, int($\ast$\+Call\+Back\+Search)(void $\ast$, void $\ast$, int judge))}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+L\+Node}$\ast$ Search\+List (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+L\+Node} $\ast$}]{List, }
+\item[{void $\ast$}]{data, }
+\item[{int}]{judge, }
+\item[{int($\ast$)(void $\ast$, void $\ast$, int judge)}]{Call\+Back\+Search}
+\end{DoxyParamCaption}
+)}\label{_double_link_8h_a538fbae00f5161911678fd8012e5b424}
+
+
+Search\+List ~\newline
+查询双向链表，通过给定的默认双向链表，判断数据以及数据地址是否存在 
+
+
+\begin{DoxyParams}[1]{参数}
+\mbox{\tt in}  & {\em $\ast$\+List} & 双向链表默认链表接口 \\
+\hline
+\mbox{\tt in}  & {\em $\ast$data} & 需要查询的无类型数据指针 \\
+\hline
+\mbox{\tt in}  & {\em judge} & 提供接口，让用户定义具体比较函数 \\
+\hline
+\mbox{\tt out}  & {\em $\ast$\+Call\+Back\+Search} & 查询的回调函数接口 \\
+\hline
+\end{DoxyParams}
+
+
+在文件 Double\+Link.\+h 第 190 行定义.
+
+\hypertarget{_double_link_8h_a6a5964d3d0366318999c4b4682bf49df}{}\index{Double\+Link.\+h@{Double\+Link.\+h}!Sequence\+List@{Sequence\+List}}
+\index{Sequence\+List@{Sequence\+List}!Double\+Link.\+h@{Double\+Link.\+h}}
+\subsubsection[{Sequence\+List(\+D\+L\+Node $\ast$\+List, int judge, int($\ast$\+Call\+Back\+Sequence)(\+D\+L\+Node $\ast$, D\+L\+Node $\ast$, D\+L\+Node $\ast$, int judge))}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+L\+Node}$\ast$ Sequence\+List (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+L\+Node} $\ast$}]{List, }
+\item[{int}]{judge, }
+\item[{int($\ast$)({\bf D\+L\+Node} $\ast$, {\bf D\+L\+Node} $\ast$, {\bf D\+L\+Node} $\ast$, int judge)}]{Call\+Back\+Sequence}
+\end{DoxyParamCaption}
+)}\label{_double_link_8h_a6a5964d3d0366318999c4b4682bf49df}
+
+
+Search\+List ~\newline
+排列双向链表函数通过judge的flag，选择合适的排序方法 
+
+
+\begin{DoxyParams}[1]{参数}
+\mbox{\tt in}  & {\em $\ast$\+List} & 双向链表默认链表接口 \\
+\hline
+\mbox{\tt in}  & {\em judge} & 提供接口，让用户定义具体比较函数 \\
+\hline
+\mbox{\tt out}  & {\em $\ast$\+Call\+Back\+Sequence} & 排序的回调函数接口 \\
+\hline
+\end{DoxyParams}
+
+
+在文件 Double\+Link.\+h 第 172 行定义.
+
+\hypertarget{_double_link_8h_a02e02668c6b08dcff05ad02a55430c2f}{}\index{Double\+Link.\+h@{Double\+Link.\+h}!Show\+List@{Show\+List}}
+\index{Show\+List@{Show\+List}!Double\+Link.\+h@{Double\+Link.\+h}}
+\subsubsection[{Show\+List(\+D\+L\+Node $\ast$\+List, int judge)}]{\setlength{\rightskip}{0pt plus 5cm}void Show\+List (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+L\+Node} $\ast$}]{List, }
+\item[{int}]{judge}
+\end{DoxyParamCaption}
+)}\label{_double_link_8h_a02e02668c6b08dcff05ad02a55430c2f}
+
+
+Show\+List ~\newline
+遍历双向链表 
+
+
+\begin{DoxyParams}[1]{参数}
+\mbox{\tt in}  & {\em $\ast$\+List} & 双向链表默认链表接口 \\
+\hline
+\mbox{\tt in}  & {\em judge} & 提供接口，让用户定义具体比较函数 \\
+\hline
+\end{DoxyParams}
+
+
+在文件 Double\+Link.\+h 第 280 行定义.
+
+\hypertarget{_double_link_8h_aa98d78b09347c0349867a8448998b9ed}{}\index{Double\+Link.\+h@{Double\+Link.\+h}!Update\+List@{Update\+List}}
+\index{Update\+List@{Update\+List}!Double\+Link.\+h@{Double\+Link.\+h}}
+\subsubsection[{Update\+List(\+D\+L\+Node $\ast$\+List, void $\ast$data\+\_\+search, void $\ast$data\+\_\+change, int judge)}]{\setlength{\rightskip}{0pt plus 5cm}void Update\+List (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+L\+Node} $\ast$}]{List, }
+\item[{void $\ast$}]{data\+\_\+search, }
+\item[{void $\ast$}]{data\+\_\+change, }
+\item[{int}]{judge}
+\end{DoxyParamCaption}
+)}\label{_double_link_8h_aa98d78b09347c0349867a8448998b9ed}
+
+
+Update\+List ~\newline
+更新双向链表，通过查询原始的节点位置，修改数据 
+
+
+\begin{DoxyParams}[1]{参数}
+\mbox{\tt in}  & {\em $\ast$\+List} & 双向链表默认链表接口 \\
+\hline
+\mbox{\tt in}  & {\em $\ast$data\+\_\+search} & 需要被更新的初始无类型数据指针 \\
+\hline
+\mbox{\tt in}  & {\em $\ast$data\+\_\+change} & 需要更新的无类型数据指针 \\
+\hline
+\mbox{\tt in}  & {\em judge} & 提供接口，让用户定义具体比较函数 \\
+\hline
+\end{DoxyParams}
+
+
+在文件 Double\+Link.\+h 第 234 行定义.
+

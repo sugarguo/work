@@ -10,7 +10,7 @@
 
 # Version          :   Link静态链接库
 
-# Description 	   :   DoubleLink
+# Description 	   :   DoubleLinkTestMakefile
 
 #
 
@@ -20,13 +20,13 @@ CC = gcc
 
 AR = ar rc
 
-Link : Link.o Link.a
-	$(CC) -o Link Link.o
+DoubleLinkTest : DoubleLinkTest.o DoubleLinkTest.a
+	$(CC)	-o	DoubleLinkTest DoubleLinkTest.o
 
-Link.o : Link.c
-	$(CC) -c Link.c
-Link.a : Link.c
-	$(AR) -c Link.a Link.c
+DoubleLinkTest.o : DoubleLinkTest.c
+	$(CC)	-c	DoubleLinkTest.c
+DoubleLinkTest.a : DoubleLink.h
+	$(AR)	-c	DoubleLink.o DoubleLink.h
 
 .PHONY: clean
 clean :
