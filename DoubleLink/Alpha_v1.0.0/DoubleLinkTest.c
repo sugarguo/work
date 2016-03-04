@@ -11,7 +11,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-//#include "windows.h"
+//#include <windows.h> //win请用这个头文件
+#include <unistd.h>
 #include "DoubleLink.h"
 
 /**
@@ -25,6 +26,7 @@ int main( int argc, char *argv[] )
 {
 	DLNode *List;
 	/* 进行int 数组测试 */
+	int judge = 0;
 	int num[1000],i = 0;
 	for(i = 0; i < 1000; i++)
 	{
@@ -38,20 +40,20 @@ int main( int argc, char *argv[] )
 		printf("OK!Create OK!\n");
 	for(i = 0; i < 1000; i++)
 		InsertList(List,(void *)&num[i]);//(num + i));
-	ShowList(List,0);
+	ShowList(List,judge);
 	sleep(1);
-	SequenceList(List,0,CallBackSequence);
-	ShowList(List,0);
+	SequenceList(List,judge,CallBackSequence);
+	ShowList(List,judge);
 	sleep(1);
-	SearchList(List,&num[1],0,CallBackSearch);
-	UpdateList(List,&num[1],&num[5],0);
-	ShowList(List,0);
+	SearchList(List,&num[1],judge,CallBackSearch);
+	UpdateList(List,&num[1],&num[5],judge);
+	ShowList(List,judge);
 	sleep(1);
-	DeleteList(List,&num[5],0);
-	ShowList(List,0);
+	DeleteList(List,&num[5],judge);
+	ShowList(List,judge);
 	sleep(1);
 	DropList(List);
-	ShowList(List,0);
+	ShowList(List,judge);
 	sleep(1);
 	/* 进行char * 字符串测试 */
 	char *test1 = "test1";

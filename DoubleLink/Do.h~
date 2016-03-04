@@ -1,0 +1,23 @@
+#ifndef __DOUBLELINK_H__
+#define __DOUBLELINK_H__
+
+typedef struct _DoubleLink
+   17 {
+   18     void *data; 
+   19     struct _DoubleLink *back;  
+   20     struct _DoubleLink *next;  
+   21 }DLNode;
+
+DLNode *CreateList();
+int CallBackSearch(void *one, void *two, int judge);
+int CallBackShow(void *one, int judge);
+int CallBackSequence(DLNode *List, DLNode *p_one, DLNode *p_two, int judge);
+DLNode *SequenceList(DLNode *List, int judge, int (*CallBackSequence)(DLNode *,DLNode *, DLNode *, int judge));
+DLNode *SearchList(DLNode *List, void *data, int judge, int (*CallBackSearch)(void *, void *, int judge));
+void InsertList(DLNode *List, void *data);
+void UpdateList(DLNode *List, void *data_search, void *data_change, int judge);
+void DeleteList(DLNode *List, void *data, int judge);
+void ShowList(DLNode *List, int judge);
+void DropList(DLNode *List);
+
+#endif
