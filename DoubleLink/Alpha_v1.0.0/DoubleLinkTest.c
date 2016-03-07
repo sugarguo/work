@@ -6,7 +6,7 @@
 * @email    	sugarguo@live.com
 * @date			2016/03/01 20:00
 * @version		v1.0.0 
-* @copyright	Sugarguo
+* @copyright	EmbedWay 恒为科技武汉研发中心 By:Sugarguo
 */
 #include <stdio.h>
 #include <stdlib.h>
@@ -26,7 +26,7 @@ int main( int argc, char *argv[] )
 {
 	DLNode *List;
 	/* 进行int 数组测试 */
-	int judge = 0;
+	int flag = 0;
 	int num[1000],i = 0;
 	for(i = 0; i < 1000; i++)
 	{
@@ -40,20 +40,20 @@ int main( int argc, char *argv[] )
 		printf("OK!Create OK!\n");
 	for(i = 0; i < 1000; i++)
 		InsertList(List,(void *)&num[i]);//(num + i));
-	ShowList(List,judge);
+	ShowList(List,flag);
 	sleep(1);
-	SequenceList(List,judge,CallBackSequence);
-	ShowList(List,judge);
+	SequenceList(List,flag,CallBackSequence);
+	ShowList(List,flag);
 	sleep(1);
-	SearchList(List,&num[1],judge,CallBackSearch);
-	UpdateList(List,&num[1],&num[5],judge);
-	ShowList(List,judge);
+	SearchList(List,&num[1],flag,CallBackSearch);
+	UpdateList(List,&num[1],&num[5],flag);
+	ShowList(List,flag);
 	sleep(1);
-	DeleteList(List,&num[5],judge);
-	ShowList(List,judge);
+	DeleteList(List,&num[5],flag);
+	ShowList(List,flag);
 	sleep(1);
 	DropList(List);
-	ShowList(List,judge);
+	ShowList(List,flag);
 	sleep(1);
 	/* 进行char * 字符串测试 */
 	char *test1 = "test1";

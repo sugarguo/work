@@ -26,12 +26,6 @@ DoubleLinkTest : DoubleLinkTest.o libDoubleLink.a
 DoubleLinkTest.o : DoubleLinkTest.c DoubleLink.h
 	$(CC)	-c	DoubleLinkTest.c
 
-libDoubleLink.a : DoubleLink.o
-	$(AR)		libDoubleLink.a DoubleLink.o
-
-DoubleLink.o :  DoubleLink.c
-	$(CC)	-c	DoubleLink.c
-
 
 .PHONY: clean
 clean :
