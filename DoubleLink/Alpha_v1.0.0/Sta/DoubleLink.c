@@ -149,7 +149,7 @@ int CallBackSequence(DLNode *List, DLNode *p_one, DLNode *p_two, int flag)
 			temp=p_one;
 			for(p_two = p_one->next; p_two != List; p_two = p_two->next)
 			{
-				if(strcmp((char *)p_two->data , (char *)temp->data) > 0 )
+				if(strcasecmp((char *)p_two->data , (char *)temp->data) > 0 )
 					temp = p_two;
 			}
 			if(temp != p_one)
@@ -296,7 +296,7 @@ int ShowList(DLNode *List, int flag)
 	{
 		CallBackShow(p->data, flag);
 		p = p->next;
-		nodenum++;
+		Nodenum++;
 	}
 	return Nodenum;
 }

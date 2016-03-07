@@ -24,55 +24,64 @@ struct Wordnum{
 	int length;
 };
 
-
-void WriteFile(char writestr[100])
-{
-	FILE *fp;
-	fp=fopen("temp.txt","a+");
-	fseek(fp, 0, SEEK_END);
-	fprintf(fp,"%s\n", writestr);
-	fclose(fp);
+/*去除字符串右边空格*/  
+void VS_StrRTrim(char *pStr)  
+{  
+    char *pTmp = pStr+strlen(pStr)-1;  
+      
+    while (*pTmp == ' ')   
+    {  
+        *pTmp = '\0';  
+        pTmp--;  
+    }  
+}  
+  
+/*去除字符串左边空格*/  
+void VS_StrLTrim(char *pStr)  
+{  
+    char *pTmp = pStr;  
+      
+    while (*pTmp == ' ')   
+    {  
+        pTmp++;  
+    }  
+    while(*pTmp != '\0')  
+    {  
+        *pStr = *pTmp;  
+        pStr++;  
+        pTmp++;  
+    }
+    *pStr = '\0';
+    *pStr = '\0';  
 }
 
-void WriteFileContent(char *filename)
-{
-	FILE *novelfile,*fp;
-	fp=fopen("temp.txt","w");
-	fclose(fp);
-	int i = 0,j = 0,word;
-	char str[100];
 
-	if((novelfile = fopen(filename,"r")) == NULL)
+DLNode *StatisticsContent(DLNode *List_Content)
+{
+	DLNode *p;
+	int i = 1;
+
+	p = List_Content->next;
+	while(p->next != List_Content)
 	{
-		printf("ERROR! File can't be Opened!\n");
-		exit(1);
-	}
-	while(( word = fgetc(novelfile)) != EOF)	//判断文件是否结束
-	{
-		if((word >= 'A' && word <= 'Z') || (word >= 'a' && word <= 'z'))
-		{
-			str[i] = (char)word;
+		if( strcasecmp((char *)p->data , (char *)p->next->data) == 0)
 			i++;
-		}
 		else
 		{
-			if(strlen(str) == 0 )
-				continue;
-			WriteFile(str);
-			i = 0;
-			
-			memset(str,'\0',sizeof(str));
+			printf("Word :\t%s\t\t ; Show :\t%d \n",(char *)p->data,i);
+			i = 1;
 		}
+		p = p->next;
 	}
+	return List_Content;
 }
-
 
 DLNode *GetFileContent(DLNode *List_Content, char *filename)
 {
 	FILE *novelfile,*fp;
 	fp=fopen("temp.txt","w");
 	fclose(fp);
-	int i = 0,j = 0,word;
+	int i = 0, word = 0;
 	char str[100];
 
 	if((novelfile = fopen(filename,"r")) == NULL)
@@ -94,19 +103,24 @@ DLNode *GetFileContent(DLNode *List_Content, char *filename)
 			//printf("%s\n",*wordstr);
 			char *wordstr;
 			wordstr = (char *)malloc(sizeof(char));
-			strcpy(wordstr,str);
-			//wordstr = str;
-			InsertList(List_Content,(void *)wordstr);
-			WriteFile(str);
-			i = 0;
-			
-			memset(str,'\0',sizeof(str));
+			if( wordstr == NULL )
+				printf ("Create MEM ERROR!\n");
+			else
+			{
+				VS_StrLTrim(str);
+				VS_StrRTrim(str);
+				strcpy(wordstr,str);
+				InsertList(List_Content,(void *)wordstr);
+				i = 0;
+				memset(str,'\0',sizeof(str));
+				wordstr=NULL;
+				free(wordstr);
+			}
 		}
 	}
-	ShowList(List_Content,2);
+	//ShowList(List_Content,2);
 	return List_Content;
 }
-
 
 /**
 * @brief main \n
@@ -117,8 +131,9 @@ DLNode *GetFileContent(DLNode *List_Content, char *filename)
 */
 int main( int argc, char *argv[] )
 {
-	char *filename = "LittleTest.txt";
-	FILE *linefile;
+	//char *filename = "LittleTest.txt";
+	char *filename = "Harry Potter and the Order of the Phoenix.txt";
+	//FILE *linefile;
 	
 	DLNode *List_Content;
 	DLNode *List_Num;
@@ -130,33 +145,12 @@ int main( int argc, char *argv[] )
 	else
 		printf("OK!Create OK!\n");
 
-
-	WriteFileContent(filename);
-	GetFileContent(List_Content,filename);
-
-
-	if((linefile = fopen("temp.txt","r")) == NULL)
-	{
-		printf("ERROR! File can't be Opened!\n");
-		exit(1);
-	}
-
-	char buf[MAX_LINE];  /*缓冲区*/
-	int len;             /*行字符个数*/
-	while(fgets(buf,MAX_LINE,linefile) != NULL)
-	{
-		len = strlen(buf);
-		buf[len-1] = '\0';  /*去掉换行符*/
-/*
-		char *word;
-		word = (char *)malloc(sizeof(char));
-		*word = buf;
-		InsertList(List_Content,word);
-*/
-		//printf("%s %d \n",buf,len - 1);
-	}
-
+	List_Content = GetFileContent(List_Content,filename);
 	ShowList(List_Content,2);
+	SequenceList(List_Content,2,CallBackSequence);
+	ShowList(List_Content,2);
+	StatisticsContent(List_Content);
+
 	DropList(List_Content);
 
 	
