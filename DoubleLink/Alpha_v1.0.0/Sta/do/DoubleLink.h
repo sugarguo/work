@@ -44,6 +44,8 @@ int CallBackSearch(void *one, void *two, int flag);
 */
 int CallBackShow(void *one, int flag);
 
+
+int CmpStr(const void *one, const void *two);
 /**
 * @brief CallBackSequence \n
 * 回调函数，对不同类型数据进行排序
@@ -107,8 +109,10 @@ void DeleteList(DLNode *List, void *data, int flag);
 * 遍历双向链表
 * @param[in]	*List	双向链表默认链表接口
 * @param[in]	flag	提供接口，让用户定义具体比较函数
+* @param[in]	judge	提供接口，让用户定义是否需要打印输出
+* @return		返回值为有多少链表
 */
-void ShowList(DLNode *List, int flag);
+int ShowList(DLNode *List, int flag, int judge);
 
 /**
 * @brief DropList \n

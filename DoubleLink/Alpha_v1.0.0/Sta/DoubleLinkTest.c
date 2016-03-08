@@ -24,6 +24,16 @@ struct Wordnum{
 	int length;
 };
 
+void WriteFile(char writestr[1000])
+{
+	FILE *fp;
+	fp=fopen("temp.txt","a+");
+	fseek(fp, 0, SEEK_END);
+	fprintf(fp,"%s\n", writestr);
+	fclose(fp);
+}
+
+
 /*去除字符串右边空格*/  
 void VS_StrRTrim(char *pStr)  
 {  
@@ -58,6 +68,11 @@ void VS_StrLTrim(char *pStr)
 
 DLNode *StatisticsContent(DLNode *List_Content)
 {
+	FILE *fp;
+	fp=fopen("dat.txt","w");
+	fclose(fp);
+	fp=fopen("dat.txt","a+");
+	//fseek(fp, 0, SEEK_END);
 	DLNode *p;
 	int i = 1;
 
@@ -68,11 +83,25 @@ DLNode *StatisticsContent(DLNode *List_Content)
 			i++;
 		else
 		{
+			/*
+			char writestr[1000]；// = "Word :\t%s\t\t ; Show :\t%d \n",(char *)p->data,i;
+			strcat(writestr,"Word :\t");
+			strcat(writestr,(char *)p->data);
+			strcat(writestr,"\t\t ; Show :\t");
+			strcat(writestr,(char *)i);
+			strcat(writestr," \n");
+			printf(writestr);
+			//WriteFile(writestr);
+			*/
 			printf("Word :\t%s\t\t ; Show :\t%d \n",(char *)p->data,i);
+			fprintf(fp,"Word :\t%s\t\t ; Show :\t%d \n",(char *)p->data,i);
+	
 			i = 1;
 		}
 		p = p->next;
 	}
+	printf("\n\nDat.txt Write OK!Please See it!\n\n\n");
+	fclose(fp);
 	return List_Content;
 }
 
@@ -93,16 +122,17 @@ DLNode *GetFileContent(DLNode *List_Content, char *filename)
 	{
 		if((word >= 'A' && word <= 'Z') || (word >= 'a' && word <= 'z'))
 		{
-			str[i] = (char)word;
+			str[i] = (char)tolower(word);
 			i++;
 		}
 		else
 		{
 			if(strlen(str) == 0 )
 				continue;
+			str[i] = '\0';
 			//printf("%s\n",*wordstr);
 			char *wordstr;
-			wordstr = (char *)malloc(sizeof(char));
+			wordstr = (char *)malloc((strlen(str) + 1) * sizeof(char));
 			if( wordstr == NULL )
 				printf ("Create MEM ERROR!\n");
 			else
@@ -131,8 +161,9 @@ DLNode *GetFileContent(DLNode *List_Content, char *filename)
 */
 int main( int argc, char *argv[] )
 {
-	//char *filename = "LittleTest.txt";
-	char *filename = "Harry Potter and the Order of the Phoenix.txt";
+	char *filename = "LittleTest.txt";
+	//char *filename = "test.txt";
+	//char *filename = "Harry Potter and the Order of the Phoenix.txt";
 	//FILE *linefile;
 	
 	DLNode *List_Content;
@@ -147,7 +178,7 @@ int main( int argc, char *argv[] )
 
 	List_Content = GetFileContent(List_Content,filename);
 	ShowList(List_Content,2);
-	SequenceList(List_Content,2,CallBackSequence);
+	SequenceList(List_Content,2,0,CallBackSequence);
 	ShowList(List_Content,2);
 	StatisticsContent(List_Content);
 

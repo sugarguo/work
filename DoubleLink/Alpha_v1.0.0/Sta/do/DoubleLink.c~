@@ -37,6 +37,11 @@ DLNode *CreateList()
 	return List;
 }
 
+int cmp(const void *a,const void *b)
+{
+     return(strcmp((char*)a,(char*)b));
+}
+
 /**
 * @brief CallBackSearch \n
 * 回调函数，比较内容是否相同
@@ -90,6 +95,22 @@ int CallBackShow(void *one, int flag)
 		printf("请使用0:int 1:char 2:char *，目前仅支持这三种！\n");
 }
 
+int CmpInt(const void *one, const void *two)
+{
+	return(*(int *)one - *(int *)two);
+}
+
+int CmpChar(const void *one, const void *two)
+{
+	return(strcmp((char *)one, (char *)two));
+}
+
+int CmpStr(const void *one, const void *two)
+{
+	return(strcmp(*(char (*)[100])one, *(char (*)[100])two));
+}
+
+
 /**
 * @brief CallBackSequence \n
 * 回调函数，对不同类型数据进行排序
@@ -107,69 +128,121 @@ int CallBackSequence(DLNode *List, DLNode *p_one, DLNode *p_two, int flag, int j
 
 	if(judge == 0)
 	{
-		for(p_one = p_one; p_one->next != List; p_one = p_one->next)
+		if(flag == 0)
 		{
-			temp=p_one;
-			for(p_two = p_one->next; p_two != List; p_two = p_two->next)
+			for(p_one = p_one; p_one->next != List; p_one = p_one->next)
 			{
-				if(flag == 0)
+				temp=p_one;
+				for(p_two = p_one->next; p_two != List; p_two = p_two->next)
 				{
 					if(*(int *)p_two->data > *(int *)temp->data )
 						temp = p_two;
 				}
-				else if(flag == 1)
+				if(temp != p_one)
 				{
-					if(strcmp((char *)p_two->data , (char *)temp->data) < 0 )
-					temp = p_two;
-				}
-				else if(flag == 2)
-				{
-					if(strcmp((char *)p_two->data , (char *)temp->data) < 0 )
-					temp = p_two;
+					temp_data=p_one->data;
+					p_one->data=temp->data;
+					temp->data=temp_data;
 				}
 			}
-			if(temp != p_one)
+		}
+		else if(flag == 1)
+		{
+			for(p_one = p_one; p_one->next != List; p_one = p_one->next)
 			{
-				temp_data=p_one->data;
-				p_one->data=temp->data;
-				temp->data=temp_data;
+				temp=p_one;
+				for(p_two = p_one->next; p_two != List; p_two = p_two->next)
+				{
+					if(strcmp((char *)p_two->data , (char *)temp->data) < 0 )
+						temp = p_two;
+				}
+				if(temp != p_one)
+				{
+					temp_data=p_one->data;
+					p_one->data=temp->data;
+					temp->data=temp_data;
+				}
+			}
+		}
+		else if(flag == 2)
+		{
+			for(p_one = p_one; p_one->next != List; p_one = p_one->next)
+			{
+				temp=p_one;
+				for(p_two = p_one->next; p_two != List; p_two = p_two->next)
+				{
+					if(strcmp((char *)p_two->data , (char *)temp->data) < 0 )
+						temp = p_two;
+				}
+				if(temp != p_one)
+				{
+					temp_data=p_one->data;
+					p_one->data=temp->data;
+					temp->data=temp_data;
+				}
 			}
 		}
 		return 0;
 	}
 	else if(judge == 1)
 	{
-		printf("根据文本长短请稍候，正在进行长度排序……！\n");
-		for(p_one = p_one; p_one->next != List; p_one = p_one->next)
+		int i = 0;
+		int Nodenum = ShowList(List, flag, judge);
+
+		printf("%d",Nodenum);
+
+
+		if(flag == 0)
 		{
-			temp=p_one;
-			for(p_two = p_one->next; p_two != List; p_two = p_two->next)
+			int IntList[Nodenum];
+			DLNode *p;
+
+			p = List->next;
+			while(p != List)
 			{
-				if(strlen((char *)p_two->data) < strlen((char *)temp->data))
-					temp = p_two;
+				IntList[i] = *(int *)p->data;
+				p = p->next;
+				i++;
 			}
-			if(temp != p_one)
-			{
-				temp_data=p_one->data;
-				p_one->data=temp->data;
-				temp->data=temp_data;
-			}
+			qsort(IntList,Nodenum,sizeof(IntList[0]),CmpInt);
 		}
-		printf("根据文本长短请稍候，正在比对是否相同排序……！\n");
-		for(p_one = p_one; p_one->next != List; p_one = p_one->next)
+		else if(flag == 1)
 		{
-			temp=p_one;
-			for(p_two = p_one->next; p_two != List; p_two = p_two->next)
+			char CharList[Nodenum];
+			DLNode *p;
+
+			p = List->next;
+			while(p != List)
 			{
-				if(strcasecmp((char *)p_two->data , (char *)temp->data) > 0 )
-					temp = p_two;
+				CharList[i] = *(char *)p->data;
+				p = p->next;
+				i++;
 			}
-			if(temp != p_one)
+			qsort(CharList,Nodenum,sizeof(CharList[0]),CmpChar);
+		}
+		else if(flag == 2)
+		{
+			char StrList[Nodenum][100];
+			DLNode *p;
+
+			p = List->next;
+			while(p != List)
 			{
-				temp_data=p_one->data;
-				p_one->data=temp->data;
-				temp->data=temp_data;
+				strcpy(StrList[i] , (char *)p->data);			
+				//StrList[i][100] = *(char *)p->data;
+				printf("%s \n",StrList[i]);
+				p = p->next;
+				i++;
 			}
+			qsort(StrList, Nodenum,100 * sizeof(char), CmpStr);
+			//p = List->next;
+			for(i = 0; i < Nodenum; i++)
+			{
+				printf("%s \n",StrList[i]);
+				//p->data = StrList[i];
+				//p = p->next;
+			}
+
 		}
 		return 0;
 	}
@@ -192,7 +265,6 @@ DLNode *SequenceList(DLNode *List, int flag, int judge, int (*CallBackSequence)(
 	p_one = List->next;
 	p_two = List->next;
 	CallBackSequence( List, p_one, p_two, flag, judge );
-	printf("Done\n");
 }
 
 /**
@@ -296,8 +368,10 @@ void DeleteList(DLNode *List, void *data, int flag)
 * 遍历双向链表
 * @param[in]	*List	双向链表默认链表接口
 * @param[in]	flag	提供接口，让用户定义具体比较函数
+* @param[in]	judge	提供接口，让用户定义是否显示遍历结果
+* @return		返回值为遍历结果，有多少个
 */
-int ShowList(DLNode *List, int flag)
+int ShowList(DLNode *List, int flag, int judge)
 {
 	printf("Start Show List!\n");
 	DLNode *p;
@@ -306,7 +380,8 @@ int ShowList(DLNode *List, int flag)
 	p = List->next;
 	while(p != List)
 	{
-		CallBackShow(p->data, flag);
+		if(judge != 1)
+			CallBackShow(p->data, flag);
 		p = p->next;
 		Nodenum++;
 	}

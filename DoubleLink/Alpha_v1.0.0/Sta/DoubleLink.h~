@@ -63,7 +63,7 @@ int CallBackSequence(DLNode *List, DLNode *p_one, DLNode *p_two, int flag, int j
 * @param[in]	flag					提供接口，让用户定义具体比较函数
 * @param[out]	*CallBackSequence	排序的回调函数接口
 */
-DLNode *SequenceList(DLNode *List, int flag, int judge, int (*CallBackSequence)(DLNode *,DLNode *, DLNode *, int flag, int judge));
+DLNode *SequenceList(DLNode *List, int flag, int (*CallBackSequence)(DLNode *,DLNode *, DLNode *, int flag));
 
 /**
 * @brief SearchList \n

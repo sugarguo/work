@@ -13,6 +13,7 @@
 #include <string.h>
 //#include <windows.h> //win请用这个头文件
 #include <unistd.h>
+#include <time.h>
 #include "DoubleLink.h"
 
 #define MAX_LINE 1024
@@ -72,7 +73,6 @@ DLNode *StatisticsContent(DLNode *List_Content)
 	fp=fopen("dat.txt","w");
 	fclose(fp);
 	fp=fopen("dat.txt","a+");
-	//fseek(fp, 0, SEEK_END);
 	DLNode *p;
 	int i = 1;
 
@@ -83,18 +83,8 @@ DLNode *StatisticsContent(DLNode *List_Content)
 			i++;
 		else
 		{
-			/*
-			char writestr[1000]；// = "Word :\t%s\t\t ; Show :\t%d \n",(char *)p->data,i;
-			strcat(writestr,"Word :\t");
-			strcat(writestr,(char *)p->data);
-			strcat(writestr,"\t\t ; Show :\t");
-			strcat(writestr,(char *)i);
-			strcat(writestr," \n");
-			printf(writestr);
-			//WriteFile(writestr);
-			*/
-			printf("Word :\t%s\t\t ; Show :\t%d \n",(char *)p->data,i);
-			fprintf(fp,"Word :\t%s\t\t ; Show :\t%d \n",(char *)p->data,i);
+			//printf("Word : %s\t\t\t\t  Show : %d \n",(char *)p->data,i);
+			fprintf(fp,"Word : %s\t\t\t\t  Show : %d \n",(char *)p->data,i);
 	
 			i = 1;
 		}
@@ -108,8 +98,6 @@ DLNode *StatisticsContent(DLNode *List_Content)
 DLNode *GetFileContent(DLNode *List_Content, char *filename)
 {
 	FILE *novelfile,*fp;
-	fp=fopen("temp.txt","w");
-	fclose(fp);
 	int i = 0, word = 0;
 	char str[100];
 
@@ -122,7 +110,7 @@ DLNode *GetFileContent(DLNode *List_Content, char *filename)
 	{
 		if((word >= 'A' && word <= 'Z') || (word >= 'a' && word <= 'z'))
 		{
-			str[i] = (char)word;
+			str[i] = (char)tolower(word);
 			i++;
 		}
 		else
@@ -139,7 +127,6 @@ DLNode *GetFileContent(DLNode *List_Content, char *filename)
 			{
 				VS_StrLTrim(str);
 				VS_StrRTrim(str);
-				str = tolower(str);
 				strcpy(wordstr,str);
 				InsertList(List_Content,(void *)wordstr);
 				i = 0;
@@ -177,11 +164,25 @@ int main( int argc, char *argv[] )
 	else
 		printf("OK!Create OK!\n");
 
+	int start_time = 0, end_time = 0;
+
+	start_time = clock();
 	List_Content = GetFileContent(List_Content,filename);
-	ShowList(List_Content,2);
-	SequenceList(List_Content,2,0,CallBackSequence);
-	ShowList(List_Content,2);
+	end_time = clock();
+	printf("Read time : %d \n", (end_time - start_time) );
+	
+	//ShowList(List_Content,2);
+	start_time = clock();
+	SequenceList(List_Content,2,1,CallBackSequence);
+	end_time = clock();
+	printf("Sequence time : %d \n", (end_time - start_time) );
+
+	//ShowList(List_Content,2);
+	start_time = clock();
 	StatisticsContent(List_Content);
+	end_time = clock();
+	printf("Statistics time : %d \n", (end_time - start_time) );
+
 
 	DropList(List_Content);
 
