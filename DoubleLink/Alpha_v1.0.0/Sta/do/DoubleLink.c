@@ -90,6 +90,20 @@ int CallBackCmpStr_K(const void *one, const void *two)
 	return(strcmp(*(char **)one, *(char **)two));
 }
 
+int Partition(void *one, DLNode *left, DLNode *right, int (*CallBackCmp)(const void *, const void *))
+{
+	void *pivot_l = left->data;
+	void *pivot_r = right->data;
+
+	while(CallBackCmp(left->data, right->data) > 0)
+	{
+		while((CallBackCmp(left->data, right->data) > 0) && (CallBackCmp(pivot_r,pivot_l) <= 0) )
+			printf("  d");
+	}
+
+}
+
+
 /**
 * @brief CallBackShow \n
 * 回调函数，显示内容
@@ -166,6 +180,37 @@ DLNode *SequenceList(DLNode *List, int flag, int (*CallBackCmp)(const void *,con
 		//free(temp_data);
 	}
 	else if(flag == 1)
+	{
+		int Nodenum = 0;
+		Nodenum = ShowList(List, 2, 1);
+
+		char **StrList = NULL;
+		StrList = (char**)malloc(Nodenum * sizeof(char*));
+		printf("Strlist=%d\n", sizeof(StrList));
+		if(StrList == NULL)
+			return ;
+		memset(StrList, 0, Nodenum * sizeof(char *));
+		int i = 0;
+		DLNode *p = NULL;
+
+		p = List->next;
+		while(p != List)
+		{	
+			StrList[i] = (char *)p->data;
+			p = p->next;
+			i++;
+		}
+		//qsort(StrList, Nodenum, sizeof(char*), CallBackCmp);
+		p = List->next;
+		for(i = 0; i < Nodenum; i++)
+		{
+			//printf("%s \n",StrList[i]);
+			p->data = StrList[i];
+			p = p->next;
+		}
+		free(StrList);
+	}
+	else if(flag == 2)
 	{
 		int Nodenum = 0;
 		Nodenum = ShowList(List, 2, 1);
