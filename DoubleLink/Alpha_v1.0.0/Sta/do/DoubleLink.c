@@ -90,6 +90,44 @@ int CallBackCmpStr_K(const void *one, const void *two)
 	return(strcmp(*(char **)one, *(char **)two));
 }
 
+/*
+void quickSort(DLNode *List, int (*CallBackCmp)(const void *, const void *)) 
+{
+	DLNode *p_one = NULL;
+	DLNode *p_two = NULL;
+	if(CallBackCmp(p_one->data,p_two->data) < 0)
+	{
+		char *temp = NULL;
+		void *pivot = NULL;
+		p_one = List->back;
+		p_two = List->next;
+
+		strcpy(temp, (char *)p_one->data);
+		strcat(temp, (char *)p_two->data);
+		strncpy((char *)pivot, temp, ((strlen((char *)p_one->data)) + strlen((char *)p_two->data)) / 2);
+
+		p_one = p_one->back;
+		p_two = p_two->next;
+
+		while(1)
+		{
+			while( CallBackCmp(p_one->back->data, pivot) < 0);
+			while( CallBackCmp(p_two->next->data, pivot) > 0);
+
+			if( p_one == p_two )
+				break;
+
+			temp = NULL;
+			(void *)temp = p_one->data;
+			p_one->data = p_two->data;
+			p_two->data = (void *)temp;
+		}
+
+		
+	}
+}
+
+
 int Partition(void *one, DLNode *left, DLNode *right, int (*CallBackCmp)(const void *, const void *))
 {
 	void *pivot_l = left->data;
@@ -97,12 +135,16 @@ int Partition(void *one, DLNode *left, DLNode *right, int (*CallBackCmp)(const v
 
 	while(CallBackCmp(left->data, right->data) > 0)
 	{
-		while((CallBackCmp(left->data, right->data) > 0) && (CallBackCmp(pivot_r,pivot_l) <= 0) )
-			printf("  d");
+		while((CallBackCmp(left->data, right->data) > 0) && (CallBackCmp(right->data,pivot_l) <= 0) )
+			right = right->back;
+		left->data = right->data;
+		while((CallBackCmp(left->data, right->data) > 0) && (CallBackCmp(left->data,pivot_l) >= 0) ) 
+			left = left->next;
+		right->data = left->data	
 	}
-
+	return left;
 }
-
+*/
 
 /**
 * @brief CallBackShow \n
@@ -186,7 +228,7 @@ DLNode *SequenceList(DLNode *List, int flag, int (*CallBackCmp)(const void *,con
 
 		char **StrList = NULL;
 		StrList = (char**)malloc(Nodenum * sizeof(char*));
-		printf("Strlist=%d\n", sizeof(StrList));
+		//printf("Strlist=%d\n", sizeof(StrList));
 		if(StrList == NULL)
 			return ;
 		memset(StrList, 0, Nodenum * sizeof(char *));
@@ -194,6 +236,7 @@ DLNode *SequenceList(DLNode *List, int flag, int (*CallBackCmp)(const void *,con
 		DLNode *p = NULL;
 
 		p = List->next;
+		printf("back %s\n",(char *)p->data);
 		while(p != List)
 		{	
 			StrList[i] = (char *)p->data;
@@ -220,6 +263,7 @@ DLNode *SequenceList(DLNode *List, int flag, int (*CallBackCmp)(const void *,con
 		DLNode *p = NULL;
 
 		p = List->next;
+		printf("back %s\n",(char *)p->back->back->data);
 		while(p != List)
 		{	
 			StrList[i] = (char *)p->data;

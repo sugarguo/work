@@ -133,8 +133,8 @@ DLNode *GetFileContent(DLNode *List_Content, char *filename)
 */
 int main( int argc, char *argv[] )
 {
-	//char *filename = "LittleTest.txt";
-	char *filename = "test.txt";
+	char *filename = "LittleTest.txt";
+	//char *filename = "test.txt";
 	//char *filename = "Harry Potter and the Order of the Phoenix.txt";
 	
 	DLNode *List_Content = NULL;
