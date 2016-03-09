@@ -4,43 +4,65 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.9~svn20110310	//
-AR	Makefile	/^AR = ar rcs$/;"	m
-CC	Makefile	/^CC = gcc$/;"	m
-CallBackSearch	DoubleLink.c	/^int CallBackSearch(void *one, void *two, int flag)$/;"	f
-CallBackSequence	DoubleLink.c	/^int CallBackSequence(DLNode *List, DLNode *p_one, DLNode *p_two, int flag, int judge)$/;"	f
-CallBackShow	DoubleLink.c	/^int CallBackShow(void *one, int flag)$/;"	f
-CmpChar	DoubleLink.c	/^int CmpChar(const void *one, const void *two)$/;"	f
-CmpInt	DoubleLink.c	/^int CmpInt(const void *one, const void *two)$/;"	f
-CmpStr	DoubleLink.c	/^int CmpStr(const void *one, const void *two)$/;"	f
-CreateList	DoubleLink.c	/^DLNode *CreateList()$/;"	f
-DLNode	DoubleLink.c	/^}DLNode;$/;"	t	typeref:struct:_DoubleLink	file:
-DLNode	DoubleLink.h	/^}DLNode;$/;"	t	typeref:struct:_DoubleLink
-DeleteList	DoubleLink.c	/^void DeleteList(DLNode *List, void *data, int flag)$/;"	f
-DropList	DoubleLink.c	/^void DropList(DLNode *List)$/;"	f
-GetFileContent	DoubleLinkTest.c	/^DLNode *GetFileContent(DLNode *List_Content, char *filename)$/;"	f
-InsertList	DoubleLink.c	/^void InsertList(DLNode *List, void *data)$/;"	f
-MAX_LINE	DoubleLinkTest.c	19;"	d	file:
-RM	Makefile	/^RM = rm -fr *.o *.a *.out$/;"	m
-SearchList	DoubleLink.c	/^DLNode *SearchList(DLNode *List, void *data, int flag, int (*CallBackSearch)(void *, void *, int flag))$/;"	f
-SequenceList	DoubleLink.c	/^DLNode *SequenceList(DLNode *List, int flag, int judge, int (*CallBackSequence)(DLNode *,DLNode *, DLNode *, int flag, int judge))$/;"	f
-ShowList	DoubleLink.c	/^int ShowList(DLNode *List, int flag, int judge)$/;"	f
-StatisticsContent	DoubleLinkTest.c	/^DLNode *StatisticsContent(DLNode *List_Content)$/;"	f
-UpdateList	DoubleLink.c	/^void UpdateList(DLNode *List, void *data_search, void *data_change, int flag)$/;"	f
-VS_StrLTrim	DoubleLinkTest.c	/^void VS_StrLTrim(char *pStr)  $/;"	f
-VS_StrRTrim	DoubleLinkTest.c	/^void VS_StrRTrim(char *pStr)  $/;"	f
-Wordnum	DoubleLinkTest.c	/^struct Wordnum{$/;"	s	file:
-WriteFile	DoubleLinkTest.c	/^void WriteFile(char writestr[1000])$/;"	f
-_DoubleLink	DoubleLink.c	/^typedef struct _DoubleLink$/;"	s	file:
-_DoubleLink	DoubleLink.h	/^typedef struct _DoubleLink$/;"	s
-__DOUBLELINK_H__	DoubleLink.h	13;"	d
-back	DoubleLink.c	/^	struct _DoubleLink *back;  \/\/\/<双向链表的前区$/;"	m	struct:_DoubleLink	typeref:struct:_DoubleLink::_DoubleLink	file:
-back	DoubleLink.h	/^	struct _DoubleLink *back;  \/\/\/<双向链表的前区$/;"	m	struct:_DoubleLink	typeref:struct:_DoubleLink::_DoubleLink
-cmp	DoubleLink.c	/^int cmp(const void *a,const void *b)$/;"	f
-data	DoubleLink.c	/^	void *data; \/\/\/<双向链表中的数据$/;"	m	struct:_DoubleLink	file:
-data	DoubleLink.h	/^	void *data; \/\/\/<双向链表中的数据$/;"	m	struct:_DoubleLink
-length	DoubleLinkTest.c	/^	int length;$/;"	m	struct:Wordnum	file:
-main	DoubleLinkTest.c	/^int main( int argc, char *argv[] )$/;"	f
-next	DoubleLink.c	/^	struct _DoubleLink *next;  \/\/\/<双向链表的后区$/;"	m	struct:_DoubleLink	typeref:struct:_DoubleLink::_DoubleLink	file:
-next	DoubleLink.h	/^	struct _DoubleLink *next;  \/\/\/<双向链表的后区$/;"	m	struct:_DoubleLink	typeref:struct:_DoubleLink::_DoubleLink
-num	DoubleLinkTest.c	/^	int num;	$/;"	m	struct:Wordnum	file:
-word	DoubleLinkTest.c	/^	char *word;$/;"	m	struct:Wordnum	file:
+AR	Makefile	/^AR = ar rcs$/;"	m	language:Make
+CC	Makefile	/^CC = gcc$/;"	m	language:Make
+CallBackCmpChar	DoubleLink.c	/^int CallBackCmpChar(const void *one, const void *two)$/;"	f	language:C	signature:(const void *one, const void *two)
+CallBackCmpChar	DoubleLink.h	/^int CallBackCmpChar(const void *one, const void *two);$/;"	p	language:C++	signature:(const void *one, const void *two)
+CallBackCmpInt	DoubleLink.c	/^int CallBackCmpInt(const void *one, const void *two)$/;"	f	language:C	signature:(const void *one, const void *two)
+CallBackCmpInt	DoubleLink.h	/^int CallBackCmpInt(const void *one, const void *two);$/;"	p	language:C++	signature:(const void *one, const void *two)
+CallBackCmpStr	DoubleLink.c	/^int CallBackCmpStr(const void *one, const void *two)$/;"	f	language:C	signature:(const void *one, const void *two)
+CallBackCmpStr	DoubleLink.h	/^int CallBackCmpStr(const void *one, const void *two);$/;"	p	language:C++	signature:(const void *one, const void *two)
+CallBackCmpStr_K	DoubleLink.c	/^int CallBackCmpStr_K(const void *one, const void *two)$/;"	f	language:C	signature:(const void *one, const void *two)
+CallBackCmpStr_K	DoubleLink.h	/^int CallBackCmpStr_K(const void *one, const void *two);$/;"	p	language:C++	signature:(const void *one, const void *two)
+CallBackShow	DoubleLink.c	/^int CallBackShow(void *one, int flag)$/;"	f	language:C	signature:(void *one, int flag)
+CallBackShow	DoubleLink.h	/^int CallBackShow(void *one, int flag);$/;"	p	language:C++	signature:(void *one, int flag)
+CmpStr	test.c	/^int CmpStr(const void *one, const void *two)$/;"	f	language:C	signature:(const void *one, const void *two)
+CreateList	DoubleLink.c	/^DLNode *CreateList()$/;"	f	language:C
+CreateList	DoubleLink.h	/^DLNode *CreateList();$/;"	p	language:C++	signature:()
+DLNode	DoubleLink.c	/^}DLNode;$/;"	t	language:C	typeref:struct:_DoubleLink	file:
+DLNode	DoubleLink.h	/^}DLNode;$/;"	t	language:C++	typeref:struct:_DoubleLink
+DeleteList	DoubleLink.c	/^void DeleteList(DLNode *List, void *data, int (*CallBackCmp)(const void *, const void *))$/;"	f	language:C	signature:(DLNode *List, void *data, int (*CallBackCmp)(const void *, const void *))
+DeleteList	DoubleLink.h	/^void DeleteList(DLNode *List, void *data, int (*CallBackCmp)(const void *, const void *));$/;"	p	language:C++	signature:(DLNode *List, void *data, int (*CallBackCmp)(const void *, const void *))
+DropList	DoubleLink.c	/^void DropList(DLNode *List)$/;"	f	language:C	signature:(DLNode *List)
+DropList	DoubleLink.h	/^void DropList(DLNode *List);$/;"	p	language:C++	signature:(DLNode *List)
+GetFileContent	DoubleLinkTest.c	/^DLNode *GetFileContent(DLNode *List_Content, char *filename)$/;"	f	language:C	signature:(DLNode *List_Content, char *filename)
+InsertList	DoubleLink.c	/^void InsertList(DLNode *List, void *data)$/;"	f	language:C	signature:(DLNode *List, void *data)
+InsertList	DoubleLink.h	/^void InsertList(DLNode *List, void *data);$/;"	p	language:C++	signature:(DLNode *List, void *data)
+MAX_LINE	DoubleLinkTest.c	19;"	d	language:C	file:
+RM	Makefile	/^RM = rm -fr *.o *.a *.out$/;"	m	language:Make
+SearchList	DoubleLink.c	/^DLNode *SearchList(DLNode *List, void *data, int (*CallBackCmp)(const void *, const void *))$/;"	f	language:C	signature:(DLNode *List, void *data, int (*CallBackCmp)(const void *, const void *))
+SearchList	DoubleLink.h	/^DLNode *SearchList(DLNode *List, void *data, int (*CallBackCmp)(const void *, const void *));$/;"	p	language:C++	signature:(DLNode *List, void *data, int (*CallBackCmp)(const void *, const void *))
+SequenceList	DoubleLink.c	/^DLNode *SequenceList(DLNode *List, int flag, int (*CallBackCmp)(const void *,const void *))$/;"	f	language:C	signature:(DLNode *List, int flag, int (*CallBackCmp)(const void *,const void *))
+SequenceList	DoubleLink.h	/^DLNode *SequenceList(DLNode *List, int flag, int (*CallBackCmp)(const void *, const void *));$/;"	p	language:C++	signature:(DLNode *List, int flag, int (*CallBackCmp)(const void *, const void *))
+ShowList	DoubleLink.c	/^int ShowList(DLNode *List, int flag, int judge)$/;"	f	language:C	signature:(DLNode *List, int flag, int judge)
+ShowList	DoubleLink.h	/^int ShowList(DLNode *List, int flag, int judge);$/;"	p	language:C++	signature:(DLNode *List, int flag, int judge)
+StatisticsContent	DoubleLinkTest.c	/^DLNode *StatisticsContent(DLNode *List_Content)$/;"	f	language:C	signature:(DLNode *List_Content)
+UpdateList	DoubleLink.c	/^void UpdateList(DLNode *List, void *data_search, void *data_change, int (*CallBackCmp)(const void *, const void *))$/;"	f	language:C	signature:(DLNode *List, void *data_search, void *data_change, int (*CallBackCmp)(const void *, const void *))
+UpdateList	DoubleLink.h	/^void UpdateList(DLNode *List, void *data_search, void *data_change, int (*CallBackCmp)(const void *, const void *));$/;"	p	language:C++	signature:(DLNode *List, void *data_search, void *data_change, int (*CallBackCmp)(const void *, const void *))
+VS_StrLTrim	DoubleLinkTest.c	/^void VS_StrLTrim(char *pStr)  $/;"	f	language:C	signature:(char *pStr)
+VS_StrRTrim	DoubleLinkTest.c	/^void VS_StrRTrim(char *pStr)  $/;"	f	language:C	signature:(char *pStr)
+Wordnum	DoubleLinkTest.c	/^struct Wordnum{$/;"	s	language:C	file:
+Wordnum::length	DoubleLinkTest.c	/^	int length;$/;"	m	language:C	struct:Wordnum	file:	access:public
+Wordnum::num	DoubleLinkTest.c	/^	int num;	$/;"	m	language:C	struct:Wordnum	file:	access:public
+Wordnum::word	DoubleLinkTest.c	/^	char *word;$/;"	m	language:C	struct:Wordnum	file:	access:public
+WriteFile	DoubleLinkTest.c	/^void WriteFile(char writestr[1000])$/;"	f	language:C	signature:(char writestr[1000])
+_DoubleLink	DoubleLink.c	/^typedef struct _DoubleLink$/;"	s	language:C	file:
+_DoubleLink	DoubleLink.h	/^typedef struct _DoubleLink$/;"	s	language:C++
+_DoubleLink::back	DoubleLink.c	/^	struct _DoubleLink *back;  \/\/\/<双向链表的前区$/;"	m	language:C	struct:_DoubleLink	typeref:struct:_DoubleLink::_DoubleLink	file:	access:public
+_DoubleLink::back	DoubleLink.h	/^	struct _DoubleLink *back;  \/\/\/<双向链表的前区$/;"	m	language:C++	struct:_DoubleLink	typeref:struct:_DoubleLink::_DoubleLink	access:public
+_DoubleLink::data	DoubleLink.c	/^	void *data; \/\/\/<双向链表中的数据$/;"	m	language:C	struct:_DoubleLink	file:	access:public
+_DoubleLink::data	DoubleLink.h	/^	void *data; \/\/\/<双向链表中的数据$/;"	m	language:C++	struct:_DoubleLink	access:public
+_DoubleLink::next	DoubleLink.c	/^	struct _DoubleLink *next;  \/\/\/<双向链表的后区$/;"	m	language:C	struct:_DoubleLink	typeref:struct:_DoubleLink::_DoubleLink	file:	access:public
+_DoubleLink::next	DoubleLink.h	/^	struct _DoubleLink *next;  \/\/\/<双向链表的后区$/;"	m	language:C++	struct:_DoubleLink	typeref:struct:_DoubleLink::_DoubleLink	access:public
+__DOUBLELINK_H__	DoubleLink.h	13;"	d	language:C++
+back	DoubleLink.c	/^	struct _DoubleLink *back;  \/\/\/<双向链表的前区$/;"	m	language:C	struct:_DoubleLink	typeref:struct:_DoubleLink::_DoubleLink	file:	access:public
+back	DoubleLink.h	/^	struct _DoubleLink *back;  \/\/\/<双向链表的前区$/;"	m	language:C++	struct:_DoubleLink	typeref:struct:_DoubleLink::_DoubleLink	access:public
+data	DoubleLink.c	/^	void *data; \/\/\/<双向链表中的数据$/;"	m	language:C	struct:_DoubleLink	file:	access:public
+data	DoubleLink.h	/^	void *data; \/\/\/<双向链表中的数据$/;"	m	language:C++	struct:_DoubleLink	access:public
+length	DoubleLinkTest.c	/^	int length;$/;"	m	language:C	struct:Wordnum	file:	access:public
+main	DoubleLinkTest.c	/^int main( int argc, char *argv[] )$/;"	f	language:C	signature:( int argc, char *argv[] )
+main	test.c	/^int main()$/;"	f	language:C
+next	DoubleLink.c	/^	struct _DoubleLink *next;  \/\/\/<双向链表的后区$/;"	m	language:C	struct:_DoubleLink	typeref:struct:_DoubleLink::_DoubleLink	file:	access:public
+next	DoubleLink.h	/^	struct _DoubleLink *next;  \/\/\/<双向链表的后区$/;"	m	language:C++	struct:_DoubleLink	typeref:struct:_DoubleLink::_DoubleLink	access:public
+num	DoubleLinkTest.c	/^	int num;	$/;"	m	language:C	struct:Wordnum	file:	access:public
+word	DoubleLinkTest.c	/^	char *word;$/;"	m	language:C	struct:Wordnum	file:	access:public

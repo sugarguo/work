@@ -27,14 +27,48 @@ typedef struct _DoubleLink
 DLNode *CreateList();
 
 /**
-* @brief CallBackSearch \n
+* @brief InsertList \n
+* 插入双向链表，根据双向链表的接口插入数据
+* @param[in]	*List		双向链表默认链表接口
+* @param[in]	*data		需要插入的无类型数据指针
+*/
+void InsertList(DLNode *List, void *data);
+
+/**
+* @brief CallBackCmpInt \n
 * 回调函数，比较内容是否相同
 * @param[in]	*one	比较的第一个内容
 * @param[in]	*two	比较的第二个内容
-* @param[in]	flag		提供接口，让用户定义具体比较函数
-* @return		返回值为0 为查询到相同数据，若返回为1，则没有查询到数据
+* @return		返回值为两个数的减法结果，根据等于大小零判断
 */
-int CallBackSearch(void *one, void *two, int flag);
+int CallBackCmpInt(const void *one, const void *two);
+
+/**
+* @brief CallBackCmpChar \n
+* 回调函数，比较内容是否相同
+* @param[in]	*one	比较的第一个内容
+* @param[in]	*two	比较的第二个内容
+* @return		返回值为两个字母比较结果
+*/
+int CallBackCmpChar(const void *one, const void *two);
+
+/**
+* @brief CallBackCmpStr \n
+* 回调函数，比较内容是否相同
+* @param[in]	*one	比较的第一个内容
+* @param[in]	*two	比较的第二个内容
+* @return		返回值为两个单词比较结果
+*/
+int CallBackCmpStr(const void *one, const void *two);
+
+/**
+* @brief CallBackCmpStr_K \n
+* 回调函数，比较内容是否相同
+* @param[in]	*one	比较的第一个内容
+* @param[in]	*two	比较的第二个内容
+* @return		返回值为两个单词比较结果
+*/
+int CallBackCmpStr_K(const void *one, const void *two);
 
 /**
 * @brief CallBackShow \n
@@ -44,46 +78,23 @@ int CallBackSearch(void *one, void *two, int flag);
 */
 int CallBackShow(void *one, int flag);
 
-
-int CmpStr(const void *one, const void *two);
-/**
-* @brief CallBackSequence \n
-* 回调函数，对不同类型数据进行排序
-* @param[in]	*List	双向链表默认链表接口
-* @param[in]	*p_one	比较的第一个数据指针
-* @param[in]	*p_two	比较的第二个数据指针
-* @param[in]	flag	提供接口，让用户定义具体比较函数类型
-* @param[in]	flag	提供接口，让用户定义具体比较函数方法
-* @return		返回值为0 为正确排序
-*/
-int CallBackSequence(DLNode *List, DLNode *p_one, DLNode *p_two, int flag, int judge);
-
-/**
-* @brief SearchList \n
-* 排列双向链表函数通过flag的flag，选择合适的排序方法
-* @param[in]	*List			双向链表默认链表接口
-* @param[in]	flag					提供接口，让用户定义具体比较函数
-* @param[out]	*CallBackSequence	排序的回调函数接口
-*/
-DLNode *SequenceList(DLNode *List, int flag, int judge, int (*CallBackSequence)(DLNode *,DLNode *, DLNode *, int flag, int judge));
-
 /**
 * @brief SearchList \n
 * 查询双向链表，通过给定的默认双向链表，判断数据以及数据地址是否存在
 * @param[in]	*List					双向链表默认链表接口
 * @param[in]	*data					需要查询的无类型数据指针
-* @param[in]	flag					提供接口，让用户定义具体比较函数
-* @param[out]	*CallBackSearch	查询的回调函数接口
+* @param[in]	*CallBackCmp			各种类型的回调函数接口
 */
-DLNode *SearchList(DLNode *List, void *data, int flag, int (*CallBackSearch)(void *, void *, int flag));
+DLNode *SearchList(DLNode *List, void *data, int (*CallBackCmp)(void *, void *));
 
 /**
-* @brief InsertList \n
-* 插入双向链表，根据双向链表的接口插入数据
-* @param[in]	*List		双向链表默认链表接口
-* @param[in]	*data		需要插入的无类型数据指针
+* @brief SequenceList \n
+* 排列双向链表函数通过flag的flag，选择合适的排序方法
+* @param[in]	*List			双向链表默认链表接口
+* @param[in]	flag					提供接口，让用户定义具体比较函数
+* @param[in]	*CallBackCmp	各种类型的回调函数接口
 */
-void InsertList(DLNode *List, void *data);
+DLNode *SequenceList(DLNode *List, int flag, int (*CallBackCmp)(const void *, const void *));
 
 /**
 * @brief UpdateList \n
@@ -91,18 +102,18 @@ void InsertList(DLNode *List, void *data);
 * @param[in]	*List				双向链表默认链表接口
 * @param[in]	*data_search		需要被更新的初始无类型数据指针
 * @param[in]	*data_change		需要更新的无类型数据指针
-* @param[in]	flag				提供接口，让用户定义具体比较函数
+* @param[in]	*CallBackCmp		各种类型的回调函数接口
 */
-void UpdateList(DLNode *List, void *data_search, void *data_change, int flag);
+void UpdateList(DLNode *List, void *data_search, void *data_change, int (*CallBackCmp)(const void *, const void *));
 
 /**
 * @brief DeleteList \n
 * 删除双向链表，查询节点位置，将前后地址相连接，然后free此节点位置
-* @param[in]	*List	双向链表默认链表接口
-* @param[in]	*data	需要被删除的无类型数据指针
-* @param[in]	flag	提供接口，让用户定义具体比较函数
+* @param[in]	*List			双向链表默认链表接口
+* @param[in]	*data			需要被删除的无类型数据指针
+* @param[in]	*CallBackCmp	各种类型的回调函数接口
 */
-void DeleteList(DLNode *List, void *data, int flag);
+void DeleteList(DLNode *List, void *data, int (*CallBackCmp)(const void *, const void *));
 
 /**
 * @brief ShowList \n
@@ -112,7 +123,7 @@ void DeleteList(DLNode *List, void *data, int flag);
 * @param[in]	judge	提供接口，让用户定义是否需要打印输出
 * @return		返回值为有多少链表
 */
-void ShowList(DLNode *List, int flag, int judge);
+int ShowList(DLNode *List, int flag, int judge);
 
 /**
 * @brief DropList \n

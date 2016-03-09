@@ -18,23 +18,6 @@
 
 #define MAX_LINE 1024
 
-
-struct Wordnum{
-	char *word;
-	int num;	
-	int length;
-};
-
-void WriteFile(char writestr[1000])
-{
-	FILE *fp;
-	fp=fopen("temp.txt","a+");
-	fseek(fp, 0, SEEK_END);
-	fprintf(fp,"%s\n", writestr);
-	fclose(fp);
-}
-
-
 /*去除字符串右边空格*/  
 void VS_StrRTrim(char *pStr)  
 {  
@@ -69,11 +52,11 @@ void VS_StrLTrim(char *pStr)
 
 DLNode *StatisticsContent(DLNode *List_Content)
 {
-	FILE *fp;
+	FILE *fp = NULL;
 	fp=fopen("dat.txt","w");
 	fclose(fp);
 	fp=fopen("dat.txt","a+");
-	DLNode *p;
+	DLNode *p = NULL;
 	int i = 1;
 
 	p = List_Content->next;
@@ -84,15 +67,15 @@ DLNode *StatisticsContent(DLNode *List_Content)
 		else
 		{
 			//printf("Word : %s\t\t\t\t  Show : %d \n",(char *)p->data,i);
-			fprintf(fp,"Word : %s\t\t\t\t  Show : %d \n",(char *)p->data,i);
+			fprintf(fp,"Word :\t%-20s\t|\tShow :\t%-20d \n",(char *)p->data,i);
 	
 			i = 1;
 		}
 		p = p->next;
 	}
+	//free(p);
 	printf("\n\nDat.txt Write OK!Please See it!\n\n\n");
 	fclose(fp);
-	return List_Content;
 }
 
 DLNode *GetFileContent(DLNode *List_Content, char *filename)
@@ -119,7 +102,7 @@ DLNode *GetFileContent(DLNode *List_Content, char *filename)
 				continue;
 			str[i] = '\0';
 			//printf("%s\n",*wordstr);
-			char *wordstr;
+			char *wordstr = NULL;
 			wordstr = (char *)malloc((strlen(str) + 1) * sizeof(char));
 			if( wordstr == NULL )
 				printf ("Create MEM ERROR!\n");
@@ -131,11 +114,12 @@ DLNode *GetFileContent(DLNode *List_Content, char *filename)
 				InsertList(List_Content,(void *)wordstr);
 				i = 0;
 				memset(str,'\0',sizeof(str));
-				wordstr=NULL;
-				free(wordstr);
+				//wordstr=NULL;
+				//free(wordstr);
 			}
 		}
 	}
+	fclose(novelfile);
 	//ShowList(List_Content,2);
 	return List_Content;
 }
@@ -152,40 +136,38 @@ int main( int argc, char *argv[] )
 	char *filename = "LittleTest.txt";
 	//char *filename = "test.txt";
 	//char *filename = "Harry Potter and the Order of the Phoenix.txt";
-	//FILE *linefile;
 	
-	DLNode *List_Content;
-	DLNode *List_Num;
+	DLNode *List_Content = NULL;
 
 	List_Content = CreateList();
-	List_Num = CreateList();
-	if (List_Content == NULL || List_Num == NULL)
+
+	if (List_Content == NULL)
+	{
 		printf("Error!\n");
+		exit(1);
+	}
 	else
 		printf("OK!Create OK!\n");
 
 	int start_time = 0, end_time = 0;
 
 	start_time = clock();
-	List_Content = GetFileContent(List_Content,filename);
+	GetFileContent(List_Content,filename);
 	end_time = clock();
-	printf("Read time : %d \n", (end_time - start_time) );
-	
-	//ShowList(List_Content,2);
-	start_time = clock();
-	SequenceList(List_Content,2,1,CallBackSequence);
-	end_time = clock();
-	printf("Sequence time : %d \n", (end_time - start_time) );
+	printf("Read time :  %f \n", (float)(end_time - start_time) / CLOCKS_PER_SEC  );
 
-	//ShowList(List_Content,2);
+	start_time = clock();
+	SequenceList(List_Content, 1, CallBackCmpStr_K);
+	end_time = clock();
+	printf("Sequence time :  %f \n", (float)(end_time - start_time) / CLOCKS_PER_SEC  );
+
 	start_time = clock();
 	StatisticsContent(List_Content);
 	end_time = clock();
-	printf("Statistics time : %d \n", (end_time - start_time) );
-
+	printf("Statistics time : %f \n", (float)(end_time - start_time) / CLOCKS_PER_SEC  );
 
 	DropList(List_Content);
-
+	//free(List_Content);
 	
 	return 0;
 }

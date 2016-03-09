@@ -48,22 +48,22 @@ int CallBackShow(void *one, int flag);
 * @brief CallBackSequence \n
 * 回调函数，对不同类型数据进行排序
 * @param[in]	*List	双向链表默认链表接口
-* @param[in]	*p_one	比较的第一个数据指针
-* @param[in]	*p_two	比较的第二个数据指针
 * @param[in]	flag	提供接口，让用户定义具体比较函数类型
 * @param[in]	flag	提供接口，让用户定义具体比较函数方法
 * @return		返回值为0 为正确排序
 */
-int CallBackSequence(DLNode *List, DLNode *p_one, DLNode *p_two, int flag, int judge);
+int CallBackCmpInt(const void *one, const void *two);
+int CallBackCmpChar(const void *one, const void *two);
+int CallBackCmpStr(const void *one, const void *two);
 
 /**
 * @brief SearchList \n
 * 排列双向链表函数通过flag的flag，选择合适的排序方法
 * @param[in]	*List			双向链表默认链表接口
 * @param[in]	flag					提供接口，让用户定义具体比较函数
-* @param[out]	*CallBackSequence	排序的回调函数接口
+* @param[out]	*CallBackCmp	排序的回调函数接口
 */
-DLNode *SequenceList(DLNode *List, int flag, int (*CallBackSequence)(DLNode *,DLNode *, DLNode *, int flag));
+DLNode *SequenceList(DLNode *List, int flag, int (*CallBackCmp)(void *, void *));
 
 /**
 * @brief SearchList \n
