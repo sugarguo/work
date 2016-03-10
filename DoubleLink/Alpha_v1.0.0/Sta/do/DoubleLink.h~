@@ -84,11 +84,9 @@ DLNode *Partition(DLNode *List, DLNode *p_one, DLNode *p_two, int (*CallBackCmp)
 * @brief  QuickSort\n
 * 快速排序 
 * @param[in]	*List					双向链表默认链表接口
-* @param[in]	*one					比较的第一个内容
-* @param[in]	*two					比较的第二个内容
 * @param[in]	*CallBackCmp			各种类型的回调函数接口
 */
-void QuickSort(DLNode *List, DLNode *p_one, DLNode *p_two, int (*CallBackCmp)(const void *, const void *));
+void QuickSort(DLNode *List, int (*CallBackCmp)(const void *, const void *)) ;
 
 /**
 * @brief CallBackShow \n

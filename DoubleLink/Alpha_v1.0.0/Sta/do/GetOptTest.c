@@ -53,11 +53,14 @@ void VS_StrLTrim(char *pStr)
 DLNode *StatisticsContent(DLNode *List_Content)
 {
 	FILE *fp = NULL;
-	fp=fopen("dat.txt","w");
-	fclose(fp);
-	fp=fopen("dat.txt","a+");
 	DLNode *p = NULL;
 	int i = 1;
+
+	if((fp = fopen("dat.txt","w")) == NULL)
+	{
+		printf("ERROR! File can't be Opened!\n");
+		exit(1);
+	}
 
 	p = List_Content->next;
 	while(p->next != List_Content)
@@ -124,19 +127,8 @@ DLNode *GetFileContent(DLNode *List_Content, char *filename)
 	return List_Content;
 }
 
-/**
-* @brief main \n
-* 测试程序的主函数，进行int以及char的创建、增、删、改、查、排序、清空操作。
-* @param[in]	argc		带int参数形式
-* @param[in]	*argv[]		带char参数形式
-* @return		函数默认返回值
-*/
-int main( int argc, char *argv[] )
+int GetStatistics(char *filename, int hflag, int pflag)
 {
-	//char *filename = "LittleTest.txt";
-	char *filename = "test.txt";
-	//char *filename = "Harry Potter and the Order of the Phoenix.txt";
-	
 	DLNode *List_Content = NULL;
 
 	List_Content = CreateList();
@@ -157,18 +149,82 @@ int main( int argc, char *argv[] )
 	printf("Read time :  %f \n", (float)(end_time - start_time) / CLOCKS_PER_SEC  );
 
 	start_time = clock();
-	//SequenceList(List_Content, 1, CallBackCmpStr_K);
-	SequenceList(List_Content, 2, CallBackCmpStr);
+	if(hflag == 0)
+		SequenceList(List_Content, 1, CallBackCmpStr_K);
+	else
+		SequenceList(List_Content, 2, CallBackCmpStr);
 	end_time = clock();
 	printf("Sequence time :  %f \n", (float)(end_time - start_time) / CLOCKS_PER_SEC  );
 
+	if(pflag == 0)
+		ShowList(List_Content, 2, 0);
 	start_time = clock();
 	StatisticsContent(List_Content);
 	end_time = clock();
 	printf("Statistics time : %f \n", (float)(end_time - start_time) / CLOCKS_PER_SEC  );
 
 	DropList(List_Content);
-	//free(List_Content);
 	
+	return 0;
+
+}
+
+
+int getLine(char *filename)
+{
+	FILE *fp;
+	int line;
+    if(NULL == (fp = fopen(filename, "r")))  
+    {  
+        printf("File open ERROR\n");  
+        exit(1);  
+    }
+	char ch;
+    while(EOF != (ch=fgetc(fp)))  
+    {  
+        line++; 
+    }  
+  
+    fclose(fp);  
+  
+    return line;  
+}
+
+int main(int argc, char **argv)
+{
+	int oc = 0;
+	char ec = NULL;
+	char *b_opt_arg = NULL;
+
+	while((oc = getopt(argc, argv, "f:plsh")) != -1)
+	{
+		switch(oc)
+		{
+			case 'f':
+				b_opt_arg = optarg;
+				printf("Filename(with path): %s\n", optarg );
+				break;
+			case 'p':
+				printf("Print ALL Statistics num:\n");
+				break;
+			case 's':
+				printf("Print Sequence:\n");
+				break;
+			case 'l':
+				printf("FILE line num:\n");
+				break;
+			case 'h':
+				printf("High Statistics:\n");
+				break;
+			case '?':
+				ec = (char)optopt;
+				printf("Arguments ERROR!\n\' %c \' Not Support!\nOnly f:filename p l n\n", ec);
+				break;
+			case ':':
+				printf("Don't have parameter!\nPlease check!\n");
+				break;
+		}
+	
+	}
 	return 0;
 }

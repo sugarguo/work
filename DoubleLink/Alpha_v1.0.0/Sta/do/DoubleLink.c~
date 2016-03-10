@@ -179,6 +179,69 @@ void QuickSort(DLNode * List, DLNode * p_one, DLNode * p_two, int (*CallBackCmp)
 }
 
 /**
+* @brief  Partition\n
+* 快速排序 
+* @param[in]	*List					双向链表默认链表接口
+* @param[in]	*one					比较的第一个内容
+* @param[in]	*two					比较的第二个内容
+* @param[in]	*CallBackCmp			各种类型的回调函数接口
+*/
+/*
+DLNode *Partition(DLNode *List, DLNode *p_one, DLNode *p_two, int (*CallBackCmp)(const void *, const void *))
+{
+	void *pivot = NULL;
+	void *temp = NULL;
+	//CallBackShow(List->data, 2);
+	CallBackShow(p_one->data, 2);
+	CallBackShow(p_two->data, 2);
+	if (List = p_two)
+	{
+		return List->next;
+	}
+	pivot = p_one->data;
+	while(p_one != p_two)
+	{
+		while(p_one != p_two && (CallBackCmp(p_two->data,pivot) >= 0) )
+			p_two = p_two->back;
+
+		temp = p_one->data;
+		p_one->data = p_two->data;
+		p_two->data = temp;
+
+		while(p_one != p_two && (CallBackCmp(p_one->data,pivot) <= 0) ) 
+			p_one = p_one->next;
+
+		temp = p_one->data;
+		p_one->data = p_two->data;
+		p_two->data = temp;
+
+	}
+	return p_one;
+}
+*/
+
+/**
+* @brief  QuickSort\n
+* 快速排序 
+* @param[in]	*List					双向链表默认链表接口
+* @param[in]	*one					比较的第一个内容
+* @param[in]	*two					比较的第二个内容
+* @param[in]	*CallBackCmp			各种类型的回调函数接口
+*/
+/*
+void QuickSort(DLNode *List, DLNode *p_one, DLNode *p_two, int (*CallBackCmp)(const void *, const void *)) 
+{
+	DLNode *p_temp = NULL;
+	p_temp = Partition(List, p_one, p_two, CallBackCmp);
+	//printf("just do\n");
+	if (p_one != p_temp)
+		QuickSort(List, p_one, p_temp->back, CallBackCmp);
+	if (p_two != p_temp)
+		QuickSort(List, p_temp->next, p_two, CallBackCmp);
+}
+*/
+
+/**
 * @brief SearchList \n
 * 查询双向链表，通过给定的默认双向链表，判断数据以及数据地址是否存在
 * @param[in]	*List					双向链表默认链表接口
@@ -248,7 +311,7 @@ DLNode *SequenceList(DLNode *List, int flag, int (*CallBackCmp)(const void *,con
 		DLNode *p = NULL;
 
 		p = List->next;
-		//printf("back %s\n",(char *)p->data);
+		printf("back %s\n",(char *)p->data);
 		while(p != List)
 		{	
 			StrList[i] = (char *)p->data;
@@ -269,44 +332,6 @@ DLNode *SequenceList(DLNode *List, int flag, int (*CallBackCmp)(const void *,con
 	else if(flag == 2)
 	{
 		QuickSort(List, List->next, List->back, CallBackCmp);
-	}
-	else if(flag == 3)
-	{
-		int nodenum = 0;
-		nodenum = ShowList(List,2,1);
-		int i = 0, j = 0, k = 0;
-		DLNode *p_one = NULL;
-		DLNode *p_two = NULL;
-
-		for (k = nodenum / 2; k > 0; k /= 2)
-		{
-			p_one = p_one->next;
-			p_two = NULL;
-			for(i = 0; i < nodenum; i++ )
-			{
-				p_one = p_one->next;
-				p_two = p_two->next;
-				for (j = i + k; j < nodenum; j += k )
-				{
-					if(CallBackCmp(p_one->data,p_two->data) < 0 )
-					{
-						void *temp = NULL;
-						temp = p_one->data;
-						int l = j - k;
-						while(l >= 0 && (CallBackCmp(p_two->data,temp) > 0))
-						{
-							p_one->data = p_two->data;
-							p_two = p_two->next;
-							l -= k;
-
-						}
-						
-						p_one->data = temp;
-
-					}
-				}
-			}
-		}
 	}
 	else
 	{
