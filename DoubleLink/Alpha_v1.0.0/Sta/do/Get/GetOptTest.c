@@ -28,6 +28,7 @@ struct globalArgs_t{
 	int pflag;				///<是否显示最终结果的flag
 	int lflag;				///<是否显示行号的flag
 	int oflag;				///<是否采用默认文件的flag
+	int fflag;				///<是否采用默认文件的flag
 	int lines;				///<数据文件的行数
 	int words;				///<数据文件中拥有词数
 	int allwords;			///<数据文件中总词数
@@ -232,11 +233,11 @@ DLNode *GetFileContent(DLNode *List_Content)
 */
 int GetStatistics( int hflag, int sflag, int oflag)
 {
-	DLNode *List_Content = NULL;
+	DLNode *List = NULL;
 
-	List_Content = CreateList();
+	List = CreateList();
 
-	if (List_Content == NULL)
+	if (List == NULL)
 	{
 		printf("Error!\n");
 		exit(1);
@@ -247,29 +248,29 @@ int GetStatistics( int hflag, int sflag, int oflag)
 	int start_time = 0, end_time = 0;
 
 	start_time = clock();
-	List_Content = GetFileContent(List_Content);
+	List = GetFileContent(List);
 	end_time = clock();
 	printf("Read time :  %f \n", (float)(end_time - start_time) / CLOCKS_PER_SEC  );
 
 	start_time = clock();
 	if(hflag == 0)
-		SequenceList(List_Content, 1, CallBackCmpStr_K);
+		SequenceList(List, 1, CallBackCmpStr_K);
 	else
-		SequenceList(List_Content, 2, CallBackCmpStr);
+		SequenceList(List, 2, CallBackCmpStr);
 	end_time = clock();
 	printf("Sequence time :  %f \n", (float)(end_time - start_time) / CLOCKS_PER_SEC  );
 
 	if(sflag == 0)
-		ShowList(List_Content, 2, 0);
+		ShowList(List, 2, 0);
 	start_time = clock();
 	if(oflag == 0)
-		StatisticsShow(List_Content);
+		StatisticsShow(List);
 	else
-		StatisticsContent(List_Content );
+		StatisticsContent(List );
 	end_time = clock();
 	printf("Statistics time : %f \n\n", (float)(end_time - start_time) / CLOCKS_PER_SEC  );
 
-	DropList(List_Content);
+	DropList(List);
 	
 	return 0;
 
@@ -305,7 +306,7 @@ void convert_document( void )
 	}
 	if( globalArgs.outfilename == NULL)
 	{
-		printf("\nDo you want create outfile:\n0: Create Default file.\n1: Only Show!\n2: File name\nYou choose:");
+		printf("\nDo you want create outfile:\n0: Create Default file.\n1: Only Show!\n2: File name\n3: Exit!\nYou choose:");
 		scanf("%d",&choose);
 		if(choose == 0)
 		{
@@ -321,6 +322,10 @@ void convert_document( void )
 			printf("Filename:\n ");
 			scanf("%s",getfilename);
 			globalArgs.outfilename = getfilename;
+		}
+		else if(choose == 3)
+		{
+			exit(1);
 		}
 		else
 		{
@@ -356,6 +361,7 @@ int main(int argc, char **argv)
 	globalArgs.pflag = 1;
 	globalArgs.lflag = 1;
 	globalArgs.oflag = 1;
+	globalArgs.fflag = 0;
 	globalArgs.bytes = 0;
 	globalArgs.words = 0;
 	globalArgs.lines = 0;
@@ -369,26 +375,42 @@ int main(int argc, char **argv)
 	{
 		switch(opt)
 		{
+/*
 			case 'f':
+				globalArgs.fflag = globalArgs.fflag + 2;
 				globalArgs.filename = optarg;
+				//printf("numid : %d\n", optind);
 				break;
+*/
 			case 'o':
+				globalArgs.fflag = globalArgs.fflag + 2;
 				globalArgs.outfilename = optarg;
+				//printf("numid : %d\n", optind);
 				break;
 			case 'h':
+				globalArgs.fflag++;
 				globalArgs.hflag = 0;
+				//printf("numid : %d\n", optind);
 				break;
 			case 's':
+				globalArgs.fflag++;
 				globalArgs.sflag = 0;
+				//printf("numid : %d\n", optind);
 				break;
 			case 'p':
+				globalArgs.fflag++;
 				globalArgs.pflag = 0;
+				//printf("numid : %d\n", optind);
 				break;
 			case 'l':
+				globalArgs.fflag++;
 				globalArgs.lflag = 0;
+				//printf("numid : %d\n", optind);
 				break;
 			case 'v':
+				globalArgs.fflag++;
 				printf("\nVersion: 1.0.0\n");
+				//printf("numid : %d\n", optind);
 				break;
 			case '?':
 				display_usage();
@@ -402,7 +424,34 @@ int main(int argc, char **argv)
 		
 		opt = getopt(argc, argv, optString);
 	}
-	convert_document();
-    
+/*
+	if (optind >= argc) {
+		fprintf(stderr, "Expected argument after options\n");
+		exit(EXIT_FAILURE);
+	}
+
+	printf("name argument = %s\n", argv[optind]);
+
+
+	//convert_document();
+	printf(" optind=%d  %d  %d\n",  optind, globalArgs.fflag, argc);
+	for(opt = 0; opt < argc; opt++)
+	{
+		printf("opt %d: %s  \n", opt,argv[opt]);
+	}
+*/
+
+	for(opt = globalArgs.fflag + 1; opt < argc; opt++)
+	{
+		printf("opt %d: %s  \n", opt,argv[opt]);
+		globalArgs.filename = argv[opt];
+		globalArgs.bytes = 0;
+		globalArgs.words = 0;
+		globalArgs.lines = 0;
+		globalArgs.allwords = 0;
+		convert_document();
+		//if(strcmp("-f",argv[opt]) == 0)
+			//printf("opt : %s\n", argv[opt]);
+    }
     return EXIT_SUCCESS;
 }
