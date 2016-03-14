@@ -1,6 +1,0 @@
-cppcheck valgrind 用 sudo apt-get install -y cppcheck valgrind
-
-cppcheck . >err.txt
-
-valgrind --tool=memcheck --leak-check=yes --show-reachable=yes --log-file=err.txt ./DoubleLinkTest
-
