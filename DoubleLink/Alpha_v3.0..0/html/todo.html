@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>DoubleLink: 待办事项列表</title>
+<title>DoubleLink——Shell命令之ls初步模拟: 待办事项列表</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,8 +30,8 @@
  <tr style="height: 56px;">
   <td id="projectlogo"><img alt="Logo" src="favicon.ico"/></td>
   <td style="padding-left: 0.5em;">
-   <div id="projectname">DoubleLink
-   &#160;<span id="projectnumber">v2.0.0</span>
+   <div id="projectname">DoubleLink——Shell命令之ls初步模拟
+   &#160;<span id="projectnumber">v1.0.0</span>
    </div>
   </td>
  </tr>
@@ -102,7 +102,17 @@ $(document).ready(function(){initNavTree('todo.html','');});
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><dl class="reflist">
-<dt><a class="anchor" id="_todo000025"></a>全局 <a class="el" href="_get_opt_test_8c.html#a97dc5d244dcdb842fab654a276322639">convert_document</a>  (void)</dt>
+<dt><a class="anchor" id="_todo000023"></a>全局 <a class="el" href="_ls_double_link_8c.html#ae30b060a26d7c4780785d1d10e9f42cd">BackMode</a>  (mode_t st_mode, char mode[])</dt>
+<dd>null  </dd>
+<dt><a class="anchor" id="_todo000022"></a>全局 <a class="el" href="_ls_double_link_8c.html#ab9c85e9cc6acbd2a09142623712ff935">BackModeCompetence</a>  (mode_t st_mode)</dt>
+<dd>null  </dd>
+<dt><a class="anchor" id="_todo000018"></a>全局 <a class="el" href="_ls_double_link_8c.html#a8775c4ae4595df3010161a2aa793c9a3">CallBackShowFileInfo</a>  (const void *datashow)</dt>
+<dd>null  </dd>
+<dt><a class="anchor" id="_todo000017"></a>全局 <a class="el" href="_ls_double_link_8c.html#aec0289cf14224c551286d03baba06346">CallBackShowFileInfo_a</a>  (const void *datashow)</dt>
+<dd>null  </dd>
+<dt><a class="anchor" id="_todo000019"></a>全局 <a class="el" href="_ls_double_link_8c.html#ad98419f273ee1e8b2be132eecc9af3c5">CallBackShowFileInfoLong</a>  (const void *datashow)</dt>
+<dd>null  </dd>
+<dt><a class="anchor" id="_todo000026"></a>全局 <a class="el" href="_ls_double_link_8c.html#a97dc5d244dcdb842fab654a276322639">convert_document</a>  (void)</dt>
 <dd>null  </dd>
 <dt><a class="anchor" id="_todo000001"></a>全局 <a class="el" href="_double_link_8c.html#aec0d0b1312b68b305a5ec9cd4ae3c6c3">CreateList</a>  ()</dt>
 <dd><p class="startdd">null </p>
@@ -112,21 +122,23 @@ $(document).ready(function(){initNavTree('todo.html','');});
 <dd><p class="startdd">null </p>
 <p class="enddd">null  </p>
 </dd>
-<dt><a class="anchor" id="_todo000024"></a>全局 <a class="el" href="_get_opt_test_8c.html#acf5088e61b616f77674f62a9ba3b86b7">display_usage</a>  (void)</dt>
+<dt><a class="anchor" id="_todo000025"></a>全局 <a class="el" href="_ls_double_link_8c.html#acf5088e61b616f77674f62a9ba3b86b7">display_usage</a>  (void)</dt>
 <dd>null  </dd>
 <dt><a class="anchor" id="_todo000008"></a>全局 <a class="el" href="_double_link_8c.html#a15364937ad58d693d28671f21106d2ec">DropList</a>  (DLNode *List)</dt>
 <dd><p class="startdd">null </p>
 <p class="enddd">null  </p>
 </dd>
-<dt><a class="anchor" id="_todo000022"></a>全局 <a class="el" href="_get_opt_test_8c.html#ae823682b8b86c3bd035fdb849e4f3d1f">GetFileContent</a>  (DLNode *List)</dt>
-<dd>按字节读入，准确率MAX，效率LOW  </dd>
-<dt><a class="anchor" id="_todo000023"></a>全局 <a class="el" href="_get_opt_test_8c.html#ab891633b1638654bdb2820c40f2cb6af">GetStatistics</a>  (int hflag, int sflag, int oflag)</dt>
+<dt><a class="anchor" id="_todo000021"></a>全局 <a class="el" href="_ls_double_link_8c.html#a614c3a2e9dc58194a2dc9841e1c06990">FromGidToGName</a>  (gid_t gid, char groupname[])</dt>
+<dd>null  </dd>
+<dt><a class="anchor" id="_todo000020"></a>全局 <a class="el" href="_ls_double_link_8c.html#a56cfb46b8170954391fc7af903c93563">FromUidToUserName</a>  (uid_t uid, char username[])</dt>
+<dd>null  </dd>
+<dt><a class="anchor" id="_todo000024"></a>全局 <a class="el" href="_ls_double_link_8c.html#aa1cb569eca37dddcc8e03c9a268644cf">GetDoubleLink</a>  (char path[])</dt>
 <dd>null  </dd>
 <dt><a class="anchor" id="_todo000004"></a>全局 <a class="el" href="_double_link_8c.html#a3c75e226a401f131a4808dd22b234cca">InsertList</a>  (DLNode *List, void *data)</dt>
 <dd><p class="startdd">null </p>
 <p class="enddd">null  </p>
 </dd>
-<dt><a class="anchor" id="_todo000026"></a>全局 <a class="el" href="_get_opt_test_8c.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a>  (int argc, char **argv)</dt>
+<dt><a class="anchor" id="_todo000027"></a>全局 <a class="el" href="_ls_double_link_8c.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a>  (int argc, char **argv)</dt>
 <dd>null  </dd>
 <dt><a class="anchor" id="_todo000002"></a>全局 <a class="el" href="_double_link_8c.html#ae1482f414cdc6afe58c99a2615487057">SearchList</a>  (DLNode *List, void *data, int(*CallBackCmp)(const void *, const void *))</dt>
 <dd><p class="startdd">null </p>
@@ -136,24 +148,14 @@ $(document).ready(function(){initNavTree('todo.html','');});
 <dd><p class="startdd">null </p>
 <p class="enddd">null  </p>
 </dd>
-<dt><a class="anchor" id="_todo000017"></a>全局 <a class="el" href="_get_opt_test_8c.html#a30c26ca0e13ccfaaeb18bbb24eea0217">ShowLine</a>  (char *filename)</dt>
-<dd>未整合到主程序，耗费系统资源  </dd>
-<dt><a class="anchor" id="_todo000007"></a>全局 <a class="el" href="_double_link_8c.html#a127d2524a910989b06852dea39a6c86f">ShowList</a>  (DLNode *List, int flag, int judge)</dt>
+<dt><a class="anchor" id="_todo000007"></a>全局 <a class="el" href="_double_link_8c.html#ad469b48f5a27b46d067410a8ea2e3744">ShowList</a>  (DLNode *List, int judge, void(*CallBackShow)(const void *))</dt>
 <dd><p class="startdd">null </p>
 <p class="enddd">null  </p>
 </dd>
-<dt><a class="anchor" id="_todo000021"></a>全局 <a class="el" href="_get_opt_test_8c.html#a0dc3570bdc3b5e6b422cf4081976afff">StatisticsContent</a>  (DLNode *List)</dt>
-<dd>有显示和写文件俩个函数，待整合  </dd>
-<dt><a class="anchor" id="_todo000020"></a>全局 <a class="el" href="_get_opt_test_8c.html#a8622568f1e4ea1d7db998a346f8e68e7">StatisticsShow</a>  (DLNode *List)</dt>
-<dd>有显示和写文件俩个函数，待整合  </dd>
 <dt><a class="anchor" id="_todo000005"></a>全局 <a class="el" href="_double_link_8c.html#af42f761136d59421fe531e5f53db7d22">UpdateList</a>  (DLNode *List, void *data_search, void *data_change, int(*CallBackCmp)(const void *, const void *))</dt>
 <dd><p class="startdd">null </p>
-<p class="enddd">null  </p>
+<p class="enddd">null </p>
 </dd>
-<dt><a class="anchor" id="_todo000019"></a>全局 <a class="el" href="_get_opt_test_8c.html#a8e8214da72e3d59826ecc3d59a7485f4">VS_StrLTrim</a>  (char *pStr)</dt>
-<dd>null  </dd>
-<dt><a class="anchor" id="_todo000018"></a>全局 <a class="el" href="_get_opt_test_8c.html#a550c7ba0830bea9bb19ab64ee947d5e3">VS_StrRTrim</a>  (char *pStr)</dt>
-<dd>null </dd>
 </dl>
 </div></div><!-- contents -->
 </div><!-- doc-content -->

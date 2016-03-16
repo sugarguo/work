@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>DoubleLink: GetOptTest.c 源文件</title>
+<title>DoubleLink——Shell命令wc初步模拟: GetOptTest.c 源文件</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,8 +30,8 @@
  <tr style="height: 56px;">
   <td id="projectlogo"><img alt="Logo" src="favicon.ico"/></td>
   <td style="padding-left: 0.5em;">
-   <div id="projectname">DoubleLink
-   &#160;<span id="projectnumber">v2.0.0</span>
+   <div id="projectname">DoubleLink——Shell命令wc初步模拟
+   &#160;<span id="projectnumber">v1.0.0</span>
    </div>
   </td>
  </tr>
@@ -318,144 +318,143 @@ $(document).ready(function(){initNavTree('_get_opt_test_8c_source.html','');});
 <div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;    printf(<span class="stringliteral">&quot;Statistics time : %f \n\n&quot;</span>, (<span class="keywordtype">float</span>)(end_time - start_time) / CLOCKS_PER_SEC  );</div>
 <div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;</div>
 <div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;    <a class="code" href="_double_link_8c.html#a15364937ad58d693d28671f21106d2ec">DropList</a>(List);</div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;    free(List);</div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;    </div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;    <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;</div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;}</div>
-<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;</div>
-<div class="line"><a name="l00374"></a><span class="lineno"><a class="line" href="_get_opt_test_8c.html#acf5088e61b616f77674f62a9ba3b86b7">  374</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="_get_opt_test_8c.html#acf5088e61b616f77674f62a9ba3b86b7">display_usage</a>( <span class="keywordtype">void</span> )</div>
-<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;{</div>
-<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;    puts(<span class="stringliteral">&quot;Such as -f \&quot;filename\&quot; -o \&quot;outfilename\&quot; -h (high Sequence) -l (Show Line) -s (Shwo SequenceList) -p (Show EndContent)\n\n&quot;</span>);</div>
-<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;    exit(EXIT_FAILURE);</div>
-<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;}</div>
-<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;</div>
-<div class="line"><a name="l00398"></a><span class="lineno"><a class="line" href="_get_opt_test_8c.html#a97dc5d244dcdb842fab654a276322639">  398</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="_get_opt_test_8c.html#a97dc5d244dcdb842fab654a276322639">convert_document</a>( <span class="keywordtype">void</span> )</div>
-<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;{</div>
-<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;    <span class="keywordtype">int</span> choose = 0;</div>
-<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;    <span class="keywordtype">char</span> getfilename[100] = <span class="stringliteral">&quot;outFile.txt&quot;</span>;</div>
-<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="_get_opt_test_8c.html#a6240b2c6874900a3e7b9257fb8ac4c14">globalArgs</a>.<a class="code" href="structglobal_args__t.html#aeac90097f29f7529968697163cea5c18">filename</a> == NULL)</div>
-<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;    {</div>
-<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;        printf(<span class="stringliteral">&quot;Don&#39;t have filename!\nPlease use -f \&quot;filename\&quot;\n &quot;</span>);</div>
-<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;        exit(1);</div>
-<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;    }</div>
-<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;    <span class="keywordflow">if</span>( <a class="code" href="_get_opt_test_8c.html#a6240b2c6874900a3e7b9257fb8ac4c14">globalArgs</a>.<a class="code" href="structglobal_args__t.html#aa40c5c56cd04686687e0cd71d52ea78b">outfilename</a> == NULL)</div>
-<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;    {</div>
-<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;        printf(<span class="stringliteral">&quot;\nDo you want create outfile:\n0: Create Default file.\n1: Only Show!\n2: File name\n3: Exit!\nYou choose:&quot;</span>);</div>
-<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;        scanf(<span class="stringliteral">&quot;%d&quot;</span>,&amp;choose);</div>
-<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;        <span class="keywordflow">if</span>(choose == 0)</div>
-<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;        {</div>
-<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;            printf(<span class="stringliteral">&quot;Don&#39;t have outfilename!\nUse default name --&gt; outFile.dat\n&quot;</span>);</div>
-<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;            <a class="code" href="_get_opt_test_8c.html#a6240b2c6874900a3e7b9257fb8ac4c14">globalArgs</a>.<a class="code" href="structglobal_args__t.html#aa40c5c56cd04686687e0cd71d52ea78b">outfilename</a> = <span class="stringliteral">&quot;outFile.dat&quot;</span>;</div>
-<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;        }</div>
-<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span>(choose == 1)</div>
-<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;        {</div>
-<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;            <a class="code" href="_get_opt_test_8c.html#a6240b2c6874900a3e7b9257fb8ac4c14">globalArgs</a>.<a class="code" href="structglobal_args__t.html#ae48c37db113eec555c7f4ce2e48e90de">oflag</a> = 0;</div>
-<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;        }</div>
-<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span>(choose == 2)</div>
-<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;        {</div>
-<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;            printf(<span class="stringliteral">&quot;Filename:\n &quot;</span>);</div>
-<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;            scanf(<span class="stringliteral">&quot;%s&quot;</span>,getfilename);</div>
-<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;            <a class="code" href="_get_opt_test_8c.html#a6240b2c6874900a3e7b9257fb8ac4c14">globalArgs</a>.<a class="code" href="structglobal_args__t.html#aa40c5c56cd04686687e0cd71d52ea78b">outfilename</a> = getfilename;</div>
-<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;        }</div>
-<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span>(choose == 3)</div>
-<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;        {</div>
-<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;            exit(1);</div>
-<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;        }</div>
-<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;        <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;        {</div>
-<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;            printf(<span class="stringliteral">&quot;Error choose!\n&quot;</span>);</div>
-<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;            exit(1);</div>
-<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;        }</div>
-<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;    }</div>
-<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;    <a class="code" href="_get_opt_test_8c.html#ab891633b1638654bdb2820c40f2cb6af">GetStatistics</a>(<a class="code" href="_get_opt_test_8c.html#a6240b2c6874900a3e7b9257fb8ac4c14">globalArgs</a>.<a class="code" href="structglobal_args__t.html#a6fe8b762116512ab777118cd3e043200">hflag</a>, <a class="code" href="_get_opt_test_8c.html#a6240b2c6874900a3e7b9257fb8ac4c14">globalArgs</a>.<a class="code" href="structglobal_args__t.html#acecd9ebff44a84e2d866ebc2e5e06da7">sflag</a>, <a class="code" href="_get_opt_test_8c.html#a6240b2c6874900a3e7b9257fb8ac4c14">globalArgs</a>.<a class="code" href="structglobal_args__t.html#ae48c37db113eec555c7f4ce2e48e90de">oflag</a>);</div>
-<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;    printf(<span class="stringliteral">&quot;Bytes is: %d\n&quot;</span>, <a class="code" href="_get_opt_test_8c.html#a6240b2c6874900a3e7b9257fb8ac4c14">globalArgs</a>.<a class="code" href="structglobal_args__t.html#a3e18e5ab1201e205ce88c473a2f4bf99">bytes</a>);</div>
-<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;    printf(<span class="stringliteral">&quot;AllWords is: %d\n&quot;</span>, <a class="code" href="_get_opt_test_8c.html#a6240b2c6874900a3e7b9257fb8ac4c14">globalArgs</a>.<a class="code" href="structglobal_args__t.html#ac3711469fee92b6ca802a757ef8676e2">allwords</a>);</div>
-<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;    printf(<span class="stringliteral">&quot;SimpleWords is: %d\n&quot;</span>, <a class="code" href="_get_opt_test_8c.html#a6240b2c6874900a3e7b9257fb8ac4c14">globalArgs</a>.<a class="code" href="structglobal_args__t.html#a76f30ccb790f9ab7ef115f30cf735cd5">words</a>);</div>
-<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="_get_opt_test_8c.html#a6240b2c6874900a3e7b9257fb8ac4c14">globalArgs</a>.<a class="code" href="structglobal_args__t.html#a4cc7e6867b564ffab9f569351d574a67">lflag</a> == 0)</div>
-<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;    {</div>
-<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;        <a class="code" href="_get_opt_test_8c.html#a30c26ca0e13ccfaaeb18bbb24eea0217">ShowLine</a>(<a class="code" href="_get_opt_test_8c.html#a6240b2c6874900a3e7b9257fb8ac4c14">globalArgs</a>.<a class="code" href="structglobal_args__t.html#aeac90097f29f7529968697163cea5c18">filename</a>);</div>
-<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;        printf(<span class="stringliteral">&quot;Lines is: %d\n&quot;</span>,<a class="code" href="_get_opt_test_8c.html#a6240b2c6874900a3e7b9257fb8ac4c14">globalArgs</a>.<a class="code" href="structglobal_args__t.html#a9921ae02cadccc99dd6c3a9b68be050a">lines</a>);</div>
-<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;    }</div>
-<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;</div>
-<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;}</div>
-<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;</div>
-<div class="line"><a name="l00467"></a><span class="lineno"><a class="line" href="_get_opt_test_8c.html#a3c04138a5bfe5d72780bb7e82a18e627">  467</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="_get_opt_test_8c.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> **argv)</div>
-<div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160;{</div>
-<div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160;    <span class="keywordtype">int</span> opt = 0;</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;    </div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;}</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;</div>
+<div class="line"><a name="l00373"></a><span class="lineno"><a class="line" href="_get_opt_test_8c.html#acf5088e61b616f77674f62a9ba3b86b7">  373</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="_get_opt_test_8c.html#acf5088e61b616f77674f62a9ba3b86b7">display_usage</a>( <span class="keywordtype">void</span> )</div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;{</div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;    puts(<span class="stringliteral">&quot;Such as -f \&quot;filename\&quot; -o \&quot;outfilename\&quot; -h (high Sequence) -l (Show Line) -s (Shwo SequenceList) -p (Show EndContent)\n\n&quot;</span>);</div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;    exit(EXIT_FAILURE);</div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;}</div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;</div>
+<div class="line"><a name="l00397"></a><span class="lineno"><a class="line" href="_get_opt_test_8c.html#a97dc5d244dcdb842fab654a276322639">  397</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="_get_opt_test_8c.html#a97dc5d244dcdb842fab654a276322639">convert_document</a>( <span class="keywordtype">void</span> )</div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;{</div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;    <span class="keywordtype">int</span> choose = 0;</div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;    <span class="keywordtype">char</span> getfilename[100] = <span class="stringliteral">&quot;outFile.txt&quot;</span>;</div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="_get_opt_test_8c.html#a6240b2c6874900a3e7b9257fb8ac4c14">globalArgs</a>.<a class="code" href="structglobal_args__t.html#aeac90097f29f7529968697163cea5c18">filename</a> == NULL)</div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;    {</div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;        printf(<span class="stringliteral">&quot;Don&#39;t have filename!\nPlease use -f \&quot;filename\&quot;\n &quot;</span>);</div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;        exit(1);</div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;    }</div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;    <span class="keywordflow">if</span>( <a class="code" href="_get_opt_test_8c.html#a6240b2c6874900a3e7b9257fb8ac4c14">globalArgs</a>.<a class="code" href="structglobal_args__t.html#aa40c5c56cd04686687e0cd71d52ea78b">outfilename</a> == NULL)</div>
+<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;    {</div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;        printf(<span class="stringliteral">&quot;\nDo you want create outfile:\n0: Create Default file.\n1: Only Show!\n2: File name\n3: Exit!\nYou choose:&quot;</span>);</div>
+<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;        scanf(<span class="stringliteral">&quot;%d&quot;</span>,&amp;choose);</div>
+<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;        <span class="keywordflow">if</span>(choose == 0)</div>
+<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;        {</div>
+<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;            printf(<span class="stringliteral">&quot;Don&#39;t have outfilename!\nUse default name --&gt; outFile.dat\n&quot;</span>);</div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;            <a class="code" href="_get_opt_test_8c.html#a6240b2c6874900a3e7b9257fb8ac4c14">globalArgs</a>.<a class="code" href="structglobal_args__t.html#aa40c5c56cd04686687e0cd71d52ea78b">outfilename</a> = <span class="stringliteral">&quot;outFile.dat&quot;</span>;</div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;        }</div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span>(choose == 1)</div>
+<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;        {</div>
+<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;            <a class="code" href="_get_opt_test_8c.html#a6240b2c6874900a3e7b9257fb8ac4c14">globalArgs</a>.<a class="code" href="structglobal_args__t.html#ae48c37db113eec555c7f4ce2e48e90de">oflag</a> = 0;</div>
+<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;        }</div>
+<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span>(choose == 2)</div>
+<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;        {</div>
+<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;            printf(<span class="stringliteral">&quot;Filename:\n &quot;</span>);</div>
+<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;            scanf(<span class="stringliteral">&quot;%s&quot;</span>,getfilename);</div>
+<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;            <a class="code" href="_get_opt_test_8c.html#a6240b2c6874900a3e7b9257fb8ac4c14">globalArgs</a>.<a class="code" href="structglobal_args__t.html#aa40c5c56cd04686687e0cd71d52ea78b">outfilename</a> = getfilename;</div>
+<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;        }</div>
+<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span>(choose == 3)</div>
+<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;        {</div>
+<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;            exit(1);</div>
+<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;        }</div>
+<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;        {</div>
+<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;            printf(<span class="stringliteral">&quot;Error choose!\n&quot;</span>);</div>
+<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;            exit(1);</div>
+<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;        }</div>
+<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;    }</div>
+<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;    <a class="code" href="_get_opt_test_8c.html#ab891633b1638654bdb2820c40f2cb6af">GetStatistics</a>(<a class="code" href="_get_opt_test_8c.html#a6240b2c6874900a3e7b9257fb8ac4c14">globalArgs</a>.<a class="code" href="structglobal_args__t.html#a6fe8b762116512ab777118cd3e043200">hflag</a>, <a class="code" href="_get_opt_test_8c.html#a6240b2c6874900a3e7b9257fb8ac4c14">globalArgs</a>.<a class="code" href="structglobal_args__t.html#acecd9ebff44a84e2d866ebc2e5e06da7">sflag</a>, <a class="code" href="_get_opt_test_8c.html#a6240b2c6874900a3e7b9257fb8ac4c14">globalArgs</a>.<a class="code" href="structglobal_args__t.html#ae48c37db113eec555c7f4ce2e48e90de">oflag</a>);</div>
+<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;    printf(<span class="stringliteral">&quot;Bytes is: %d\n&quot;</span>, <a class="code" href="_get_opt_test_8c.html#a6240b2c6874900a3e7b9257fb8ac4c14">globalArgs</a>.<a class="code" href="structglobal_args__t.html#a3e18e5ab1201e205ce88c473a2f4bf99">bytes</a>);</div>
+<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;    printf(<span class="stringliteral">&quot;AllWords is: %d\n&quot;</span>, <a class="code" href="_get_opt_test_8c.html#a6240b2c6874900a3e7b9257fb8ac4c14">globalArgs</a>.<a class="code" href="structglobal_args__t.html#ac3711469fee92b6ca802a757ef8676e2">allwords</a>);</div>
+<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;    printf(<span class="stringliteral">&quot;SimpleWords is: %d\n&quot;</span>, <a class="code" href="_get_opt_test_8c.html#a6240b2c6874900a3e7b9257fb8ac4c14">globalArgs</a>.<a class="code" href="structglobal_args__t.html#a76f30ccb790f9ab7ef115f30cf735cd5">words</a>);</div>
+<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="_get_opt_test_8c.html#a6240b2c6874900a3e7b9257fb8ac4c14">globalArgs</a>.<a class="code" href="structglobal_args__t.html#a4cc7e6867b564ffab9f569351d574a67">lflag</a> == 0)</div>
+<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;    {</div>
+<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;        <a class="code" href="_get_opt_test_8c.html#a30c26ca0e13ccfaaeb18bbb24eea0217">ShowLine</a>(<a class="code" href="_get_opt_test_8c.html#a6240b2c6874900a3e7b9257fb8ac4c14">globalArgs</a>.<a class="code" href="structglobal_args__t.html#aeac90097f29f7529968697163cea5c18">filename</a>);</div>
+<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;        printf(<span class="stringliteral">&quot;Lines is: %d\n&quot;</span>,<a class="code" href="_get_opt_test_8c.html#a6240b2c6874900a3e7b9257fb8ac4c14">globalArgs</a>.<a class="code" href="structglobal_args__t.html#a9921ae02cadccc99dd6c3a9b68be050a">lines</a>);</div>
+<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;    }</div>
+<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;</div>
+<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;}</div>
+<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;</div>
+<div class="line"><a name="l00466"></a><span class="lineno"><a class="line" href="_get_opt_test_8c.html#a3c04138a5bfe5d72780bb7e82a18e627">  466</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="_get_opt_test_8c.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> **argv)</div>
+<div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160;{</div>
+<div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160;    <span class="keywordtype">int</span> opt = 0;</div>
+<div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160;</div>
 <div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160;</div>
-<div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160;</div>
-<div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160;    <a class="code" href="_get_opt_test_8c.html#a6240b2c6874900a3e7b9257fb8ac4c14">globalArgs</a>.<a class="code" href="structglobal_args__t.html#a6fe8b762116512ab777118cd3e043200">hflag</a> = 1;</div>
-<div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160;    <a class="code" href="_get_opt_test_8c.html#a6240b2c6874900a3e7b9257fb8ac4c14">globalArgs</a>.<a class="code" href="structglobal_args__t.html#acecd9ebff44a84e2d866ebc2e5e06da7">sflag</a> = 1;</div>
-<div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160;    <a class="code" href="_get_opt_test_8c.html#a6240b2c6874900a3e7b9257fb8ac4c14">globalArgs</a>.<a class="code" href="structglobal_args__t.html#a3bf178baaa87d9153b6ef764640fe960">pflag</a> = 1;</div>
-<div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160;    <a class="code" href="_get_opt_test_8c.html#a6240b2c6874900a3e7b9257fb8ac4c14">globalArgs</a>.<a class="code" href="structglobal_args__t.html#a4cc7e6867b564ffab9f569351d574a67">lflag</a> = 1;</div>
-<div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160;    <a class="code" href="_get_opt_test_8c.html#a6240b2c6874900a3e7b9257fb8ac4c14">globalArgs</a>.<a class="code" href="structglobal_args__t.html#ae48c37db113eec555c7f4ce2e48e90de">oflag</a> = 1;</div>
-<div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160;    <a class="code" href="_get_opt_test_8c.html#a6240b2c6874900a3e7b9257fb8ac4c14">globalArgs</a>.<a class="code" href="structglobal_args__t.html#aab9e30d72b4b6af02ce19b24422ad2ce">fflag</a> = 0;</div>
-<div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160;    <a class="code" href="_get_opt_test_8c.html#a6240b2c6874900a3e7b9257fb8ac4c14">globalArgs</a>.<a class="code" href="structglobal_args__t.html#a3e18e5ab1201e205ce88c473a2f4bf99">bytes</a> = 0;</div>
-<div class="line"><a name="l00479"></a><span class="lineno">  479</span>&#160;    <a class="code" href="_get_opt_test_8c.html#a6240b2c6874900a3e7b9257fb8ac4c14">globalArgs</a>.<a class="code" href="structglobal_args__t.html#a76f30ccb790f9ab7ef115f30cf735cd5">words</a> = 0;</div>
-<div class="line"><a name="l00480"></a><span class="lineno">  480</span>&#160;    <a class="code" href="_get_opt_test_8c.html#a6240b2c6874900a3e7b9257fb8ac4c14">globalArgs</a>.<a class="code" href="structglobal_args__t.html#a9921ae02cadccc99dd6c3a9b68be050a">lines</a> = 0;</div>
-<div class="line"><a name="l00481"></a><span class="lineno">  481</span>&#160;    <a class="code" href="_get_opt_test_8c.html#a6240b2c6874900a3e7b9257fb8ac4c14">globalArgs</a>.<a class="code" href="structglobal_args__t.html#ac3711469fee92b6ca802a757ef8676e2">allwords</a> = 0;</div>
-<div class="line"><a name="l00482"></a><span class="lineno">  482</span>&#160;</div>
-<div class="line"><a name="l00483"></a><span class="lineno">  483</span>&#160;    <a class="code" href="_get_opt_test_8c.html#a6240b2c6874900a3e7b9257fb8ac4c14">globalArgs</a>.<a class="code" href="structglobal_args__t.html#aeac90097f29f7529968697163cea5c18">filename</a> = NULL;</div>
-<div class="line"><a name="l00484"></a><span class="lineno">  484</span>&#160;    <a class="code" href="_get_opt_test_8c.html#a6240b2c6874900a3e7b9257fb8ac4c14">globalArgs</a>.<a class="code" href="structglobal_args__t.html#aa40c5c56cd04686687e0cd71d52ea78b">outfilename</a> = NULL;</div>
-<div class="line"><a name="l00485"></a><span class="lineno">  485</span>&#160;</div>
-<div class="line"><a name="l00486"></a><span class="lineno">  486</span>&#160;    opt = getopt(argc, argv, optString);</div>
-<div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160;    <span class="keywordflow">while</span>( opt != -1)</div>
-<div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160;    {</div>
-<div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160;        <span class="keywordflow">switch</span>(opt)</div>
-<div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;        {</div>
-<div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160;            <span class="keywordflow">case</span> <span class="charliteral">&#39;o&#39;</span>:</div>
-<div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160;                <a class="code" href="_get_opt_test_8c.html#a6240b2c6874900a3e7b9257fb8ac4c14">globalArgs</a>.<a class="code" href="structglobal_args__t.html#aab9e30d72b4b6af02ce19b24422ad2ce">fflag</a> = <a class="code" href="_get_opt_test_8c.html#a6240b2c6874900a3e7b9257fb8ac4c14">globalArgs</a>.<a class="code" href="structglobal_args__t.html#aab9e30d72b4b6af02ce19b24422ad2ce">fflag</a> + 2;</div>
-<div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;                <a class="code" href="_get_opt_test_8c.html#a6240b2c6874900a3e7b9257fb8ac4c14">globalArgs</a>.<a class="code" href="structglobal_args__t.html#aa40c5c56cd04686687e0cd71d52ea78b">outfilename</a> = optarg;</div>
-<div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;                <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160;            <span class="keywordflow">case</span> <span class="charliteral">&#39;h&#39;</span>:</div>
-<div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;                <a class="code" href="_get_opt_test_8c.html#a6240b2c6874900a3e7b9257fb8ac4c14">globalArgs</a>.<a class="code" href="structglobal_args__t.html#aab9e30d72b4b6af02ce19b24422ad2ce">fflag</a>++;</div>
-<div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160;                <a class="code" href="_get_opt_test_8c.html#a6240b2c6874900a3e7b9257fb8ac4c14">globalArgs</a>.<a class="code" href="structglobal_args__t.html#a6fe8b762116512ab777118cd3e043200">hflag</a> = 0;</div>
-<div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160;                <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160;            <span class="keywordflow">case</span> <span class="charliteral">&#39;s&#39;</span>:</div>
-<div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160;                <a class="code" href="_get_opt_test_8c.html#a6240b2c6874900a3e7b9257fb8ac4c14">globalArgs</a>.<a class="code" href="structglobal_args__t.html#aab9e30d72b4b6af02ce19b24422ad2ce">fflag</a>++;</div>
-<div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;                <a class="code" href="_get_opt_test_8c.html#a6240b2c6874900a3e7b9257fb8ac4c14">globalArgs</a>.<a class="code" href="structglobal_args__t.html#acecd9ebff44a84e2d866ebc2e5e06da7">sflag</a> = 0;</div>
-<div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160;                <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160;            <span class="keywordflow">case</span> <span class="charliteral">&#39;p&#39;</span>:</div>
-<div class="line"><a name="l00504"></a><span class="lineno">  504</span>&#160;                <a class="code" href="_get_opt_test_8c.html#a6240b2c6874900a3e7b9257fb8ac4c14">globalArgs</a>.<a class="code" href="structglobal_args__t.html#aab9e30d72b4b6af02ce19b24422ad2ce">fflag</a>++;</div>
-<div class="line"><a name="l00505"></a><span class="lineno">  505</span>&#160;                <a class="code" href="_get_opt_test_8c.html#a6240b2c6874900a3e7b9257fb8ac4c14">globalArgs</a>.<a class="code" href="structglobal_args__t.html#a3bf178baaa87d9153b6ef764640fe960">pflag</a> = 0;</div>
-<div class="line"><a name="l00506"></a><span class="lineno">  506</span>&#160;                <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00507"></a><span class="lineno">  507</span>&#160;            <span class="keywordflow">case</span> <span class="charliteral">&#39;l&#39;</span>:</div>
-<div class="line"><a name="l00508"></a><span class="lineno">  508</span>&#160;                <a class="code" href="_get_opt_test_8c.html#a6240b2c6874900a3e7b9257fb8ac4c14">globalArgs</a>.<a class="code" href="structglobal_args__t.html#aab9e30d72b4b6af02ce19b24422ad2ce">fflag</a>++;</div>
-<div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160;                <a class="code" href="_get_opt_test_8c.html#a6240b2c6874900a3e7b9257fb8ac4c14">globalArgs</a>.<a class="code" href="structglobal_args__t.html#a4cc7e6867b564ffab9f569351d574a67">lflag</a> = 0;</div>
-<div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160;                <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00511"></a><span class="lineno">  511</span>&#160;            <span class="keywordflow">case</span> <span class="charliteral">&#39;v&#39;</span>:</div>
-<div class="line"><a name="l00512"></a><span class="lineno">  512</span>&#160;                <a class="code" href="_get_opt_test_8c.html#a6240b2c6874900a3e7b9257fb8ac4c14">globalArgs</a>.<a class="code" href="structglobal_args__t.html#aab9e30d72b4b6af02ce19b24422ad2ce">fflag</a>++;</div>
-<div class="line"><a name="l00513"></a><span class="lineno">  513</span>&#160;                printf(<span class="stringliteral">&quot;\nVersion: 1.0.0\n&quot;</span>);</div>
-<div class="line"><a name="l00514"></a><span class="lineno">  514</span>&#160;                <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00515"></a><span class="lineno">  515</span>&#160;            <span class="keywordflow">case</span> <span class="charliteral">&#39;?&#39;</span>:</div>
-<div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160;                <a class="code" href="_get_opt_test_8c.html#acf5088e61b616f77674f62a9ba3b86b7">display_usage</a>();</div>
-<div class="line"><a name="l00517"></a><span class="lineno">  517</span>&#160;                <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00518"></a><span class="lineno">  518</span>&#160;            <span class="keywordflow">case</span> <span class="charliteral">&#39;:&#39;</span>:</div>
-<div class="line"><a name="l00519"></a><span class="lineno">  519</span>&#160;                printf(<span class="stringliteral">&quot;Don&#39;t have parameter!\nPlease check!\n&quot;</span>);</div>
-<div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160;                <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160;            <span class="keywordflow">default</span>:</div>
-<div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160;                <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160;        }</div>
-<div class="line"><a name="l00524"></a><span class="lineno">  524</span>&#160;        </div>
-<div class="line"><a name="l00525"></a><span class="lineno">  525</span>&#160;        opt = getopt(argc, argv, optString);</div>
-<div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160;    }</div>
-<div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160;</div>
-<div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160;    <span class="keywordflow">for</span>(opt = <a class="code" href="_get_opt_test_8c.html#a6240b2c6874900a3e7b9257fb8ac4c14">globalArgs</a>.<a class="code" href="structglobal_args__t.html#aab9e30d72b4b6af02ce19b24422ad2ce">fflag</a> + 1; opt &lt; argc; opt++)</div>
-<div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160;    {</div>
-<div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;        printf(<span class="stringliteral">&quot;Read file %d: %s  \n&quot;</span>, opt,argv[opt]);</div>
-<div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160;        <a class="code" href="_get_opt_test_8c.html#a6240b2c6874900a3e7b9257fb8ac4c14">globalArgs</a>.<a class="code" href="structglobal_args__t.html#aeac90097f29f7529968697163cea5c18">filename</a> = argv[opt];</div>
-<div class="line"><a name="l00532"></a><span class="lineno">  532</span>&#160;        <a class="code" href="_get_opt_test_8c.html#a6240b2c6874900a3e7b9257fb8ac4c14">globalArgs</a>.<a class="code" href="structglobal_args__t.html#a3e18e5ab1201e205ce88c473a2f4bf99">bytes</a> = 0;</div>
-<div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160;        <a class="code" href="_get_opt_test_8c.html#a6240b2c6874900a3e7b9257fb8ac4c14">globalArgs</a>.<a class="code" href="structglobal_args__t.html#a76f30ccb790f9ab7ef115f30cf735cd5">words</a> = 0;</div>
-<div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160;        <a class="code" href="_get_opt_test_8c.html#a6240b2c6874900a3e7b9257fb8ac4c14">globalArgs</a>.<a class="code" href="structglobal_args__t.html#a9921ae02cadccc99dd6c3a9b68be050a">lines</a> = 0;</div>
-<div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;        <a class="code" href="_get_opt_test_8c.html#a6240b2c6874900a3e7b9257fb8ac4c14">globalArgs</a>.<a class="code" href="structglobal_args__t.html#ac3711469fee92b6ca802a757ef8676e2">allwords</a> = 0;</div>
-<div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160;        <a class="code" href="_get_opt_test_8c.html#a97dc5d244dcdb842fab654a276322639">convert_document</a>();</div>
-<div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160;    }</div>
-<div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160;    <span class="keywordflow">return</span> EXIT_SUCCESS;</div>
-<div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160;}</div>
+<div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160;    <a class="code" href="_get_opt_test_8c.html#a6240b2c6874900a3e7b9257fb8ac4c14">globalArgs</a>.<a class="code" href="structglobal_args__t.html#a6fe8b762116512ab777118cd3e043200">hflag</a> = 1;</div>
+<div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160;    <a class="code" href="_get_opt_test_8c.html#a6240b2c6874900a3e7b9257fb8ac4c14">globalArgs</a>.<a class="code" href="structglobal_args__t.html#acecd9ebff44a84e2d866ebc2e5e06da7">sflag</a> = 1;</div>
+<div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160;    <a class="code" href="_get_opt_test_8c.html#a6240b2c6874900a3e7b9257fb8ac4c14">globalArgs</a>.<a class="code" href="structglobal_args__t.html#a3bf178baaa87d9153b6ef764640fe960">pflag</a> = 1;</div>
+<div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160;    <a class="code" href="_get_opt_test_8c.html#a6240b2c6874900a3e7b9257fb8ac4c14">globalArgs</a>.<a class="code" href="structglobal_args__t.html#a4cc7e6867b564ffab9f569351d574a67">lflag</a> = 1;</div>
+<div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160;    <a class="code" href="_get_opt_test_8c.html#a6240b2c6874900a3e7b9257fb8ac4c14">globalArgs</a>.<a class="code" href="structglobal_args__t.html#ae48c37db113eec555c7f4ce2e48e90de">oflag</a> = 1;</div>
+<div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160;    <a class="code" href="_get_opt_test_8c.html#a6240b2c6874900a3e7b9257fb8ac4c14">globalArgs</a>.<a class="code" href="structglobal_args__t.html#aab9e30d72b4b6af02ce19b24422ad2ce">fflag</a> = 0;</div>
+<div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160;    <a class="code" href="_get_opt_test_8c.html#a6240b2c6874900a3e7b9257fb8ac4c14">globalArgs</a>.<a class="code" href="structglobal_args__t.html#a3e18e5ab1201e205ce88c473a2f4bf99">bytes</a> = 0;</div>
+<div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160;    <a class="code" href="_get_opt_test_8c.html#a6240b2c6874900a3e7b9257fb8ac4c14">globalArgs</a>.<a class="code" href="structglobal_args__t.html#a76f30ccb790f9ab7ef115f30cf735cd5">words</a> = 0;</div>
+<div class="line"><a name="l00479"></a><span class="lineno">  479</span>&#160;    <a class="code" href="_get_opt_test_8c.html#a6240b2c6874900a3e7b9257fb8ac4c14">globalArgs</a>.<a class="code" href="structglobal_args__t.html#a9921ae02cadccc99dd6c3a9b68be050a">lines</a> = 0;</div>
+<div class="line"><a name="l00480"></a><span class="lineno">  480</span>&#160;    <a class="code" href="_get_opt_test_8c.html#a6240b2c6874900a3e7b9257fb8ac4c14">globalArgs</a>.<a class="code" href="structglobal_args__t.html#ac3711469fee92b6ca802a757ef8676e2">allwords</a> = 0;</div>
+<div class="line"><a name="l00481"></a><span class="lineno">  481</span>&#160;</div>
+<div class="line"><a name="l00482"></a><span class="lineno">  482</span>&#160;    <a class="code" href="_get_opt_test_8c.html#a6240b2c6874900a3e7b9257fb8ac4c14">globalArgs</a>.<a class="code" href="structglobal_args__t.html#aeac90097f29f7529968697163cea5c18">filename</a> = NULL;</div>
+<div class="line"><a name="l00483"></a><span class="lineno">  483</span>&#160;    <a class="code" href="_get_opt_test_8c.html#a6240b2c6874900a3e7b9257fb8ac4c14">globalArgs</a>.<a class="code" href="structglobal_args__t.html#aa40c5c56cd04686687e0cd71d52ea78b">outfilename</a> = NULL;</div>
+<div class="line"><a name="l00484"></a><span class="lineno">  484</span>&#160;</div>
+<div class="line"><a name="l00485"></a><span class="lineno">  485</span>&#160;    opt = getopt(argc, argv, optString);</div>
+<div class="line"><a name="l00486"></a><span class="lineno">  486</span>&#160;    <span class="keywordflow">while</span>( opt != -1)</div>
+<div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160;    {</div>
+<div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160;        <span class="keywordflow">switch</span>(opt)</div>
+<div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160;        {</div>
+<div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;            <span class="keywordflow">case</span> <span class="charliteral">&#39;o&#39;</span>:</div>
+<div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160;                <a class="code" href="_get_opt_test_8c.html#a6240b2c6874900a3e7b9257fb8ac4c14">globalArgs</a>.<a class="code" href="structglobal_args__t.html#aab9e30d72b4b6af02ce19b24422ad2ce">fflag</a> = <a class="code" href="_get_opt_test_8c.html#a6240b2c6874900a3e7b9257fb8ac4c14">globalArgs</a>.<a class="code" href="structglobal_args__t.html#aab9e30d72b4b6af02ce19b24422ad2ce">fflag</a> + 2;</div>
+<div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160;                <a class="code" href="_get_opt_test_8c.html#a6240b2c6874900a3e7b9257fb8ac4c14">globalArgs</a>.<a class="code" href="structglobal_args__t.html#aa40c5c56cd04686687e0cd71d52ea78b">outfilename</a> = optarg;</div>
+<div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;            <span class="keywordflow">case</span> <span class="charliteral">&#39;h&#39;</span>:</div>
+<div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160;                <a class="code" href="_get_opt_test_8c.html#a6240b2c6874900a3e7b9257fb8ac4c14">globalArgs</a>.<a class="code" href="structglobal_args__t.html#aab9e30d72b4b6af02ce19b24422ad2ce">fflag</a>++;</div>
+<div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;                <a class="code" href="_get_opt_test_8c.html#a6240b2c6874900a3e7b9257fb8ac4c14">globalArgs</a>.<a class="code" href="structglobal_args__t.html#a6fe8b762116512ab777118cd3e043200">hflag</a> = 0;</div>
+<div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160;            <span class="keywordflow">case</span> <span class="charliteral">&#39;s&#39;</span>:</div>
+<div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160;                <a class="code" href="_get_opt_test_8c.html#a6240b2c6874900a3e7b9257fb8ac4c14">globalArgs</a>.<a class="code" href="structglobal_args__t.html#aab9e30d72b4b6af02ce19b24422ad2ce">fflag</a>++;</div>
+<div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160;                <a class="code" href="_get_opt_test_8c.html#a6240b2c6874900a3e7b9257fb8ac4c14">globalArgs</a>.<a class="code" href="structglobal_args__t.html#acecd9ebff44a84e2d866ebc2e5e06da7">sflag</a> = 0;</div>
+<div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160;            <span class="keywordflow">case</span> <span class="charliteral">&#39;p&#39;</span>:</div>
+<div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160;                <a class="code" href="_get_opt_test_8c.html#a6240b2c6874900a3e7b9257fb8ac4c14">globalArgs</a>.<a class="code" href="structglobal_args__t.html#aab9e30d72b4b6af02ce19b24422ad2ce">fflag</a>++;</div>
+<div class="line"><a name="l00504"></a><span class="lineno">  504</span>&#160;                <a class="code" href="_get_opt_test_8c.html#a6240b2c6874900a3e7b9257fb8ac4c14">globalArgs</a>.<a class="code" href="structglobal_args__t.html#a3bf178baaa87d9153b6ef764640fe960">pflag</a> = 0;</div>
+<div class="line"><a name="l00505"></a><span class="lineno">  505</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00506"></a><span class="lineno">  506</span>&#160;            <span class="keywordflow">case</span> <span class="charliteral">&#39;l&#39;</span>:</div>
+<div class="line"><a name="l00507"></a><span class="lineno">  507</span>&#160;                <a class="code" href="_get_opt_test_8c.html#a6240b2c6874900a3e7b9257fb8ac4c14">globalArgs</a>.<a class="code" href="structglobal_args__t.html#aab9e30d72b4b6af02ce19b24422ad2ce">fflag</a>++;</div>
+<div class="line"><a name="l00508"></a><span class="lineno">  508</span>&#160;                <a class="code" href="_get_opt_test_8c.html#a6240b2c6874900a3e7b9257fb8ac4c14">globalArgs</a>.<a class="code" href="structglobal_args__t.html#a4cc7e6867b564ffab9f569351d574a67">lflag</a> = 0;</div>
+<div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160;            <span class="keywordflow">case</span> <span class="charliteral">&#39;v&#39;</span>:</div>
+<div class="line"><a name="l00511"></a><span class="lineno">  511</span>&#160;                <a class="code" href="_get_opt_test_8c.html#a6240b2c6874900a3e7b9257fb8ac4c14">globalArgs</a>.<a class="code" href="structglobal_args__t.html#aab9e30d72b4b6af02ce19b24422ad2ce">fflag</a>++;</div>
+<div class="line"><a name="l00512"></a><span class="lineno">  512</span>&#160;                printf(<span class="stringliteral">&quot;\nVersion: 1.0.0\n&quot;</span>);</div>
+<div class="line"><a name="l00513"></a><span class="lineno">  513</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00514"></a><span class="lineno">  514</span>&#160;            <span class="keywordflow">case</span> <span class="charliteral">&#39;?&#39;</span>:</div>
+<div class="line"><a name="l00515"></a><span class="lineno">  515</span>&#160;                <a class="code" href="_get_opt_test_8c.html#acf5088e61b616f77674f62a9ba3b86b7">display_usage</a>();</div>
+<div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00517"></a><span class="lineno">  517</span>&#160;            <span class="keywordflow">case</span> <span class="charliteral">&#39;:&#39;</span>:</div>
+<div class="line"><a name="l00518"></a><span class="lineno">  518</span>&#160;                printf(<span class="stringliteral">&quot;Don&#39;t have parameter!\nPlease check!\n&quot;</span>);</div>
+<div class="line"><a name="l00519"></a><span class="lineno">  519</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160;            <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160;        }</div>
+<div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160;        </div>
+<div class="line"><a name="l00524"></a><span class="lineno">  524</span>&#160;        opt = getopt(argc, argv, optString);</div>
+<div class="line"><a name="l00525"></a><span class="lineno">  525</span>&#160;    }</div>
+<div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160;</div>
+<div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160;    <span class="keywordflow">for</span>(opt = <a class="code" href="_get_opt_test_8c.html#a6240b2c6874900a3e7b9257fb8ac4c14">globalArgs</a>.<a class="code" href="structglobal_args__t.html#aab9e30d72b4b6af02ce19b24422ad2ce">fflag</a> + 1; opt &lt; argc; opt++)</div>
+<div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160;    {</div>
+<div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160;        printf(<span class="stringliteral">&quot;Read file %d: %s  \n&quot;</span>, opt,argv[opt]);</div>
+<div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;        <a class="code" href="_get_opt_test_8c.html#a6240b2c6874900a3e7b9257fb8ac4c14">globalArgs</a>.<a class="code" href="structglobal_args__t.html#aeac90097f29f7529968697163cea5c18">filename</a> = argv[opt];</div>
+<div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160;        <a class="code" href="_get_opt_test_8c.html#a6240b2c6874900a3e7b9257fb8ac4c14">globalArgs</a>.<a class="code" href="structglobal_args__t.html#a3e18e5ab1201e205ce88c473a2f4bf99">bytes</a> = 0;</div>
+<div class="line"><a name="l00532"></a><span class="lineno">  532</span>&#160;        <a class="code" href="_get_opt_test_8c.html#a6240b2c6874900a3e7b9257fb8ac4c14">globalArgs</a>.<a class="code" href="structglobal_args__t.html#a76f30ccb790f9ab7ef115f30cf735cd5">words</a> = 0;</div>
+<div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160;        <a class="code" href="_get_opt_test_8c.html#a6240b2c6874900a3e7b9257fb8ac4c14">globalArgs</a>.<a class="code" href="structglobal_args__t.html#a9921ae02cadccc99dd6c3a9b68be050a">lines</a> = 0;</div>
+<div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160;        <a class="code" href="_get_opt_test_8c.html#a6240b2c6874900a3e7b9257fb8ac4c14">globalArgs</a>.<a class="code" href="structglobal_args__t.html#ac3711469fee92b6ca802a757ef8676e2">allwords</a> = 0;</div>
+<div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;        <a class="code" href="_get_opt_test_8c.html#a97dc5d244dcdb842fab654a276322639">convert_document</a>();</div>
+<div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160;    }</div>
+<div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160;    <span class="keywordflow">return</span> EXIT_SUCCESS;</div>
+<div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160;}</div>
 <div class="ttc" id="_double_link_8c_html_a127d2524a910989b06852dea39a6c86f"><div class="ttname"><a href="_double_link_8c.html#a127d2524a910989b06852dea39a6c86f">ShowList</a></div><div class="ttdeci">int ShowList(DLNode *List, int flag, int judge)</div><div class="ttdoc">ShowList  遍历双向链表，根据flag选择显示格式，根据judge选择是否输出遍历结果 </div><div class="ttdef"><b>Definition:</b> <a href="_double_link_8c_source.html#l00485">DoubleLink.c:485</a></div></div>
 <div class="ttc" id="_get_opt_test_8c_html_a30c26ca0e13ccfaaeb18bbb24eea0217"><div class="ttname"><a href="_get_opt_test_8c.html#a30c26ca0e13ccfaaeb18bbb24eea0217">ShowLine</a></div><div class="ttdeci">int ShowLine(char *filename)</div><div class="ttdoc">ShowLine  显示文件或者返回行数 </div><div class="ttdef"><b>Definition:</b> <a href="_get_opt_test_8c_source.html#l00055">GetOptTest.c:55</a></div></div>
-<div class="ttc" id="_get_opt_test_8c_html_acf5088e61b616f77674f62a9ba3b86b7"><div class="ttname"><a href="_get_opt_test_8c.html#acf5088e61b616f77674f62a9ba3b86b7">display_usage</a></div><div class="ttdeci">void display_usage(void)</div><div class="ttdoc">display_usage  词频统计测试文件通过getopt函数的错误回显 </div><div class="ttdef"><b>Definition:</b> <a href="_get_opt_test_8c_source.html#l00374">GetOptTest.c:374</a></div></div>
+<div class="ttc" id="_get_opt_test_8c_html_acf5088e61b616f77674f62a9ba3b86b7"><div class="ttname"><a href="_get_opt_test_8c.html#acf5088e61b616f77674f62a9ba3b86b7">display_usage</a></div><div class="ttdeci">void display_usage(void)</div><div class="ttdoc">display_usage  词频统计测试文件通过getopt函数的错误回显 </div><div class="ttdef"><b>Definition:</b> <a href="_get_opt_test_8c_source.html#l00373">GetOptTest.c:373</a></div></div>
 <div class="ttc" id="_double_link_8c_html_ae14dec8d152bc2fe872c9e7b80364c52"><div class="ttname"><a href="_double_link_8c.html#ae14dec8d152bc2fe872c9e7b80364c52">CallBackCmpStr_K</a></div><div class="ttdeci">int CallBackCmpStr_K(const void *one, const void *two)</div><div class="ttdoc">CallBackCmpStr_K  回调函数，比较内容是否相同 </div><div class="ttdef"><b>Definition:</b> <a href="_double_link_8c_source.html#l00113">DoubleLink.c:113</a></div></div>
 <div class="ttc" id="_double_link_8h_html"><div class="ttname"><a href="_double_link_8h.html">DoubleLink.h</a></div><div class="ttdoc">通用双向链表  双向链表的动态创建，增删改查，支持多种数据格式，提供冒泡 快排方法。 </div></div>
 <div class="ttc" id="struct___double_link_html"><div class="ttname"><a href="struct___double_link.html">_DoubleLink</a></div><div class="ttdoc">定义双向链表的结构体 </div><div class="ttdef"><b>Definition:</b> <a href="_double_link_8c_source.html#l00022">DoubleLink.c:22</a></div></div>
@@ -468,7 +467,7 @@ $(document).ready(function(){initNavTree('_get_opt_test_8c_source.html','');});
 <div class="ttc" id="_get_opt_test_8c_html_a8e8214da72e3d59826ecc3d59a7485f4"><div class="ttname"><a href="_get_opt_test_8c.html#a8e8214da72e3d59826ecc3d59a7485f4">VS_StrLTrim</a></div><div class="ttdeci">void VS_StrLTrim(char *pStr)</div><div class="ttdoc">VS_StrLTrim  去除字符串左边空格 </div><div class="ttdef"><b>Definition:</b> <a href="_get_opt_test_8c_source.html#l00120">GetOptTest.c:120</a></div></div>
 <div class="ttc" id="_double_link_8c_html_ac4872b9b04c64d8f80c68a1010142094"><div class="ttname"><a href="_double_link_8c.html#ac4872b9b04c64d8f80c68a1010142094">CallBackCmpStr</a></div><div class="ttdeci">int CallBackCmpStr(const void *one, const void *two)</div><div class="ttdoc">CallBackCmpStr  回调函数，比较内容是否相同 </div><div class="ttdef"><b>Definition:</b> <a href="_double_link_8c_source.html#l00100">DoubleLink.c:100</a></div></div>
 <div class="ttc" id="_get_opt_test_8c_html_a0dc3570bdc3b5e6b422cf4081976afff"><div class="ttname"><a href="_get_opt_test_8c.html#a0dc3570bdc3b5e6b422cf4081976afff">StatisticsContent</a></div><div class="ttdeci">DLNode * StatisticsContent(DLNode *List)</div><div class="ttdoc">StatisticsContent  统计词频，不显示获取词频结果，写入文件 </div><div class="ttdef"><b>Definition:</b> <a href="_get_opt_test_8c_source.html#l00196">GetOptTest.c:196</a></div></div>
-<div class="ttc" id="_get_opt_test_8c_html_a97dc5d244dcdb842fab654a276322639"><div class="ttname"><a href="_get_opt_test_8c.html#a97dc5d244dcdb842fab654a276322639">convert_document</a></div><div class="ttdeci">void convert_document(void)</div><div class="ttdoc">convert_document  词频统计测试文件通过getopt函数的配置函数 </div><div class="ttdef"><b>Definition:</b> <a href="_get_opt_test_8c_source.html#l00398">GetOptTest.c:398</a></div></div>
+<div class="ttc" id="_get_opt_test_8c_html_a97dc5d244dcdb842fab654a276322639"><div class="ttname"><a href="_get_opt_test_8c.html#a97dc5d244dcdb842fab654a276322639">convert_document</a></div><div class="ttdeci">void convert_document(void)</div><div class="ttdoc">convert_document  词频统计测试文件通过getopt函数的配置函数 </div><div class="ttdef"><b>Definition:</b> <a href="_get_opt_test_8c_source.html#l00397">GetOptTest.c:397</a></div></div>
 <div class="ttc" id="structglobal_args__t_html_a9921ae02cadccc99dd6c3a9b68be050a"><div class="ttname"><a href="structglobal_args__t.html#a9921ae02cadccc99dd6c3a9b68be050a">globalArgs_t::lines</a></div><div class="ttdeci">int lines</div><div class="ttdoc">数据文件的行数 </div><div class="ttdef"><b>Definition:</b> <a href="_get_opt_test_8c_source.html#l00029">GetOptTest.c:29</a></div></div>
 <div class="ttc" id="_double_link_8c_html_a65b4c249cc137b01fc07b9f7ffbcf46e"><div class="ttname"><a href="_double_link_8c.html#a65b4c249cc137b01fc07b9f7ffbcf46e">SequenceList</a></div><div class="ttdeci">DLNode * SequenceList(DLNode *List, int flag, int(*CallBackCmp)(const void *, const void *))</div><div class="ttdoc">SequenceList  排列双向链表函数通过flag的flag，选择合适的排序方法 </div><div class="ttdef"><b>Definition:</b> <a href="_double_link_8c_source.html#l00266">DoubleLink.c:266</a></div></div>
 <div class="ttc" id="_get_opt_test_8c_html_ab891633b1638654bdb2820c40f2cb6af"><div class="ttname"><a href="_get_opt_test_8c.html#ab891633b1638654bdb2820c40f2cb6af">GetStatistics</a></div><div class="ttdeci">int GetStatistics(int hflag, int sflag, int oflag)</div><div class="ttdoc">GetStatistics  词频统计测试文件主要运行函数，通过flag判断是否需要显示运行结果 </div><div class="ttdef"><b>Definition:</b> <a href="_get_opt_test_8c_source.html#l00310">GetOptTest.c:310</a></div></div>
@@ -477,7 +476,7 @@ $(document).ready(function(){initNavTree('_get_opt_test_8c_source.html','');});
 <div class="ttc" id="structglobal_args__t_html_ac3711469fee92b6ca802a757ef8676e2"><div class="ttname"><a href="structglobal_args__t.html#ac3711469fee92b6ca802a757ef8676e2">globalArgs_t::allwords</a></div><div class="ttdeci">int allwords</div><div class="ttdoc">数据文件中总词数 </div><div class="ttdef"><b>Definition:</b> <a href="_get_opt_test_8c_source.html#l00031">GetOptTest.c:31</a></div></div>
 <div class="ttc" id="struct___double_link_html_ac5c5967f62e5c3601479be651a8ed76c"><div class="ttname"><a href="struct___double_link.html#ac5c5967f62e5c3601479be651a8ed76c">_DoubleLink::data</a></div><div class="ttdeci">void * data</div><div class="ttdoc">双向链表中的数据 </div><div class="ttdef"><b>Definition:</b> <a href="_double_link_8c_source.html#l00024">DoubleLink.c:24</a></div></div>
 <div class="ttc" id="_get_opt_test_8c_html_a550c7ba0830bea9bb19ab64ee947d5e3"><div class="ttname"><a href="_get_opt_test_8c.html#a550c7ba0830bea9bb19ab64ee947d5e3">VS_StrRTrim</a></div><div class="ttdeci">void VS_StrRTrim(char *pStr)</div><div class="ttdoc">VS_StrRTrim  去除字符串右边空格 </div><div class="ttdef"><b>Definition:</b> <a href="_get_opt_test_8c_source.html#l00091">GetOptTest.c:91</a></div></div>
-<div class="ttc" id="_get_opt_test_8c_html_a3c04138a5bfe5d72780bb7e82a18e627"><div class="ttname"><a href="_get_opt_test_8c.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a></div><div class="ttdeci">int main(int argc, char **argv)</div><div class="ttdoc">main  通过getopt，实现程序通过参数进行运行目的 </div><div class="ttdef"><b>Definition:</b> <a href="_get_opt_test_8c_source.html#l00467">GetOptTest.c:467</a></div></div>
+<div class="ttc" id="_get_opt_test_8c_html_a3c04138a5bfe5d72780bb7e82a18e627"><div class="ttname"><a href="_get_opt_test_8c.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a></div><div class="ttdeci">int main(int argc, char **argv)</div><div class="ttdoc">main  通过getopt，实现程序通过参数进行运行目的 </div><div class="ttdef"><b>Definition:</b> <a href="_get_opt_test_8c_source.html#l00466">GetOptTest.c:466</a></div></div>
 <div class="ttc" id="structglobal_args__t_html_a3e18e5ab1201e205ce88c473a2f4bf99"><div class="ttname"><a href="structglobal_args__t.html#a3e18e5ab1201e205ce88c473a2f4bf99">globalArgs_t::bytes</a></div><div class="ttdeci">int bytes</div><div class="ttdoc">数据文件中字节数 </div><div class="ttdef"><b>Definition:</b> <a href="_get_opt_test_8c_source.html#l00032">GetOptTest.c:32</a></div></div>
 <div class="ttc" id="_get_opt_test_8c_html_a6240b2c6874900a3e7b9257fb8ac4c14"><div class="ttname"><a href="_get_opt_test_8c.html#a6240b2c6874900a3e7b9257fb8ac4c14">globalArgs</a></div><div class="ttdeci">struct globalArgs_t globalArgs</div></div>
 <div class="ttc" id="_double_link_8c_html_aec0d0b1312b68b305a5ec9cd4ae3c6c3"><div class="ttname"><a href="_double_link_8c.html#aec0d0b1312b68b305a5ec9cd4ae3c6c3">CreateList</a></div><div class="ttdeci">DLNode * CreateList()</div><div class="ttdoc">CreateList  创建双向链表 </div><div class="ttdef"><b>Definition:</b> <a href="_double_link_8c_source.html#l00048">DoubleLink.c:48</a></div></div>

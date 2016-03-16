@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['fflag',['fflag',['../structglobal_args__t.html#aab9e30d72b4b6af02ce19b24422ad2ce',1,'globalArgs_t']]],
-  ['filename',['filename',['../structglobal_args__t.html#aeac90097f29f7529968697163cea5c18',1,'globalArgs_t']]]
+  ['fileinfo',['FileInfo',['../struct_file_info.html',1,'']]],
+  ['filename',['filename',['../struct_file_info.html#a5482b27881397d5b87f54feab7471580',1,'FileInfo']]],
+  ['fromgidtogname',['FromGidToGName',['../_ls_double_link_8c.html#a614c3a2e9dc58194a2dc9841e1c06990',1,'LsDoubleLink.c']]],
+  ['fromuidtousername',['FromUidToUserName',['../_ls_double_link_8c.html#a56cfb46b8170954391fc7af903c93563',1,'LsDoubleLink.c']]]
 ];

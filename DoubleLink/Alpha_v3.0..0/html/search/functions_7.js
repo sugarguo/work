@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['vs_5fstrltrim',['VS_StrLTrim',['../_get_opt_test_8c.html#a8e8214da72e3d59826ecc3d59a7485f4',1,'GetOptTest.c']]],
-  ['vs_5fstrrtrim',['VS_StrRTrim',['../_get_opt_test_8c.html#a550c7ba0830bea9bb19ab64ee947d5e3',1,'GetOptTest.c']]]
+  ['searchlist',['SearchList',['../_double_link_8c.html#ae1482f414cdc6afe58c99a2615487057',1,'SearchList(DLNode *List, void *data, int(*CallBackCmp)(const void *, const void *)):&#160;DoubleLink.c'],['../_double_link_8h.html#ae1482f414cdc6afe58c99a2615487057',1,'SearchList(DLNode *List, void *data, int(*CallBackCmp)(const void *, const void *)):&#160;DoubleLink.c']]],
+  ['sequencelist',['SequenceList',['../_double_link_8c.html#a65b4c249cc137b01fc07b9f7ffbcf46e',1,'SequenceList(DLNode *List, int flag, int(*CallBackCmp)(const void *, const void *)):&#160;DoubleLink.c'],['../_double_link_8h.html#a65b4c249cc137b01fc07b9f7ffbcf46e',1,'SequenceList(DLNode *List, int flag, int(*CallBackCmp)(const void *, const void *)):&#160;DoubleLink.c']]],
+  ['showlist',['ShowList',['../_double_link_8c.html#ad469b48f5a27b46d067410a8ea2e3744',1,'ShowList(DLNode *List, int judge, void(*CallBackShow)(const void *)):&#160;DoubleLink.c'],['../_double_link_8h.html#ad469b48f5a27b46d067410a8ea2e3744',1,'ShowList(DLNode *List, int judge, void(*CallBackShow)(const void *)):&#160;DoubleLink.c']]]
 ];

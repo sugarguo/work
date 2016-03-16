@@ -1,7 +1,6 @@
 var NAVTREE =
 [
-  [ "DoubleLink", "index.html", [
-    [ "Week_2 第二周", "md__r_e_a_d_m_e.html", null ],
+  [ "DoubleLink——Shell命令之ls初步模拟", "index.html", [
     [ "待办事项列表", "todo.html", null ],
     [ "结构体", null, [
       [ "结构体", "annotated.html", "annotated" ],

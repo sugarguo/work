@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>DoubleLink: DoubleLink.h 文件参考</title>
+<title>DoubleLink——Shell命令之ls初步模拟: DoubleLink.h 文件参考</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,8 +30,8 @@
  <tr style="height: 56px;">
   <td id="projectlogo"><img alt="Logo" src="favicon.ico"/></td>
   <td style="padding-left: 0.5em;">
-   <div id="projectname">DoubleLink
-   &#160;<span id="projectnumber">v2.0.0</span>
+   <div id="projectname">DoubleLink——Shell命令之ls初步模拟
+   &#160;<span id="projectnumber">v1.0.0</span>
    </div>
   </td>
  </tr>
@@ -152,10 +152,18 @@ $(document).ready(function(){initNavTree('_double_link_8h.html','');});
 <tr class="memdesc:ae14dec8d152bc2fe872c9e7b80364c52"><td class="mdescLeft">&#160;</td><td class="mdescRight">CallBackCmpStr_K <br/>
 回调函数，比较内容是否相同  <a href="#ae14dec8d152bc2fe872c9e7b80364c52">更多...</a><br/></td></tr>
 <tr class="separator:ae14dec8d152bc2fe872c9e7b80364c52"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aae7d8cc126e2938b9f152c300b83f7d3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_double_link_8h.html#aae7d8cc126e2938b9f152c300b83f7d3">CallBackShow</a> (void *one, int flag)</td></tr>
-<tr class="memdesc:aae7d8cc126e2938b9f152c300b83f7d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">CallBackShow <br/>
-回调函数，显示内容  <a href="#aae7d8cc126e2938b9f152c300b83f7d3">更多...</a><br/></td></tr>
-<tr class="separator:aae7d8cc126e2938b9f152c300b83f7d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad05dd75b33d7d56d74d6e6ce624125b4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_double_link_8h.html#ad05dd75b33d7d56d74d6e6ce624125b4">CallBackShowInt</a> (void *data)</td></tr>
+<tr class="memdesc:ad05dd75b33d7d56d74d6e6ce624125b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">CallBackShowInt <br/>
+回调函数，显示内容  <a href="#ad05dd75b33d7d56d74d6e6ce624125b4">更多...</a><br/></td></tr>
+<tr class="separator:ad05dd75b33d7d56d74d6e6ce624125b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aefac383a30219d8cb05b74702240135b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_double_link_8h.html#aefac383a30219d8cb05b74702240135b">CallBackShowChar</a> (void *data)</td></tr>
+<tr class="memdesc:aefac383a30219d8cb05b74702240135b"><td class="mdescLeft">&#160;</td><td class="mdescRight">CallBackShowChar <br/>
+回调函数，显示内容  <a href="#aefac383a30219d8cb05b74702240135b">更多...</a><br/></td></tr>
+<tr class="separator:aefac383a30219d8cb05b74702240135b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50c02bf53f7850f53caa64d4e77ff013"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_double_link_8h.html#a50c02bf53f7850f53caa64d4e77ff013">CallBackShowStr</a> (void *data)</td></tr>
+<tr class="memdesc:a50c02bf53f7850f53caa64d4e77ff013"><td class="mdescLeft">&#160;</td><td class="mdescRight">CallBackShowStr <br/>
+回调函数，显示内容  <a href="#a50c02bf53f7850f53caa64d4e77ff013">更多...</a><br/></td></tr>
+<tr class="separator:a50c02bf53f7850f53caa64d4e77ff013"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae1482f414cdc6afe58c99a2615487057"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_double_link_8c.html#a9fcabae42ec5545a4c8f778a68a4e578">DLNode</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_double_link_8h.html#ae1482f414cdc6afe58c99a2615487057">SearchList</a> (<a class="el" href="_double_link_8c.html#a9fcabae42ec5545a4c8f778a68a4e578">DLNode</a> *List, void *data, int(*CallBackCmp)(const void *, const void *))</td></tr>
 <tr class="memdesc:ae1482f414cdc6afe58c99a2615487057"><td class="mdescLeft">&#160;</td><td class="mdescRight">SearchList <br/>
 查询双向链表，通过给定的默认双向链表，判断数据以及数据地址是否存在  <a href="#ae1482f414cdc6afe58c99a2615487057">更多...</a><br/></td></tr>
@@ -176,10 +184,10 @@ $(document).ready(function(){initNavTree('_double_link_8h.html','');});
 <tr class="memdesc:aa397cd5b88823e339f63a646497bd260"><td class="mdescLeft">&#160;</td><td class="mdescRight">DeleteList <br/>
 删除双向链表，查询节点位置，将前后地址相连接，然后free此节点位置  <a href="#aa397cd5b88823e339f63a646497bd260">更多...</a><br/></td></tr>
 <tr class="separator:aa397cd5b88823e339f63a646497bd260"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a127d2524a910989b06852dea39a6c86f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_double_link_8h.html#a127d2524a910989b06852dea39a6c86f">ShowList</a> (<a class="el" href="_double_link_8c.html#a9fcabae42ec5545a4c8f778a68a4e578">DLNode</a> *List, int flag, int judge)</td></tr>
-<tr class="memdesc:a127d2524a910989b06852dea39a6c86f"><td class="mdescLeft">&#160;</td><td class="mdescRight">ShowList <br/>
-遍历双向链表，根据flag选择显示格式，根据judge选择是否输出遍历结果  <a href="#a127d2524a910989b06852dea39a6c86f">更多...</a><br/></td></tr>
-<tr class="separator:a127d2524a910989b06852dea39a6c86f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad469b48f5a27b46d067410a8ea2e3744"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_double_link_8h.html#ad469b48f5a27b46d067410a8ea2e3744">ShowList</a> (<a class="el" href="_double_link_8c.html#a9fcabae42ec5545a4c8f778a68a4e578">DLNode</a> *List, int judge, void(*CallBackShow)(const void *))</td></tr>
+<tr class="memdesc:ad469b48f5a27b46d067410a8ea2e3744"><td class="mdescLeft">&#160;</td><td class="mdescRight">ShowList <br/>
+遍历双向链表，根据flag选择显示格式，根据judge选择是否输出遍历结果  <a href="#ad469b48f5a27b46d067410a8ea2e3744">更多...</a><br/></td></tr>
+<tr class="separator:ad469b48f5a27b46d067410a8ea2e3744"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a15364937ad58d693d28671f21106d2ec"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_double_link_8h.html#a15364937ad58d693d28671f21106d2ec">DropList</a> (<a class="el" href="_double_link_8c.html#a9fcabae42ec5545a4c8f778a68a4e578">DLNode</a> *List)</td></tr>
 <tr class="memdesc:a15364937ad58d693d28671f21106d2ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">DropList <br/>
 删除双向链表，全部删除，释放内存空间  <a href="#a15364937ad58d693d28671f21106d2ec">更多...</a><br/></td></tr>
@@ -374,41 +382,84 @@ $(document).ready(function(){initNavTree('_double_link_8h.html','');});
 
 </div>
 </div>
-<a class="anchor" id="aae7d8cc126e2938b9f152c300b83f7d3"></a>
+<a class="anchor" id="aefac383a30219d8cb05b74702240135b"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int CallBackShow </td>
+          <td class="memname">void CallBackShowChar </td>
           <td>(</td>
           <td class="paramtype">void *&#160;</td>
-          <td class="paramname"><em>one</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramname"><em>data</em></td><td>)</td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>flag</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>CallBackShow <br/>
+<p>CallBackShowChar <br/>
 回调函数，显示内容 </p>
 <dl class="params"><dt>参数</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*one</td><td>需要显示的内容 </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">flag</td><td>提供接口，flag = 0: int显示 1: char字符显示 2: char * 字符串显示 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*data</td><td>需要显示的内容 </td></tr>
   </table>
   </dd>
 </dl>
 
-<p>在文件 <a class="el" href="_double_link_8c_source.html">DoubleLink.c</a> 第 <a class="el" href="_double_link_8c_source.html#l00125">125</a> 行定义.</p>
+<p>在文件 <a class="el" href="_double_link_8c_source.html">DoubleLink.c</a> 第 <a class="el" href="_double_link_8c_source.html#l00133">133</a> 行定义.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad05dd75b33d7d56d74d6e6ce624125b4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CallBackShowInt </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>data</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>CallBackShowInt <br/>
+回调函数，显示内容 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">*data</td><td>需要显示的内容 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>在文件 <a class="el" href="_double_link_8c_source.html">DoubleLink.c</a> 第 <a class="el" href="_double_link_8c_source.html#l00124">124</a> 行定义.</p>
+
+</div>
+</div>
+<a class="anchor" id="a50c02bf53f7850f53caa64d4e77ff013"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CallBackShowStr </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>data</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>CallBackShowStr <br/>
+回调函数，显示内容 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">*data</td><td>需要显示的内容 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>在文件 <a class="el" href="_double_link_8c_source.html">DoubleLink.c</a> 第 <a class="el" href="_double_link_8c_source.html#l00142">142</a> 行定义.</p>
 
 </div>
 </div>
@@ -573,7 +624,7 @@ $(document).ready(function(){initNavTree('_double_link_8h.html','');});
 <dl class="section note"><dt>注解</dt><dd>删除双向链表，查询节点位置，将前后地址相连接，然后free此节点位置 </dd></dl>
 <dl class="todo"><dt><b><a class="el" href="todo.html#_todo000006">待办事项:</a></b></dt><dd>null </dd></dl>
 
-<p>在文件 <a class="el" href="_double_link_8c_source.html">DoubleLink.c</a> 第 <a class="el" href="_double_link_8c_source.html#l00435">435</a> 行定义.</p>
+<p>在文件 <a class="el" href="_double_link_8c_source.html">DoubleLink.c</a> 第 <a class="el" href="_double_link_8c_source.html#l00445">445</a> 行定义.</p>
 
 </div>
 </div>
@@ -644,7 +695,7 @@ $(document).ready(function(){initNavTree('_double_link_8h.html','');});
 <dl class="section note"><dt>注解</dt><dd>此操作会清空双向链表的数据，系统暂存空间,谨慎操作 </dd></dl>
 <dl class="todo"><dt><b><a class="el" href="todo.html#_todo000008">待办事项:</a></b></dt><dd>null </dd></dl>
 
-<p>在文件 <a class="el" href="_double_link_8c_source.html">DoubleLink.c</a> 第 <a class="el" href="_double_link_8c_source.html#l00522">522</a> 行定义.</p>
+<p>在文件 <a class="el" href="_double_link_8c_source.html">DoubleLink.c</a> 第 <a class="el" href="_double_link_8c_source.html#l00532">532</a> 行定义.</p>
 
 </div>
 </div>
@@ -729,7 +780,7 @@ $(document).ready(function(){initNavTree('_double_link_8h.html','');});
 <dl class="section note"><dt>注解</dt><dd>插入双向链表，根据双向链表的接口插入数据 </dd></dl>
 <dl class="todo"><dt><b><a class="el" href="todo.html#_todo000004">待办事项:</a></b></dt><dd>null </dd></dl>
 
-<p>在文件 <a class="el" href="_double_link_8c_source.html">DoubleLink.c</a> 第 <a class="el" href="_double_link_8c_source.html#l00356">356</a> 行定义.</p>
+<p>在文件 <a class="el" href="_double_link_8c_source.html">DoubleLink.c</a> 第 <a class="el" href="_double_link_8c_source.html#l00366">366</a> 行定义.</p>
 
 </div>
 </div>
@@ -824,7 +875,7 @@ $(document).ready(function(){initNavTree('_double_link_8h.html','');});
 <dl class="section note"><dt>注解</dt><dd>查询双向链表，通过给定的默认双向链表，判断数据以及数据地址是否存在 </dd></dl>
 <dl class="todo"><dt><b><a class="el" href="todo.html#_todo000002">待办事项:</a></b></dt><dd>null </dd></dl>
 
-<p>在文件 <a class="el" href="_double_link_8c_source.html">DoubleLink.c</a> 第 <a class="el" href="_double_link_8c_source.html#l00231">231</a> 行定义.</p>
+<p>在文件 <a class="el" href="_double_link_8c_source.html">DoubleLink.c</a> 第 <a class="el" href="_double_link_8c_source.html#l00241">241</a> 行定义.</p>
 
 </div>
 </div>
@@ -919,11 +970,11 @@ $(document).ready(function(){initNavTree('_double_link_8h.html','');});
 <dl class="section note"><dt>注解</dt><dd>排列双向链表函数通过flag的flag，选择合适的排序方法 </dd></dl>
 <dl class="todo"><dt><b><a class="el" href="todo.html#_todo000003">待办事项:</a></b></dt><dd>null </dd></dl>
 
-<p>在文件 <a class="el" href="_double_link_8c_source.html">DoubleLink.c</a> 第 <a class="el" href="_double_link_8c_source.html#l00266">266</a> 行定义.</p>
+<p>在文件 <a class="el" href="_double_link_8c_source.html">DoubleLink.c</a> 第 <a class="el" href="_double_link_8c_source.html#l00276">276</a> 行定义.</p>
 
 </div>
 </div>
-<a class="anchor" id="a127d2524a910989b06852dea39a6c86f"></a>
+<a class="anchor" id="ad469b48f5a27b46d067410a8ea2e3744"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -937,13 +988,13 @@ $(document).ready(function(){initNavTree('_double_link_8h.html','');});
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>flag</em>, </td>
+          <td class="paramname"><em>judge</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>judge</em>&#160;</td>
+          <td class="paramtype">void(*)(const void *)&#160;</td>
+          <td class="paramname"><em>CallBackShow</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -965,9 +1016,9 @@ $(document).ready(function(){initNavTree('_double_link_8h.html','');});
 <tr>
 <td>*List </td><td>DLNode </td><td>双向链表默认链表接口 </td></tr>
 <tr>
-<td>flag </td><td>int </td><td>显示格式flag </td></tr>
-<tr>
 <td>judge </td><td>int </td><td>是否显示flag </td></tr>
+<tr>
+<td>*CallBackShow</td><td>void </td><td>显示回调函数 </td></tr>
 </table>
 </td></tr>
   </table>
@@ -994,9 +1045,9 @@ $(document).ready(function(){initNavTree('_double_link_8h.html','');});
 <tr>
 <td>*List </td><td>DLNode </td><td>双向链表默认链表接口 </td></tr>
 <tr>
-<td>flag </td><td>int </td><td>显示格式flag </td></tr>
-<tr>
 <td>judge </td><td>int </td><td>是否显示flag </td></tr>
+<tr>
+<td>*CallBackShow</td><td>void </td><td>显示回调函数 </td></tr>
 </table>
 </td></tr>
   </table>
@@ -1014,7 +1065,7 @@ $(document).ready(function(){initNavTree('_double_link_8h.html','');});
 <dl class="section note"><dt>注解</dt><dd>遍历双向链表，根据flag选择显示格式，根据judge选择是否输出遍历结果 </dd></dl>
 <dl class="todo"><dt><b><a class="el" href="todo.html#_todo000007">待办事项:</a></b></dt><dd>null </dd></dl>
 
-<p>在文件 <a class="el" href="_double_link_8c_source.html">DoubleLink.c</a> 第 <a class="el" href="_double_link_8c_source.html#l00485">485</a> 行定义.</p>
+<p>在文件 <a class="el" href="_double_link_8c_source.html">DoubleLink.c</a> 第 <a class="el" href="_double_link_8c_source.html#l00495">495</a> 行定义.</p>
 
 </div>
 </div>
@@ -1119,7 +1170,7 @@ $(document).ready(function(){initNavTree('_double_link_8h.html','');});
 <dl class="section note"><dt>注解</dt><dd>更新双向链表，通过查询原始的节点位置，修改数据 </dd></dl>
 <dl class="todo"><dt><b><a class="el" href="todo.html#_todo000005">待办事项:</a></b></dt><dd>null </dd></dl>
 
-<p>在文件 <a class="el" href="_double_link_8c_source.html">DoubleLink.c</a> 第 <a class="el" href="_double_link_8c_source.html#l00397">397</a> 行定义.</p>
+<p>在文件 <a class="el" href="_double_link_8c_source.html">DoubleLink.c</a> 第 <a class="el" href="_double_link_8c_source.html#l00407">407</a> 行定义.</p>
 
 </div>
 </div>

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['hflag',['hflag',['../structglobal_args__t.html#a6fe8b762116512ab777118cd3e043200',1,'globalArgs_t']]]
+  ['globalargs',['globalArgs',['../_ls_double_link_8c.html#a6240b2c6874900a3e7b9257fb8ac4c14',1,'LsDoubleLink.c']]],
+  ['groupname',['groupname',['../struct_file_info.html#a9f6545b7fd455eaac34ee2bc61d2a172',1,'FileInfo']]]
 ];

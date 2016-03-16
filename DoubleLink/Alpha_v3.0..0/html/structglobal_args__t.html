@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>DoubleLink: globalArgs_t结构体 参考</title>
+<title>DoubleLink——Shell命令之ls初步模拟: globalArgs_t结构体 参考</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,8 +30,8 @@
  <tr style="height: 56px;">
   <td id="projectlogo"><img alt="Logo" src="favicon.ico"/></td>
   <td style="padding-left: 0.5em;">
-   <div id="projectname">DoubleLink
-   &#160;<span id="projectnumber">v2.0.0</span>
+   <div id="projectname">DoubleLink——Shell命令之ls初步模拟
+   &#160;<span id="projectnumber">v1.0.0</span>
    </div>
   </td>
  </tr>
@@ -116,125 +116,109 @@ $(document).ready(function(){initNavTree('structglobal_args__t.html','');});
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 成员变量</h2></td></tr>
-<tr class="memitem:aeac90097f29f7529968697163cea5c18"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structglobal_args__t.html#aeac90097f29f7529968697163cea5c18">filename</a></td></tr>
-<tr class="memdesc:aeac90097f29f7529968697163cea5c18"><td class="mdescLeft">&#160;</td><td class="mdescRight">默认数据的文件名  <a href="#aeac90097f29f7529968697163cea5c18">更多...</a><br/></td></tr>
-<tr class="separator:aeac90097f29f7529968697163cea5c18"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa40c5c56cd04686687e0cd71d52ea78b"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structglobal_args__t.html#aa40c5c56cd04686687e0cd71d52ea78b">outfilename</a></td></tr>
-<tr class="memdesc:aa40c5c56cd04686687e0cd71d52ea78b"><td class="mdescLeft">&#160;</td><td class="mdescRight">默认输出的文件名  <a href="#aa40c5c56cd04686687e0cd71d52ea78b">更多...</a><br/></td></tr>
-<tr class="separator:aa40c5c56cd04686687e0cd71d52ea78b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6fe8b762116512ab777118cd3e043200"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structglobal_args__t.html#a6fe8b762116512ab777118cd3e043200">hflag</a></td></tr>
-<tr class="memdesc:a6fe8b762116512ab777118cd3e043200"><td class="mdescLeft">&#160;</td><td class="mdescRight">是否快速排序的flag  <a href="#a6fe8b762116512ab777118cd3e043200">更多...</a><br/></td></tr>
-<tr class="separator:a6fe8b762116512ab777118cd3e043200"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acecd9ebff44a84e2d866ebc2e5e06da7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structglobal_args__t.html#acecd9ebff44a84e2d866ebc2e5e06da7">sflag</a></td></tr>
-<tr class="memdesc:acecd9ebff44a84e2d866ebc2e5e06da7"><td class="mdescLeft">&#160;</td><td class="mdescRight">是否显示排序结果的flag  <a href="#acecd9ebff44a84e2d866ebc2e5e06da7">更多...</a><br/></td></tr>
-<tr class="separator:acecd9ebff44a84e2d866ebc2e5e06da7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3bf178baaa87d9153b6ef764640fe960"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structglobal_args__t.html#a3bf178baaa87d9153b6ef764640fe960">pflag</a></td></tr>
-<tr class="memdesc:a3bf178baaa87d9153b6ef764640fe960"><td class="mdescLeft">&#160;</td><td class="mdescRight">是否显示最终结果的flag  <a href="#a3bf178baaa87d9153b6ef764640fe960">更多...</a><br/></td></tr>
-<tr class="separator:a3bf178baaa87d9153b6ef764640fe960"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f50c85874ef8f3405625e5a26febbcb"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structglobal_args__t.html#a6f50c85874ef8f3405625e5a26febbcb">path</a> [1024]</td></tr>
+<tr class="memdesc:a6f50c85874ef8f3405625e5a26febbcb"><td class="mdescLeft">&#160;</td><td class="mdescRight">文件绝对路径  <a href="#a6f50c85874ef8f3405625e5a26febbcb">更多...</a><br/></td></tr>
+<tr class="separator:a6f50c85874ef8f3405625e5a26febbcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad532de65ced2a7f637c0cfa3a6e7e993"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structglobal_args__t.html#ad532de65ced2a7f637c0cfa3a6e7e993">iflag</a></td></tr>
+<tr class="memdesc:ad532de65ced2a7f637c0cfa3a6e7e993"><td class="mdescLeft">&#160;</td><td class="mdescRight">是否的flag  <a href="#ad532de65ced2a7f637c0cfa3a6e7e993">更多...</a><br/></td></tr>
+<tr class="separator:ad532de65ced2a7f637c0cfa3a6e7e993"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afbb9b1dda8ad9915e753c7a84be13489"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structglobal_args__t.html#afbb9b1dda8ad9915e753c7a84be13489">cflag</a></td></tr>
+<tr class="memdesc:afbb9b1dda8ad9915e753c7a84be13489"><td class="mdescLeft">&#160;</td><td class="mdescRight">是否采用修改时间排序的flag  <a href="#afbb9b1dda8ad9915e753c7a84be13489">更多...</a><br/></td></tr>
+<tr class="separator:afbb9b1dda8ad9915e753c7a84be13489"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2586d61cfd83f6d8ee1777eb20b54b0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structglobal_args__t.html#ae2586d61cfd83f6d8ee1777eb20b54b0">kflag</a></td></tr>
+<tr class="memdesc:ae2586d61cfd83f6d8ee1777eb20b54b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">是否采用字节排序结果的flag  <a href="#ae2586d61cfd83f6d8ee1777eb20b54b0">更多...</a><br/></td></tr>
+<tr class="separator:ae2586d61cfd83f6d8ee1777eb20b54b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3fe9f9160e69ccb1c2ec2762072a6a4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structglobal_args__t.html#ab3fe9f9160e69ccb1c2ec2762072a6a4">tflag</a></td></tr>
+<tr class="memdesc:ab3fe9f9160e69ccb1c2ec2762072a6a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">是否显示最终结果的flag  <a href="#ab3fe9f9160e69ccb1c2ec2762072a6a4">更多...</a><br/></td></tr>
+<tr class="separator:ab3fe9f9160e69ccb1c2ec2762072a6a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa52c9d76427dab785a267dfb2c0242b1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structglobal_args__t.html#aa52c9d76427dab785a267dfb2c0242b1">mflag</a></td></tr>
+<tr class="memdesc:aa52c9d76427dab785a267dfb2c0242b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">是否横向输出的flag  <a href="#aa52c9d76427dab785a267dfb2c0242b1">更多...</a><br/></td></tr>
+<tr class="separator:aa52c9d76427dab785a267dfb2c0242b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4cc7e6867b564ffab9f569351d574a67"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structglobal_args__t.html#a4cc7e6867b564ffab9f569351d574a67">lflag</a></td></tr>
-<tr class="memdesc:a4cc7e6867b564ffab9f569351d574a67"><td class="mdescLeft">&#160;</td><td class="mdescRight">是否显示行号的flag  <a href="#a4cc7e6867b564ffab9f569351d574a67">更多...</a><br/></td></tr>
+<tr class="memdesc:a4cc7e6867b564ffab9f569351d574a67"><td class="mdescLeft">&#160;</td><td class="mdescRight">是否长格式显示文件的flag  <a href="#a4cc7e6867b564ffab9f569351d574a67">更多...</a><br/></td></tr>
 <tr class="separator:a4cc7e6867b564ffab9f569351d574a67"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae48c37db113eec555c7f4ce2e48e90de"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structglobal_args__t.html#ae48c37db113eec555c7f4ce2e48e90de">oflag</a></td></tr>
-<tr class="memdesc:ae48c37db113eec555c7f4ce2e48e90de"><td class="mdescLeft">&#160;</td><td class="mdescRight">是否采用默认文件的flag  <a href="#ae48c37db113eec555c7f4ce2e48e90de">更多...</a><br/></td></tr>
-<tr class="separator:ae48c37db113eec555c7f4ce2e48e90de"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aab9e30d72b4b6af02ce19b24422ad2ce"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structglobal_args__t.html#aab9e30d72b4b6af02ce19b24422ad2ce">fflag</a></td></tr>
-<tr class="memdesc:aab9e30d72b4b6af02ce19b24422ad2ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">是否采用默认文件的flag  <a href="#aab9e30d72b4b6af02ce19b24422ad2ce">更多...</a><br/></td></tr>
-<tr class="separator:aab9e30d72b4b6af02ce19b24422ad2ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9921ae02cadccc99dd6c3a9b68be050a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structglobal_args__t.html#a9921ae02cadccc99dd6c3a9b68be050a">lines</a></td></tr>
-<tr class="memdesc:a9921ae02cadccc99dd6c3a9b68be050a"><td class="mdescLeft">&#160;</td><td class="mdescRight">数据文件的行数  <a href="#a9921ae02cadccc99dd6c3a9b68be050a">更多...</a><br/></td></tr>
-<tr class="separator:a9921ae02cadccc99dd6c3a9b68be050a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a76f30ccb790f9ab7ef115f30cf735cd5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structglobal_args__t.html#a76f30ccb790f9ab7ef115f30cf735cd5">words</a></td></tr>
-<tr class="memdesc:a76f30ccb790f9ab7ef115f30cf735cd5"><td class="mdescLeft">&#160;</td><td class="mdescRight">数据文件中拥有词数  <a href="#a76f30ccb790f9ab7ef115f30cf735cd5">更多...</a><br/></td></tr>
-<tr class="separator:a76f30ccb790f9ab7ef115f30cf735cd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac3711469fee92b6ca802a757ef8676e2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structglobal_args__t.html#ac3711469fee92b6ca802a757ef8676e2">allwords</a></td></tr>
-<tr class="memdesc:ac3711469fee92b6ca802a757ef8676e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">数据文件中总词数  <a href="#ac3711469fee92b6ca802a757ef8676e2">更多...</a><br/></td></tr>
-<tr class="separator:ac3711469fee92b6ca802a757ef8676e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3e18e5ab1201e205ce88c473a2f4bf99"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structglobal_args__t.html#a3e18e5ab1201e205ce88c473a2f4bf99">bytes</a></td></tr>
-<tr class="memdesc:a3e18e5ab1201e205ce88c473a2f4bf99"><td class="mdescLeft">&#160;</td><td class="mdescRight">数据文件中字节数  <a href="#a3e18e5ab1201e205ce88c473a2f4bf99">更多...</a><br/></td></tr>
-<tr class="separator:a3e18e5ab1201e205ce88c473a2f4bf99"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b2a56cd9a79cbfd3f2bce4e463d9245"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structglobal_args__t.html#a7b2a56cd9a79cbfd3f2bce4e463d9245">aflag</a></td></tr>
+<tr class="memdesc:a7b2a56cd9a79cbfd3f2bce4e463d9245"><td class="mdescLeft">&#160;</td><td class="mdescRight">是否显示隐藏文件的flag  <a href="#a7b2a56cd9a79cbfd3f2bce4e463d9245">更多...</a><br/></td></tr>
+<tr class="separator:a7b2a56cd9a79cbfd3f2bce4e463d9245"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3bf178baaa87d9153b6ef764640fe960"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structglobal_args__t.html#a3bf178baaa87d9153b6ef764640fe960">pflag</a></td></tr>
+<tr class="memdesc:a3bf178baaa87d9153b6ef764640fe960"><td class="mdescLeft">&#160;</td><td class="mdescRight">文件个数标量  <a href="#a3bf178baaa87d9153b6ef764640fe960">更多...</a><br/></td></tr>
+<tr class="separator:a3bf178baaa87d9153b6ef764640fe960"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add78a9ef7e3c17ea829b2bd642cb54be"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structglobal_args__t.html#add78a9ef7e3c17ea829b2bd642cb54be">pnflag</a></td></tr>
+<tr class="memdesc:add78a9ef7e3c17ea829b2bd642cb54be"><td class="mdescLeft">&#160;</td><td class="mdescRight">文件个数标量  <a href="#add78a9ef7e3c17ea829b2bd642cb54be">更多...</a><br/></td></tr>
+<tr class="separator:add78a9ef7e3c17ea829b2bd642cb54be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a493e07ea63caf467c6817876a2e8a4ea"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structglobal_args__t.html#a493e07ea63caf467c6817876a2e8a4ea">plflag</a></td></tr>
+<tr class="memdesc:a493e07ea63caf467c6817876a2e8a4ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">字符长度标量  <a href="#a493e07ea63caf467c6817876a2e8a4ea">更多...</a><br/></td></tr>
+<tr class="separator:a493e07ea63caf467c6817876a2e8a4ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96885a7ac3fa5bab18fe2f82df3bc938"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structglobal_args__t.html#a96885a7ac3fa5bab18fe2f82df3bc938">pzlflag</a></td></tr>
+<tr class="memdesc:a96885a7ac3fa5bab18fe2f82df3bc938"><td class="mdescLeft">&#160;</td><td class="mdescRight">字符长度标量  <a href="#a96885a7ac3fa5bab18fe2f82df3bc938">更多...</a><br/></td></tr>
+<tr class="separator:a96885a7ac3fa5bab18fe2f82df3bc938"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
 <div class="textblock"><p>定义默认信息的结构体 </p>
 
-<p>在文件 <a class="el" href="_get_opt_test_8c_source.html">GetOptTest.c</a> 第 <a class="el" href="_get_opt_test_8c_source.html#l00020">20</a> 行定义.</p>
+<p>在文件 <a class="el" href="_ls_double_link_8c_source.html">LsDoubleLink.c</a> 第 <a class="el" href="_ls_double_link_8c_source.html#l00027">27</a> 行定义.</p>
 </div><h2 class="groupheader">结构体成员变量说明</h2>
-<a class="anchor" id="ac3711469fee92b6ca802a757ef8676e2"></a>
+<a class="anchor" id="a7b2a56cd9a79cbfd3f2bce4e463d9245"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int allwords</td>
+          <td class="memname">int aflag</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>数据文件中总词数 </p>
+<p>是否显示隐藏文件的flag </p>
 
-<p>在文件 <a class="el" href="_get_opt_test_8c_source.html">GetOptTest.c</a> 第 <a class="el" href="_get_opt_test_8c_source.html#l00031">31</a> 行定义.</p>
+<p>在文件 <a class="el" href="_ls_double_link_8c_source.html">LsDoubleLink.c</a> 第 <a class="el" href="_ls_double_link_8c_source.html#l00035">35</a> 行定义.</p>
 
 </div>
 </div>
-<a class="anchor" id="a3e18e5ab1201e205ce88c473a2f4bf99"></a>
+<a class="anchor" id="afbb9b1dda8ad9915e753c7a84be13489"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int bytes</td>
+          <td class="memname">int cflag</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>数据文件中字节数 </p>
+<p>是否采用修改时间排序的flag </p>
 
-<p>在文件 <a class="el" href="_get_opt_test_8c_source.html">GetOptTest.c</a> 第 <a class="el" href="_get_opt_test_8c_source.html#l00032">32</a> 行定义.</p>
+<p>在文件 <a class="el" href="_ls_double_link_8c_source.html">LsDoubleLink.c</a> 第 <a class="el" href="_ls_double_link_8c_source.html#l00030">30</a> 行定义.</p>
 
 </div>
 </div>
-<a class="anchor" id="aab9e30d72b4b6af02ce19b24422ad2ce"></a>
+<a class="anchor" id="ad532de65ced2a7f637c0cfa3a6e7e993"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int fflag</td>
+          <td class="memname">int iflag</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>是否采用默认文件的flag </p>
+<p>是否的flag </p>
 
-<p>在文件 <a class="el" href="_get_opt_test_8c_source.html">GetOptTest.c</a> 第 <a class="el" href="_get_opt_test_8c_source.html#l00028">28</a> 行定义.</p>
+<p>在文件 <a class="el" href="_ls_double_link_8c_source.html">LsDoubleLink.c</a> 第 <a class="el" href="_ls_double_link_8c_source.html#l00029">29</a> 行定义.</p>
 
 </div>
 </div>
-<a class="anchor" id="aeac90097f29f7529968697163cea5c18"></a>
+<a class="anchor" id="ae2586d61cfd83f6d8ee1777eb20b54b0"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">char* filename</td>
+          <td class="memname">int kflag</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>默认数据的文件名 </p>
+<p>是否采用字节排序结果的flag </p>
 
-<p>在文件 <a class="el" href="_get_opt_test_8c_source.html">GetOptTest.c</a> 第 <a class="el" href="_get_opt_test_8c_source.html#l00021">21</a> 行定义.</p>
-
-</div>
-</div>
-<a class="anchor" id="a6fe8b762116512ab777118cd3e043200"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int hflag</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>是否快速排序的flag </p>
-
-<p>在文件 <a class="el" href="_get_opt_test_8c_source.html">GetOptTest.c</a> 第 <a class="el" href="_get_opt_test_8c_source.html#l00023">23</a> 行定义.</p>
+<p>在文件 <a class="el" href="_ls_double_link_8c_source.html">LsDoubleLink.c</a> 第 <a class="el" href="_ls_double_link_8c_source.html#l00031">31</a> 行定义.</p>
 
 </div>
 </div>
@@ -248,57 +232,41 @@ $(document).ready(function(){initNavTree('structglobal_args__t.html','');});
       </table>
 </div><div class="memdoc">
 
-<p>是否显示行号的flag </p>
+<p>是否长格式显示文件的flag </p>
 
-<p>在文件 <a class="el" href="_get_opt_test_8c_source.html">GetOptTest.c</a> 第 <a class="el" href="_get_opt_test_8c_source.html#l00026">26</a> 行定义.</p>
+<p>在文件 <a class="el" href="_ls_double_link_8c_source.html">LsDoubleLink.c</a> 第 <a class="el" href="_ls_double_link_8c_source.html#l00034">34</a> 行定义.</p>
 
 </div>
 </div>
-<a class="anchor" id="a9921ae02cadccc99dd6c3a9b68be050a"></a>
+<a class="anchor" id="aa52c9d76427dab785a267dfb2c0242b1"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int lines</td>
+          <td class="memname">int mflag</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>数据文件的行数 </p>
+<p>是否横向输出的flag </p>
 
-<p>在文件 <a class="el" href="_get_opt_test_8c_source.html">GetOptTest.c</a> 第 <a class="el" href="_get_opt_test_8c_source.html#l00029">29</a> 行定义.</p>
+<p>在文件 <a class="el" href="_ls_double_link_8c_source.html">LsDoubleLink.c</a> 第 <a class="el" href="_ls_double_link_8c_source.html#l00033">33</a> 行定义.</p>
 
 </div>
 </div>
-<a class="anchor" id="ae48c37db113eec555c7f4ce2e48e90de"></a>
+<a class="anchor" id="a6f50c85874ef8f3405625e5a26febbcb"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int oflag</td>
+          <td class="memname">char path[1024]</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>是否采用默认文件的flag </p>
+<p>文件绝对路径 </p>
 
-<p>在文件 <a class="el" href="_get_opt_test_8c_source.html">GetOptTest.c</a> 第 <a class="el" href="_get_opt_test_8c_source.html#l00027">27</a> 行定义.</p>
-
-</div>
-</div>
-<a class="anchor" id="aa40c5c56cd04686687e0cd71d52ea78b"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">char* outfilename</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>默认输出的文件名 </p>
-
-<p>在文件 <a class="el" href="_get_opt_test_8c_source.html">GetOptTest.c</a> 第 <a class="el" href="_get_opt_test_8c_source.html#l00022">22</a> 行定义.</p>
+<p>在文件 <a class="el" href="_ls_double_link_8c_source.html">LsDoubleLink.c</a> 第 <a class="el" href="_ls_double_link_8c_source.html#l00028">28</a> 行定义.</p>
 
 </div>
 </div>
@@ -312,46 +280,78 @@ $(document).ready(function(){initNavTree('structglobal_args__t.html','');});
       </table>
 </div><div class="memdoc">
 
+<p>文件个数标量 </p>
+
+<p>在文件 <a class="el" href="_ls_double_link_8c_source.html">LsDoubleLink.c</a> 第 <a class="el" href="_ls_double_link_8c_source.html#l00036">36</a> 行定义.</p>
+
+</div>
+</div>
+<a class="anchor" id="a493e07ea63caf467c6817876a2e8a4ea"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int plflag</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>字符长度标量 </p>
+
+<p>在文件 <a class="el" href="_ls_double_link_8c_source.html">LsDoubleLink.c</a> 第 <a class="el" href="_ls_double_link_8c_source.html#l00038">38</a> 行定义.</p>
+
+</div>
+</div>
+<a class="anchor" id="add78a9ef7e3c17ea829b2bd642cb54be"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int pnflag</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>文件个数标量 </p>
+
+<p>在文件 <a class="el" href="_ls_double_link_8c_source.html">LsDoubleLink.c</a> 第 <a class="el" href="_ls_double_link_8c_source.html#l00037">37</a> 行定义.</p>
+
+</div>
+</div>
+<a class="anchor" id="a96885a7ac3fa5bab18fe2f82df3bc938"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int pzlflag</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>字符长度标量 </p>
+
+<p>在文件 <a class="el" href="_ls_double_link_8c_source.html">LsDoubleLink.c</a> 第 <a class="el" href="_ls_double_link_8c_source.html#l00039">39</a> 行定义.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab3fe9f9160e69ccb1c2ec2762072a6a4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int tflag</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
 <p>是否显示最终结果的flag </p>
 
-<p>在文件 <a class="el" href="_get_opt_test_8c_source.html">GetOptTest.c</a> 第 <a class="el" href="_get_opt_test_8c_source.html#l00025">25</a> 行定义.</p>
-
-</div>
-</div>
-<a class="anchor" id="acecd9ebff44a84e2d866ebc2e5e06da7"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int sflag</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>是否显示排序结果的flag </p>
-
-<p>在文件 <a class="el" href="_get_opt_test_8c_source.html">GetOptTest.c</a> 第 <a class="el" href="_get_opt_test_8c_source.html#l00024">24</a> 行定义.</p>
-
-</div>
-</div>
-<a class="anchor" id="a76f30ccb790f9ab7ef115f30cf735cd5"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int words</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>数据文件中拥有词数 </p>
-
-<p>在文件 <a class="el" href="_get_opt_test_8c_source.html">GetOptTest.c</a> 第 <a class="el" href="_get_opt_test_8c_source.html#l00030">30</a> 行定义.</p>
+<p>在文件 <a class="el" href="_ls_double_link_8c_source.html">LsDoubleLink.c</a> 第 <a class="el" href="_ls_double_link_8c_source.html#l00032">32</a> 行定义.</p>
 
 </div>
 </div>
 <hr/>该结构体的文档由以下文件生成:<ul>
-<li><a class="el" href="_get_opt_test_8c_source.html">GetOptTest.c</a></li>
+<li><a class="el" href="_ls_double_link_8c_source.html">LsDoubleLink.c</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

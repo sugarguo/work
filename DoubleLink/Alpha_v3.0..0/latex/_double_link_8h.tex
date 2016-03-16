@@ -35,8 +35,14 @@ int \hyperlink{_double_link_8h_ac4872b9b04c64d8f80c68a1010142094}{Call\-Back\-Cm
 int \hyperlink{_double_link_8h_ae14dec8d152bc2fe872c9e7b80364c52}{Call\-Back\-Cmp\-Str\-\_\-\-K} (const void $\ast$one, const void $\ast$two)
 \begin{DoxyCompactList}\small\item\em Call\-Back\-Cmp\-Str\-\_\-\-K \par
 回调函数，比较内容是否相同 \end{DoxyCompactList}\item 
-int \hyperlink{_double_link_8h_aae7d8cc126e2938b9f152c300b83f7d3}{Call\-Back\-Show} (void $\ast$one, int flag)
-\begin{DoxyCompactList}\small\item\em Call\-Back\-Show \par
+void \hyperlink{_double_link_8h_ad05dd75b33d7d56d74d6e6ce624125b4}{Call\-Back\-Show\-Int} (void $\ast$data)
+\begin{DoxyCompactList}\small\item\em Call\-Back\-Show\-Int \par
+回调函数，显示内容 \end{DoxyCompactList}\item 
+void \hyperlink{_double_link_8h_aefac383a30219d8cb05b74702240135b}{Call\-Back\-Show\-Char} (void $\ast$data)
+\begin{DoxyCompactList}\small\item\em Call\-Back\-Show\-Char \par
+回调函数，显示内容 \end{DoxyCompactList}\item 
+void \hyperlink{_double_link_8h_a50c02bf53f7850f53caa64d4e77ff013}{Call\-Back\-Show\-Str} (void $\ast$data)
+\begin{DoxyCompactList}\small\item\em Call\-Back\-Show\-Str \par
 回调函数，显示内容 \end{DoxyCompactList}\item 
 \hyperlink{_double_link_8c_a9fcabae42ec5545a4c8f778a68a4e578}{D\-L\-Node} $\ast$ \hyperlink{_double_link_8h_ae1482f414cdc6afe58c99a2615487057}{Search\-List} (\hyperlink{_double_link_8c_a9fcabae42ec5545a4c8f778a68a4e578}{D\-L\-Node} $\ast$List, void $\ast$data, int($\ast$Call\-Back\-Cmp)(const void $\ast$, const void $\ast$))
 \begin{DoxyCompactList}\small\item\em Search\-List \par
@@ -53,7 +59,7 @@ void \hyperlink{_double_link_8h_af42f761136d59421fe531e5f53db7d22}{Update\-List}
 void \hyperlink{_double_link_8h_aa397cd5b88823e339f63a646497bd260}{Delete\-List} (\hyperlink{_double_link_8c_a9fcabae42ec5545a4c8f778a68a4e578}{D\-L\-Node} $\ast$List, void $\ast$data, int($\ast$Call\-Back\-Cmp)(const void $\ast$, const void $\ast$))
 \begin{DoxyCompactList}\small\item\em Delete\-List \par
 删除双向链表，查询节点位置，将前后地址相连接，然后free此节点位置 \end{DoxyCompactList}\item 
-int \hyperlink{_double_link_8h_a127d2524a910989b06852dea39a6c86f}{Show\-List} (\hyperlink{_double_link_8c_a9fcabae42ec5545a4c8f778a68a4e578}{D\-L\-Node} $\ast$List, int flag, int judge)
+int \hyperlink{_double_link_8h_ad469b48f5a27b46d067410a8ea2e3744}{Show\-List} (\hyperlink{_double_link_8c_a9fcabae42ec5545a4c8f778a68a4e578}{D\-L\-Node} $\ast$List, int judge, void($\ast$Call\-Back\-Show)(const void $\ast$))
 \begin{DoxyCompactList}\small\item\em Show\-List \par
 遍历双向链表，根据flag选择显示格式，根据judge选择是否输出遍历结果 \end{DoxyCompactList}\item 
 void \hyperlink{_double_link_8h_a15364937ad58d693d28671f21106d2ec}{Drop\-List} (\hyperlink{_double_link_8c_a9fcabae42ec5545a4c8f778a68a4e578}{D\-L\-Node} $\ast$List)
@@ -209,29 +215,68 @@ Call\-Back\-Cmp\-Str\-\_\-\-K \par
 
 在文件 Double\-Link.\-c 第 113 行定义.
 
-\hypertarget{_double_link_8h_aae7d8cc126e2938b9f152c300b83f7d3}{\index{Double\-Link.\-h@{Double\-Link.\-h}!Call\-Back\-Show@{Call\-Back\-Show}}
-\index{Call\-Back\-Show@{Call\-Back\-Show}!DoubleLink.h@{Double\-Link.\-h}}
-\subsubsection[{Call\-Back\-Show}]{\setlength{\rightskip}{0pt plus 5cm}int Call\-Back\-Show (
+\hypertarget{_double_link_8h_aefac383a30219d8cb05b74702240135b}{\index{Double\-Link.\-h@{Double\-Link.\-h}!Call\-Back\-Show\-Char@{Call\-Back\-Show\-Char}}
+\index{Call\-Back\-Show\-Char@{Call\-Back\-Show\-Char}!DoubleLink.h@{Double\-Link.\-h}}
+\subsubsection[{Call\-Back\-Show\-Char}]{\setlength{\rightskip}{0pt plus 5cm}void Call\-Back\-Show\-Char (
 \begin{DoxyParamCaption}
-\item[{void $\ast$}]{one, }
-\item[{int}]{flag}
+\item[{void $\ast$}]{data}
 \end{DoxyParamCaption}
-)}}\label{_double_link_8h_aae7d8cc126e2938b9f152c300b83f7d3}
+)}}\label{_double_link_8h_aefac383a30219d8cb05b74702240135b}
 
 
-Call\-Back\-Show \par
+Call\-Back\-Show\-Char \par
 回调函数，显示内容 
 
 
 \begin{DoxyParams}[1]{参数}
-\mbox{\tt in}  & {\em $\ast$one} & 需要显示的内容 \\
-\hline
-\mbox{\tt in}  & {\em flag} & 提供接口，flag = 0\-: int显示 1\-: char字符显示 2\-: char $\ast$ 字符串显示 \\
+\mbox{\tt in}  & {\em $\ast$data} & 需要显示的内容 \\
 \hline
 \end{DoxyParams}
 
 
-在文件 Double\-Link.\-c 第 125 行定义.
+在文件 Double\-Link.\-c 第 133 行定义.
+
+\hypertarget{_double_link_8h_ad05dd75b33d7d56d74d6e6ce624125b4}{\index{Double\-Link.\-h@{Double\-Link.\-h}!Call\-Back\-Show\-Int@{Call\-Back\-Show\-Int}}
+\index{Call\-Back\-Show\-Int@{Call\-Back\-Show\-Int}!DoubleLink.h@{Double\-Link.\-h}}
+\subsubsection[{Call\-Back\-Show\-Int}]{\setlength{\rightskip}{0pt plus 5cm}void Call\-Back\-Show\-Int (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{data}
+\end{DoxyParamCaption}
+)}}\label{_double_link_8h_ad05dd75b33d7d56d74d6e6ce624125b4}
+
+
+Call\-Back\-Show\-Int \par
+回调函数，显示内容 
+
+
+\begin{DoxyParams}[1]{参数}
+\mbox{\tt in}  & {\em $\ast$data} & 需要显示的内容 \\
+\hline
+\end{DoxyParams}
+
+
+在文件 Double\-Link.\-c 第 124 行定义.
+
+\hypertarget{_double_link_8h_a50c02bf53f7850f53caa64d4e77ff013}{\index{Double\-Link.\-h@{Double\-Link.\-h}!Call\-Back\-Show\-Str@{Call\-Back\-Show\-Str}}
+\index{Call\-Back\-Show\-Str@{Call\-Back\-Show\-Str}!DoubleLink.h@{Double\-Link.\-h}}
+\subsubsection[{Call\-Back\-Show\-Str}]{\setlength{\rightskip}{0pt plus 5cm}void Call\-Back\-Show\-Str (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{data}
+\end{DoxyParamCaption}
+)}}\label{_double_link_8h_a50c02bf53f7850f53caa64d4e77ff013}
+
+
+Call\-Back\-Show\-Str \par
+回调函数，显示内容 
+
+
+\begin{DoxyParams}[1]{参数}
+\mbox{\tt in}  & {\em $\ast$data} & 需要显示的内容 \\
+\hline
+\end{DoxyParams}
+
+
+在文件 Double\-Link.\-c 第 142 行定义.
 
 \hypertarget{_double_link_8h_aec0d0b1312b68b305a5ec9cd4ae3c6c3}{\index{Double\-Link.\-h@{Double\-Link.\-h}!Create\-List@{Create\-List}}
 \index{Create\-List@{Create\-List}!DoubleLink.h@{Double\-Link.\-h}}
@@ -413,7 +458,7 @@ null
 \item[\hyperlink{todo__todo000006}{待办事项}]null \end{DoxyRefDesc}
 
 
-在文件 Double\-Link.\-c 第 435 行定义.
+在文件 Double\-Link.\-c 第 445 行定义.
 
 \hypertarget{_double_link_8h_a15364937ad58d693d28671f21106d2ec}{\index{Double\-Link.\-h@{Double\-Link.\-h}!Drop\-List@{Drop\-List}}
 \index{Drop\-List@{Drop\-List}!DoubleLink.h@{Double\-Link.\-h}}
@@ -501,7 +546,7 @@ null
 \item[\hyperlink{todo__todo000008}{待办事项}]null \end{DoxyRefDesc}
 
 
-在文件 Double\-Link.\-c 第 522 行定义.
+在文件 Double\-Link.\-c 第 532 行定义.
 
 \hypertarget{_double_link_8h_a3c75e226a401f131a4808dd22b234cca}{\index{Double\-Link.\-h@{Double\-Link.\-h}!Insert\-List@{Insert\-List}}
 \index{Insert\-List@{Insert\-List}!DoubleLink.h@{Double\-Link.\-h}}
@@ -592,7 +637,7 @@ null
 \item[\hyperlink{todo__todo000004}{待办事项}]null \end{DoxyRefDesc}
 
 
-在文件 Double\-Link.\-c 第 356 行定义.
+在文件 Double\-Link.\-c 第 366 行定义.
 
 \hypertarget{_double_link_8h_ae1482f414cdc6afe58c99a2615487057}{\index{Double\-Link.\-h@{Double\-Link.\-h}!Search\-List@{Search\-List}}
 \index{Search\-List@{Search\-List}!DoubleLink.h@{Double\-Link.\-h}}
@@ -686,7 +731,7 @@ null
 \item[\hyperlink{todo__todo000002}{待办事项}]null \end{DoxyRefDesc}
 
 
-在文件 Double\-Link.\-c 第 231 行定义.
+在文件 Double\-Link.\-c 第 241 行定义.
 
 \hypertarget{_double_link_8h_a65b4c249cc137b01fc07b9f7ffbcf46e}{\index{Double\-Link.\-h@{Double\-Link.\-h}!Sequence\-List@{Sequence\-List}}
 \index{Sequence\-List@{Sequence\-List}!DoubleLink.h@{Double\-Link.\-h}}
@@ -780,17 +825,17 @@ null
 \item[\hyperlink{todo__todo000003}{待办事项}]null \end{DoxyRefDesc}
 
 
-在文件 Double\-Link.\-c 第 266 行定义.
+在文件 Double\-Link.\-c 第 276 行定义.
 
-\hypertarget{_double_link_8h_a127d2524a910989b06852dea39a6c86f}{\index{Double\-Link.\-h@{Double\-Link.\-h}!Show\-List@{Show\-List}}
+\hypertarget{_double_link_8h_ad469b48f5a27b46d067410a8ea2e3744}{\index{Double\-Link.\-h@{Double\-Link.\-h}!Show\-List@{Show\-List}}
 \index{Show\-List@{Show\-List}!DoubleLink.h@{Double\-Link.\-h}}
 \subsubsection[{Show\-List}]{\setlength{\rightskip}{0pt plus 5cm}int Show\-List (
 \begin{DoxyParamCaption}
 \item[{{\bf D\-L\-Node} $\ast$}]{List, }
-\item[{int}]{flag, }
-\item[{int}]{judge}
+\item[{int}]{judge, }
+\item[{void($\ast$)(const void $\ast$)}]{Call\-Back\-Show}
 \end{DoxyParamCaption}
-)}}\label{_double_link_8h_a127d2524a910989b06852dea39a6c86f}
+)}}\label{_double_link_8h_ad469b48f5a27b46d067410a8ea2e3744}
 
 
 Show\-List \par
@@ -808,8 +853,8 @@ Sugarguo
 \hline
 \rowcolor{lightgray}{\bf name }&{\bf type }&{\bf description of param  }\\\cline{1-3}
 $\ast$\-List &D\-L\-Node &双向链表默认链表接口 \\\cline{1-3}
-flag &int &显示格式flag \\\cline{1-3}
 judge &int &是否显示flag \\\cline{1-3}
+$\ast$\-Call\-Back\-Show&void &显示回调函数 \\\cline{1-3}
 \end{TabularC}
 \\
 \hline
@@ -847,8 +892,8 @@ Sugarguo
 \hline
 \rowcolor{lightgray}{\bf name }&{\bf type }&{\bf description of param  }\\\cline{1-3}
 $\ast$\-List &D\-L\-Node &双向链表默认链表接口 \\\cline{1-3}
-flag &int &显示格式flag \\\cline{1-3}
 judge &int &是否显示flag \\\cline{1-3}
+$\ast$\-Call\-Back\-Show&void &显示回调函数 \\\cline{1-3}
 \end{TabularC}
 \\
 \hline
@@ -874,7 +919,7 @@ null
 \item[\hyperlink{todo__todo000007}{待办事项}]null \end{DoxyRefDesc}
 
 
-在文件 Double\-Link.\-c 第 485 行定义.
+在文件 Double\-Link.\-c 第 495 行定义.
 
 \hypertarget{_double_link_8h_af42f761136d59421fe531e5f53db7d22}{\index{Double\-Link.\-h@{Double\-Link.\-h}!Update\-List@{Update\-List}}
 \index{Update\-List@{Update\-List}!DoubleLink.h@{Double\-Link.\-h}}
@@ -971,5 +1016,5 @@ null
 \item[\hyperlink{todo__todo000005}{待办事项}]null \end{DoxyRefDesc}
 
 
-在文件 Double\-Link.\-c 第 397 行定义.
+在文件 Double\-Link.\-c 第 407 行定义.
 
