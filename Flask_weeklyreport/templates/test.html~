@@ -1,0 +1,32 @@
+		{% block page_content %}
+
+    <div>
+      <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#addModal">
+        Launch demo modal
+      </button>
+      <!-- Modal -->
+      <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+      aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">
+                <span aria-hidden="true">
+                  x
+                </span>
+                <span class="sr-only">
+                  Close
+                </span>
+              </button>
+              <h4 class="modal-title" id="myModalLabel">
+                Modal title
+              </h4>
+            </div>
+            <div class="modal-body">
+              <input type="text" id="myInput" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+		{% endblock page_content %}

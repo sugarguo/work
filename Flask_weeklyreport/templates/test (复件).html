@@ -1,0 +1,79 @@
+<html>
+  
+  <head>
+    <title>
+      Index
+    </title>
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.min.css"
+    />
+    <!-- 可选的Bootstrap主题文件（一般不用引入） -->
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"
+    />
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js">
+    </script>
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="http://cdn.bootcss.com/bootstrap/3.2.0/js/bootstrap.min.js">
+    </script>
+  </head>
+
+    <nav class="navbar navbar-default">
+        <div class="container-fluid" id="navbar-container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header pull-left">
+                <a class="navbar-brand" href="">
+                    Sugarguo-Weekly_report
+                </a>
+            </div>
+		<ul class="nav navbar-nav navbar-left">
+        	<li class="active"><a href="/"><span class="glyphicon glyphicon-home"> 主页 </span></a></li>
+        	<li><a type="button" href="#addModal" data-toggle="modal" data-target="#addModal"><span class="glyphicon glyphicon-plus"> 新建 </span></a></li>
+		</ul>
+		<ul class="nav navbar-nav navbar-right">
+			<li><a class="active"><span class="glyphicon glyphicon-user"> 你好， 未登录用户  </span></a></li>
+			<li><a href="/"><span class="glyphicon glyphicon-stop"> 退出 </span></a></li><a class="label label-default" href="/"></a>
+			<form class="navbar-form navbar-right" action="http://www.baidu.com/s" target="_blank">
+				<span class="input-icon">
+				<input type=text placeholder="请输入搜索项" name=wd class="nav-search-input" id="nav-search-input" >
+				<!--input type="submit" value="百度搜索"-->
+				<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+				</span>
+			</form>
+		</ul>
+        </div>
+    </nav>
+  
+  <body>
+    <div>
+      <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#addModal">
+        Launch demo modal
+      </button>
+      <!-- Modal -->
+      <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+      aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">
+                <span aria-hidden="true">
+                  x
+                </span>
+                <span class="sr-only">
+                  Close
+                </span>
+              </button>
+              <h4 class="modal-title" id="myModalLabel">
+                Modal title
+              </h4>
+            </div>
+            <div class="modal-body">
+              <input type="text" id="myInput" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+</html>
