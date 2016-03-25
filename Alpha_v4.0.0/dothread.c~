@@ -1,0 +1,64 @@
+#include <stdio.h>
+#include <sys/time.h> 
+#include <pthread.h>
+
+int pThreadActVarMagPCID = -1;
+pthread_t pThreadActVarMagPC; 
+pthread_mutex_t BACK_COMM_mutex = PTHREAD_MUTEX_INITIALIZER ;
+
+void *ActVarMagThread(void *pdbdata)
+{
+	printf("--------------------\n");
+	printf(" actvarmagthread on \n");
+	printf("--------------------\n");
+	while(1)
+	{
+		if(pthread_mutex_lock(&BACK_COMM_mutex)!=0)
+		{
+			printf("ActVarMagThread BACK_COMM_mutex lock err !!\n");
+			break;
+		}
+		usleep(40);
+		if(pthread_mutex_unlock(&BACK_COMM_mutex)!=0) //unlock
+		{
+			printf("ActVarMagThread pthread_mutex_unlock err !!\n");
+			break;
+		}
+		usleep(100);
+	}
+	sleep(1);
+}
+
+int main(void)
+{
+	printf("mul thread starting test \n");
+	pthread_mutex_init(&BACK_COMM_mutex,NULL);  
+	memset((void *)&pThreadActVarMagPC, 0, sizeof(pThreadActVarMagPC)); 
+	if((pThreadActVarMagPCID = pthread_create(&pThreadActVarMagPC, NULL, ActVarMagThread, NULL)) != 0)  
+	{
+		printf("ActVarMagPC fork err !!");
+		return -1;    
+	}
+	else 
+	{
+		while(1)
+		{
+			if(pthread_mutex_lock(&BACK_COMM_mutex)!=0)
+			{
+				printf("BACK_COMM_mutex lock err !!\n");
+				break;
+			}
+			usleep(40);
+			if(pthread_mutex_unlock(&BACK_COMM_mutex)!=0) //unlock
+			{
+				printf("pthread_mutex_unlock err \n");
+				break;
+			}
+			usleep(100);
+		}
+	}
+	sleep(1);
+	return 0;
+}
+
+

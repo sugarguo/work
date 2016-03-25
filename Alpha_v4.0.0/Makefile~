@@ -1,0 +1,44 @@
+#****************************************************************************
+
+# Copyright        :   EmbedWay 恒为科技武汉研发中心 By:Sugarguo
+
+# Author           :   sugarguo
+
+# Date             :   2016-03-01
+
+# Version          :   Link静态链接库
+
+# Description 	   :   DoubleLinkTestMakefile
+
+#
+
+#****************************************************************************/
+
+CC = gcc
+
+AR = ar rcs
+
+RM = rm -fr *.o *.a *.out
+
+ThreadTest : ThreadTest.o libDoubleLink.a libNetPacket.a
+	$(CC)	-o	ThreadTest ThreadTest.o libDoubleLink.a libNetPacket.a
+
+ThreadTest.o : ThreadTest.c DoubleLink.h NetPacket.h
+	$(CC)	-c	ThreadTest.c
+
+libNetPacket.a : NetPacket.o
+	$(AR)		libNetPacket.a NetPacket.o
+
+NetPacket.o :  NetPacket.c
+	$(CC)	-c	NetPacket.c
+
+libDoubleLink.a : DoubleLink.o
+	$(AR)		libDoubleLink.a DoubleLink.o
+
+DoubleLink.o :  DoubleLink.c
+	$(CC)	-c	DoubleLink.c
+
+
+.PHONY: clean
+clean :
+	$(RM)		LsDoubleLink

@@ -1,0 +1,80 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <pthread.h>
+#include "DoubleLink.h"
+#include "NetPacket.h"
+
+
+
+void CallBackShowNetPacketId(const void *data)
+{
+	struct NetPacket *netpacket = NULL;
+	netpacket = (struct NetPacket *)data;
+	printf("np_id : %d\n", *(int *)netpacket->np-id);
+}
+
+
+
+void insnet(NetPacket *netnode, NetPacket *netdata)
+{
+
+	NetPacket *netpacket = NULL;
+	netpacket = (NetPacket*)malloc(sizeof(NetPacket));
+	netpacket->np_id = 1;
+	netpacket->np_df = 1;
+	netpacket->np_mf = 1;
+	netpacket->np_off = 1;
+
+	InsertNetPacket(netnode,netpacket);
+
+	netpacket->np_id = 2;
+	netpacket->np_df = 2;
+	netpacket->np_mf = 2;
+	netpacket->np_off = 2;
+	InsertNetPacket(netnode,netpacket);
+
+
+	netpacket->np_id = 3;
+	netpacket->np_df = 3;
+	netpacket->np_mf = 3;
+	netpacket->np_off = 3;
+	InsertNetPacket(netnode,netpacket);
+
+
+	netpacket->np_id = 4;
+	netpacket->np_df = 4;
+	netpacket->np_mf = 4;
+	netpacket->np_off = 4;
+	InsertNetPacket(netnode,netpacket);
+
+
+	netpacket->np_id = 5;
+	netpacket->np_df = 5;
+	netpacket->np_mf = 5;
+	netpacket->np_off = 5;
+	InsertNetPacket(netnode,netpacket);
+}
+
+
+
+
+int main(int argc, char **argv)
+{
+
+	DLNode *List = NULL;
+	List = CreateList();
+	NetPacket *netpacket = NULL;
+	netpacket = (NetPacket*)malloc(sizeof(NetPacket));
+	netpacket->np_id = 0;
+	netpacket->np_df = 0;
+	netpacket->np_mf = 0;
+	netpacket->np_off = 0;
+	InsertList(List, (void *)netpacket);
+	
+	insnet((NetPacket *)List->data, NetPacket *netdata)
+
+	
+	return 0;
+}
+
+
