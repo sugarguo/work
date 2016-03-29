@@ -66,7 +66,7 @@
             <div class="form-group">
 				<label for="project" class="col-md-2 col-md-offset-1 control-label span_l">主任务名:</label>
 				<div class="col-md-9">
-					<input class="input_l" id="project" type="text" name="project">
+					<input class="form-control" id="project" type="text" name="project">
 				</div>
 				<input id="op" name="op" type="hidden" value="create">
 				<input id="date" name="date" type="hidden">
@@ -76,13 +76,13 @@
 			<div class="form-group">
 				<label for="branch" class="col-md-2 col-md-offset-1 control-label span_l">子任务名:</label>
 				<div class="col-md-9">
-					<input class="form-control input_l" id="branch" type="text" name="branch">
+					<input class="form-control" id="branch" type="text" name="branch">
 				</div>
 			</div>
 			<div class="form-group">
 				<label for="update" class="col-md-2 col-md-offset-1 control-label span_l">完成时间:</label>
 				<div class="col-md-9">
-					<input class="input_l"  type="text" id="datetimepicker" name="update">
+					<input class="form-control"  type="text" id="datetimepicker" name="update">
 				</div>
 			</div>				
 			<div class="form-group">
@@ -125,7 +125,7 @@
 			<div class="form-group">
 				<label for="workload" class="col-md-2 col-md-offset-1 control-label span_l">工作时间:</label>
 				<div class="col-md-9">
-					<input class="input_b" id="workload" type="text" name="workload">
+					<input class="form-control" id="workload" type="text" name="workload">
 				</div>
 			</div>
 			<div class="form-group">
